@@ -2,7 +2,6 @@
 #define _Pompe_h
 
 // Include
-#include <list>
 #include "Class.h"
 
 // Using
@@ -13,13 +12,12 @@ class Pompe : public Module {
 	private:
 		bool enMarche;
 		bool enPanne;
-		Moteur moteur;
-		Vanne vanne1;
-		Vanne vanne2;
 	public:
-		Pompe(bool marche = true, bool panne = false);
-		~Pompe();
+		Pompe(bool marche = true, bool panne = false):Module("Pompe"){};
+		~Pompe() {};
 		bool getEnMarche();
 		bool getEnPanne();
+		void setEnMarche(bool marche);
+		void setEnPanne(bool panne);
 };
 #endif

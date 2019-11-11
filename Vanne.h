@@ -11,14 +11,14 @@ using namespace std;
 // Class
 class Vanne : public Module {
 	private:
-		bool estOuvert;
+		bool estFerme;
 		bool estBloque;
-		Module* module1;
-		Module* module2;
 	public:
-		Vanne(bool estOuvert = true, bool estBloque = false);
-		~Vanne();
-		bool getEstOuvert();
+		Vanne(bool estFerme = true, bool estBloque = false):Module("Vanne"){};
+		~Vanne() {};
+		bool getEstFerme();
+		void setEstFerme(bool estFerme);
 		bool getEstBloque();
+		void setEstBloque(bool estBloque);
 };
 #endif

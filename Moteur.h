@@ -3,7 +3,8 @@
 
 // Include
 #include <list>
-#include "Class.h"
+#include <string.h>
+#include "Module.h"
 
 // Using
 using namespace std;
@@ -12,9 +13,12 @@ using namespace std;
 class Moteur : public Module {
 	private:
 		bool estAlimente;
+		list<Module> chemin;
 	public:
-		Moteur(bool estAlimente = false);
-		~Moteur();
+		Moteur(string nom, list<Module> chemin, bool estAlimente = false):Module(nom) {};
+		~Moteur() {};
 		bool getEstAlimente();
+		void setEstAlimente(bool estAlimente);
+		void calculEstAlimente();
 };
 #endif
