@@ -13,7 +13,9 @@ class Pompe : public Module {
 	private:
 		bool enMarche;
 		bool enPanne;
-		list<Module> relier;
+		Moteur moteur;
+		Vanne vanne1;
+		Vanne vanne2;
 	public:
 		Pompe(bool marche = true, bool panne = false);
 		~Pompe();

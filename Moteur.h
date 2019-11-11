@@ -13,7 +13,7 @@ class Moteur : public Module {
 	private:
 		bool estAlimente;
 	public:
-		Moteur(bool estAlimente = true);
+		Moteur(bool estAlimente = false);
 		~Moteur();
 		bool getEstAlimente();
 };

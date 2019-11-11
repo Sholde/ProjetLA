@@ -12,9 +12,13 @@ using namespace std;
 class Vanne : public Module {
 	private:
 		bool estOuvert;
+		bool estBloque;
+		Module* module1;
+		Module* module2;
 	public:
-		Vanne(bool estOuvert = true);
+		Vanne(bool estOuvert = true, bool estBloque = false);
 		~Vanne();
 		bool getEstOuvert();
+		bool getEstBloque();
 };
 #endif

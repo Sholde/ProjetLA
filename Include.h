@@ -6,8 +6,6 @@
 #include "Vanne.h"
 #include "Moteur.h"
 #include "Pompe.h"
-#include "PompePrimaire.h"
-#include "PompeSecondaire.h"
 #include "Reservoir.h"
 
 #endif

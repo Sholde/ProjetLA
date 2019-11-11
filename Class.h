@@ -1,13 +1,11 @@
 #ifndef _Class_h
 #define _Class_h
 
-// Class déclarations
+// Dclarations des classes
 class Module;
 class Reservoir;
 class Pompe;
 class Vanne;
 class Moteur;
-class PompePrimaire;
-class PompeSecondaire;
 
 #endif

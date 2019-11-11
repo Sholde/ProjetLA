@@ -14,9 +14,9 @@ class Reservoir : public Module {
 		int capacite;
 		bool estPlein;
 		Pompe primaire;
-		Pompe secondaire;
+		Pompe secours;
 	public:
-		Reservoir(int capacite = 0, bool plein = true);
+		Reservoir(Pompe& p, Pompe& secours, int capacite = 0, bool plein = true);
 		~Reservoir();
 		int getCapacite();
 		bool getEstPlein();
