@@ -1,4 +1,4 @@
 run:compil
 	./run.out
 compil:
-	gcc *.cc -o run.out
+	g++ *.cc -o run.out
