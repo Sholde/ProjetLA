@@ -5,13 +5,10 @@
 # 0. Avant propos
 Le projet contient:
 
--> Un Makefile de compilation (taper la commande make pour compiler et executer le programme).
-
--> Le code contenant les .h et .cc et main.cc le code principal.
-
--> Sortie .run.out -> bin généré par le Makefile.
-
--> README est la documentation.
+ - Un Makefile de compilation (taper la commande make pour compiler et executer le programme).
+ - Le code contenant les .h et .cc et main.cc le code principal.
+ - Sortie .run.out -> bin généré par le Makefile.
+ - README est la documentation.
 
 # 1. Manuel utilisateur
 
