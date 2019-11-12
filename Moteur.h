@@ -12,13 +12,12 @@ using namespace std;
 // Class
 class Moteur : public Module {
 	private:
-		bool estAlimente;
-		list<Module> chemin;
+		bool est_alimente;
+		list<VanneClassique*> vannes_classique;
+		Reservoir* reservoir;
 	public:
-		Moteur(string nom, list<Module> chemin, bool estAlimente = false):Module(nom) {};
-		~Moteur() {};
-		bool getEstAlimente();
-		void setEstAlimente(bool estAlimente);
-		void calculEstAlimente();
+		Moteur(string nom, bool est_alimente = false);
+		~Moteur();
+		void init(list<VanneClassique*> vannes_classique, Reservoir* reservoir);
 };
 #endif

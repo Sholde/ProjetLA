@@ -4,6 +4,8 @@
 // Include
 #include <list>
 #include "Class.h"
+#include <string.h>
+#include "Module.h"
 
 // Using
 using namespace std;
@@ -11,14 +13,10 @@ using namespace std;
 // Class
 class Vanne : public Module {
 	private:
-		bool estFerme;
-		bool estBloque;
+		bool est_ferme;
+		bool est_bloque;
 	public:
-		Vanne(bool estFerme = true, bool estBloque = false):Module("Vanne"){};
-		~Vanne() {};
-		bool getEstFerme();
-		void setEstFerme(bool estFerme);
-		bool getEstBloque();
-		void setEstBloque(bool estBloque);
+		Vanne(string nom, bool est_ferme = true, bool est_bloque = false);
+		~Vanne();
 };
 #endif

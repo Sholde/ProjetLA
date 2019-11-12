@@ -7,5 +7,7 @@ class Reservoir;
 class Pompe;
 class Vanne;
 class Moteur;
+class VanneClassique;
+class VanneTransition;
 
 #endif

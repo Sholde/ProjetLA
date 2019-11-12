@@ -7,5 +7,7 @@
 #include "Moteur.h"
 #include "Pompe.h"
 #include "Reservoir.h"
+#include "VanneClassique.h"
+#include "VanneTransition.h"
 
 #endif

@@ -1,4 +1,7 @@
-run:compil
-	./run.out
-compil:
-	g++ *.cc -o run.out
+all: compil run
+
+compil: *.cc
+	g++ *.cc -o main.exe
+
+run:
+	./main.exe

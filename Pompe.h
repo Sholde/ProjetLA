@@ -2,7 +2,9 @@
 #define _Pompe_h
 
 // Include
+#include <string.h>
 #include "Class.h"
+#include "Module.h"
 
 // Using
 using namespace std;
@@ -10,14 +12,10 @@ using namespace std;
 // Class
 class Pompe : public Module {
 	private:
-		bool enMarche;
-		bool enPanne;
+		bool en_marche;
+		bool en_panne;
 	public:
-		Pompe(bool marche = true, bool panne = false):Module("Pompe"){};
-		~Pompe() {};
-		bool getEnMarche();
-		bool getEnPanne();
-		void setEnMarche(bool marche);
-		void setEnPanne(bool panne);
+		Pompe(string nom, bool marche = true, bool panne = false);
+		~Pompe();
 };
 #endif

@@ -4,6 +4,8 @@
 // Include
 #include <list>
 #include "Class.h"
+#include <string.h>
+#include "Module.h"
 
 // Using
 using namespace std;
@@ -12,15 +14,18 @@ using namespace std;
 class Reservoir : public Module {
 	private:
 		int capacite;
-		bool estPlein;
-		Pompe primaire;
-		Pompe secours;
+		bool est_plein;
+		
+		Pompe* primaire; // différentiation entre pompe primaire et secondaire
+		Pompe* secours; // différentiation entre pompe primaire et secondaire
+		
+		list<VanneClassique*> vannes_classique; // car pas de différenciation entre chaque vanne classique
+		list<VanneTransition*> vannes_transition; // car pas de différenciation entre chaque vanne transition
+		
+		Moteur* moteur; // accès direct aux moteur
 	public:
-		Reservoir(Pompe& p, Pompe& secours, int capacite = 0, bool plein = false):Module("Réservoir"){};
-		~Reservoir() {};
-		int getCapacite();
-		void setCapacite(int capacite);
-		bool getEstPlein();
-		void setEstPlein(bool plein);
+		Reservoir(string nom, int capacite = 0, bool plein = false);
+		~Reservoir();
+		void init(Pompe* primaire, Pompe* secours, list<VanneClassique*> vannes_classique, list<VanneTransition*> vannes_transition, Moteur* moteur);
 };
 #endif
