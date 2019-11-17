@@ -1,0 +1,42 @@
+digraph G {
+	/* Dessins */
+	T1,T2,T3 [
+		color = red
+	]
+	M1,M2,M3 [
+		color = green
+	]
+	N1,N2,N3 [ 
+		color = grey
+	]
+	
+	label = <<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0">
+	<TR><TD ALIGN="right" >Légende:</TD></TR>
+	<TR><TD ALIGN="right" ><FONT COLOR="red">T:</FONT></TD><TD ALIGN="left" >Reservoir</TD></TR>
+	<TR><TD ALIGN="right" ><FONT COLOR="green">M:</FONT></TD><TD ALIGN="left" >Moteur</TD></TR>
+	<TR><TD ALIGN="right" ><FONT COLOR="grey">N:</FONT></TD><TD ALIGN="left" >Noeud</TD></TR>
+	<TR><TD ALIGN="right" ><FONT COLOR="black">V:</FONT></TD><TD ALIGN="left" >Vanne</TD></TR>
+	</TABLE>>
+
+	T1 -> N1;
+	T2 -> N2;
+	T3 -> N3;
+	N1 -> M1;
+	N1 -> V2;
+	V2 -> N2;
+	N1 -> V1;
+	V1 -> N3;
+	
+	N2 -> M2;
+	N2 -> V2;
+	V2 -> N1;
+	N2 -> V3;
+	V3 -> N3;
+	
+	N3 -> M3;
+	N3 -> V3;
+	V3 -> N2;
+	N3 -> V1;
+	V1 -> N1;
+
+}
