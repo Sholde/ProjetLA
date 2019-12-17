@@ -19,6 +19,6 @@ int main()
       window.draw(shape);
       window.display();
   }
-
-  return 0;
+  int a = 0;
+  return a;
 }
