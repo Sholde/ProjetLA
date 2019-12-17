@@ -16,7 +16,8 @@ compil.o:
 	${hidden} echo création des liens... OK
 
 run:
-	${hidden} export LD_LIBRARY_PATH=${path}/lib && ./${name}
+	${hidden} export LD_LIBRARY_PATH=${path}/lib && echo exécution... && ./${name} && echo fin exécution...
+	
 
 clear:
 	${hidden} rm *.o
