@@ -5,7 +5,7 @@ option=-lsfml-graphics -lsfml-window -lsfml-system
 hidden=@
 
 
-all: compil
+all: compil clear
 
 compil: compil.o
 	${hidden} g++ ${main}.o -o ${name} -L${path}/lib ${option}
@@ -17,3 +17,7 @@ compil.o:
 
 run:
 	${hidden} export LD_LIBRARY_PATH=${path}/lib && ./${name}
+
+clear:
+	${hidden} rm *.o
+	${hidden} echo suppression des fichiers objets... OK
