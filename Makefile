@@ -1,15 +1,19 @@
 path=/home/user/lib/SFML-2.5.1
 name=sfml-app
-main=Main.cc
+main=Main
 option=-lsfml-graphics -lsfml-window -lsfml-system
+hidden=@
+
 
 all: compil
 
 compil: compil.o
-	g++ main.o -o ${name} -L${path}/lib ${option}
+	${hidden} g++ ${main}.o -o ${name} -L${path}/lib ${option}
+	${hidden} echo édition des liens... OK
 
 compil.o:
-	g++ -c ${main} -I${path}/include
+	${hidden} g++ -c ${main}.cc -I${path}/include
+	${hidden} echo création des liens... OK
 
 run:
-	export LD_LIBRARY_PATH=${path}/lib && ./${name}
+	${hidden} export LD_LIBRARY_PATH=${path}/lib && ./${name}
