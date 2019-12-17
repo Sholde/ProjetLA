@@ -1,6 +1,6 @@
 path=/home/user/lib/SFML-2.5.1
 name=sfml-app
-main=main.cc
+main=Main.cc
 option=-lsfml-graphics -lsfml-window -lsfml-system
 
 all: compil
