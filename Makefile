@@ -12,7 +12,7 @@ compil: compil.o
 	${hidden} echo édition des liens... OK
 
 compil.o:
-	${hidden} g++ -c ${main}.cc -I${path}/include
+	${hidden} g++ -c ${main}.cpp -I${path}/include
 	${hidden} echo création des liens... OK
 
 run:
