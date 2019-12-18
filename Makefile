@@ -1,18 +1,21 @@
 path=/home/user/lib/SFML-2.5.1
 name=sfml-app
-main=Main
+DEPS=System.hh Cercle.hh
+OBJ=System.o Cercle.o Main.o
 option=-lsfml-graphics -lsfml-window -lsfml-system
 hidden=@
 
 
 all: compil clear
 
-compil: compil.o
-	${hidden} g++ ${main}.o -o ${name} -L${path}/lib ${option}
+compil: $(OBJ) lien
+	${hidden} g++ $(OBJ) -o ${name} -L${path}/lib ${option}
 	${hidden} echo édition des liens... OK
 
-compil.o:
-	${hidden} g++ -c ${main}.cpp -I${path}/include
+%.o: %.cpp ${DEPS}
+	${hidden} g++ -c -o $@ $< -I${path}/include
+
+lien:
 	${hidden} echo création des liens... OK
 
 run:

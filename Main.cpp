@@ -1,37 +1,20 @@
 #include <SFML/Graphics.hpp>
+#include "System.hh"
 
 int main()
 {
-  sf::RenderWindow window(sf::VideoMode(400, 200), "Test");
-  sf::CircleShape shape(100.f);
-  int x = 1;
-  shape.setFillColor(sf::Color::Green);
-  
-  int i = 0;
+  System system;
 
-  while (window.isOpen())
+  while (system.window.isOpen())
   {
-    i++;
     sf::Event event;
-    if(i == 6) {
-      i = 0;
-      if(shape.getPosition().x > 200) {
-        x = -1;
-      }
-      if(shape.getPosition().x < 0) {
-        x = 1;
-      }
-      shape.setPosition(shape.getPosition().x + x, shape.getPosition().y);
+    system.update();
+    while (system.window.pollEvent(event))
+    {
+      if (event.type == sf::Event::Closed)
+        system.window.close();
     }
-    while (window.pollEvent(event))
-      {
-        if (event.type == sf::Event::Closed)
-          window.close();
-      }
-
-      window.clear();
-      window.draw(shape);
-      window.display();
+		system.render();
   }
   return 0;
 }
