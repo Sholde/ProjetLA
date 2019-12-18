@@ -2,6 +2,7 @@
 #define _Cercle_hh
 
 #include <SFML/Graphics.hpp>
+#include "Class.hh"
 #include "System.hh"
 
 class Cercle {

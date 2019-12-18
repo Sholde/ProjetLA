@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include "Class.hh"
 #include "System.hh"
 #include "Cercle.hh"
 

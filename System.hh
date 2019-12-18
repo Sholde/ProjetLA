@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <list>
+#include "Class.hh"
 #include "Cercle.hh"
 
 class System {
