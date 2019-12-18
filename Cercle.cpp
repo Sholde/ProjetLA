@@ -5,7 +5,8 @@
 #include "Cercle.hh"
 
 Cercle::Cercle(float size, sf::Color color):shape(size) {
-	shape.setFillColor(color);
+	this->shape.setFillColor(color);
+	this->speed = 1;
 }
 
 Cercle::~Cercle() {}
@@ -15,19 +16,19 @@ void Cercle::initSystem(System* system) {
 }
 
 void Cercle::update() {
-	time++;
-	if(time == limit) {
-		time = 0;
-		if(shape.getPosition().x > 200) {
-			speed = -1;
+	this->time++;
+	if(this->time == this->limit) {
+		this->time = 0;
+		if(this->shape.getPosition().x > 200) {
+			this->speed = -1;
 		}
-		if(shape.getPosition().x < 0) {
-			speed = 1;
+		if(this->shape.getPosition().x < 0) {
+			this->speed = 1;
 		}
-		shape.setPosition(shape.getPosition().x + speed, shape.getPosition().y);
+		this->shape.setPosition(this->shape.getPosition().x + this->speed, this->shape.getPosition().y);
 	}
 }
 
 void Cercle::render() {
-	system->window.draw(shape);
+	this->system->window.draw(this->shape);
 }

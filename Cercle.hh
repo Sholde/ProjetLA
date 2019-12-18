@@ -11,7 +11,7 @@ class Cercle {
 	sf::CircleShape shape;
 	
 	// vitesse de céplacement
-	int speed = 2;
+	int speed;
 	
 	// affichage
 	int time = 0;
