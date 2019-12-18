@@ -9,8 +9,9 @@ class Cercle {
 	// private field
 	System* system;
 	sf::CircleShape shape;
+	
 	// vitesse de céplacement
-	int speed = 1;
+	int speed = 2;
 	
 	// affichage
 	int time = 0;
@@ -18,8 +19,11 @@ class Cercle {
 	
 	// public field
 	public:
-		Cercle(System* system);
+		Cercle(float = 100.f, sf::Color = sf::Color::Green);
 		~Cercle();
+		
+		// le system appelle cette fonction quand il add ce cercle
+		void initSystem(System* system);
 		
 		// calcul
 		void update();

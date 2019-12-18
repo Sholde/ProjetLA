@@ -3,11 +3,12 @@
 #include "System.hh"
 #include "Cercle.hh"
 
-System::System():window(sf::VideoMode(400, 200), "Test"), composant() {}
+System::System(int width, int heigth):window(sf::VideoMode(width, heigth), "System"), composant() {}
 
 System::~System() {}
 
 void System::add(Cercle* c) {
+	c->initSystem(this);
 	this->composant.push_back(c);
 }
 

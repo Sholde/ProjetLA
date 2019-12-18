@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <list>
 #include "Class.hh"
+#include "Constants.hh"
 #include "Cercle.hh"
 
 class System {
@@ -16,7 +17,7 @@ class System {
 		sf::RenderWindow window;
 		
 		// function
-		System();
+		System(int = WIDTH, int = HEIGTH);
 		~System();
 		
 		// ajoute un cercle a la liste

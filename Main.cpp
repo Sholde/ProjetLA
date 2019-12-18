@@ -6,7 +6,7 @@
 int main()
 {
   System system;
-  Cercle c1(&system);
+  Cercle c1(100.f, sf::Color::Red);
 	system.add(&c1);
 
   while (system.window.isOpen())

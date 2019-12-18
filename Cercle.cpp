@@ -1,14 +1,18 @@
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics.hpp>
 #include "Class.hh"
 #include "System.hh"
 #include "Cercle.hh"
 
-Cercle::Cercle(System* system):shape(100.f) {
-	this->system = system;
-	shape.setFillColor(sf::Color::Green);
+Cercle::Cercle(float size, sf::Color color):shape(size) {
+	shape.setFillColor(color);
 }
 
 Cercle::~Cercle() {}
+
+void Cercle::initSystem(System* system) {
+	this->system = system;
+}
 
 void Cercle::update() {
 	time++;

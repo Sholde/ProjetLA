@@ -1,6 +1,6 @@
 path=/home/user/lib/SFML-2.5.1
 name=sfml-app
-DEPS=Class.hh System.hh Cercle.hh
+DEPS=Class.hh System.hh Cercle.hh Constants.hh 
 OBJ=System.o Cercle.o Main.o
 option=-lsfml-graphics -lsfml-window -lsfml-system
 hidden=@
@@ -19,7 +19,7 @@ lien:
 	${hidden} echo création des liens... OK
 
 run:
-	${hidden} export LD_LIBRARY_PATH=${path}/lib && echo start... && ./${name} && echo end...
+	${hidden} export LD_LIBRARY_PATH=${path}/lib && echo starting... && ./${name} && echo ending...
 	
 
 clear:
