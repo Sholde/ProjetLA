@@ -2,7 +2,7 @@
 
 int main()
 {
-  sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+  sf::RenderWindow window(sf::VideoMode(400, 200), "Test");
   sf::CircleShape shape(100.f);
   int x = 1;
   shape.setFillColor(sf::Color::Green);
@@ -13,11 +13,12 @@ int main()
   {
     i++;
     sf::Event event;
-    if(! (i%6)) {
-      if(shape.getPosition().x > 100) {
+    if(i == 6) {
+      i = 0;
+      if(shape.getPosition().x > 200) {
         x = -1;
       }
-      if(shape.getPosition().x < -100) {
+      if(shape.getPosition().x < 0) {
         x = 1;
       }
       shape.setPosition(shape.getPosition().x + x, shape.getPosition().y);
