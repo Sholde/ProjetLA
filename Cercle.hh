@@ -10,6 +10,7 @@ class Cercle {
 	System* system;
 	sf::CircleShape shape;
 	int speed = 1;
+	int time = 0;
 	
 	// public field
 	public:

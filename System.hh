@@ -8,7 +8,7 @@
 
 class System {
 	// private field
-	std::list<Cercle> composant;
+	std::list<Cercle*> composant;
 	
 	// public field
 	public:
@@ -18,6 +18,12 @@ class System {
 		// function
 		System();
 		~System();
+		
+		// ajoute un cercle a la liste
+		void add(Cercle* c);
+		
+		// gere les evenememnt, ici juste la fermetuer de la fenetre
+		void handleEvent(sf::Event event);
 		
 		// calcul
 		void update();

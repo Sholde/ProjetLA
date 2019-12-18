@@ -11,15 +11,19 @@ Cercle::Cercle(System* system):shape(100.f) {
 Cercle::~Cercle() {}
 
 void Cercle::update() {
-	if(shape.getPosition().x > 200) {
-    speed = -1;
-  }
-  else if(shape.getPosition().x < 0) {
-    speed = 1;
-  }
-  shape.setPosition(shape.getPosition().x + speed, shape.getPosition().y);
+	time++;
+	if(time == 6) {
+		time = 0;
+		if(shape.getPosition().x > 200) {
+			speed = -1;
+		}
+		if(shape.getPosition().x < 0) {
+			speed = 1;
+		}
+		shape.setPosition(shape.getPosition().x + speed, shape.getPosition().y);
+	}
 }
 
 void Cercle::render() {
-	system->window.draw(this->shape);
+	system->window.draw(shape);
 }

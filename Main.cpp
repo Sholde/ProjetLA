@@ -6,16 +6,14 @@
 int main()
 {
   System system;
+  Cercle c1(&system);
+	system.add(&c1);
 
   while (system.window.isOpen())
   {
     sf::Event event;
     system.update();
-    while (system.window.pollEvent(event))
-    {
-      if (event.type == sf::Event::Closed)
-        system.window.close();
-    }
+    system.handleEvent(event);
 		system.render();
   }
   return 0;
