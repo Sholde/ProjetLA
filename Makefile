@@ -16,9 +16,9 @@ compil.o:
 	${hidden} echo création des liens... OK
 
 run:
-	${hidden} export LD_LIBRARY_PATH=${path}/lib && echo exécution... && ./${name} && echo fin exécution...
+	${hidden} export LD_LIBRARY_PATH=${path}/lib && echo start... && ./${name} && echo end...
 	
 
 clear:
 	${hidden} rm *.o
-	${hidden} echo suppression des fichiers objets... OK
+	${hidden} echo suppréssion des fichiers objets... OK
