@@ -12,7 +12,7 @@ Cercle::~Cercle() {}
 
 void Cercle::update() {
 	time++;
-	if(time == 6) {
+	if(time == limit) {
 		time = 0;
 		if(shape.getPosition().x > 200) {
 			speed = -1;

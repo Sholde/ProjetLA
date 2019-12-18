@@ -9,8 +9,12 @@ class Cercle {
 	// private field
 	System* system;
 	sf::CircleShape shape;
+	// vitesse de céplacement
 	int speed = 1;
+	
+	// affichage
 	int time = 0;
+	int limit = 6;
 	
 	// public field
 	public:
