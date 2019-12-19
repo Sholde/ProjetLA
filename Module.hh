@@ -5,14 +5,14 @@
 
 class Module {
 	// private field
-	sf::Text name;
 	
 	// public field
 	public:
-		Module(const char* name, sf::Font *font);
+	int test;
+		Module(int test);
 		~Module();
 		
-		sf::Text getName() { return name; };
+		//sf::Text getName() { return name; };
 		
 		virtual void update();
 		virtual void render();

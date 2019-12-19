@@ -2,4 +2,4 @@
 #include "Module.hh"
 #include "Pompe.hh"
 
-Pompe::Pompe(const char* name, sf::Font *font):Module(name, font) {}
+Pompe::Pompe(int test):Module(test) {}

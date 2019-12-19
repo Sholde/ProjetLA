@@ -1,8 +1,8 @@
 #include <SFML/Graphics.hpp>
-#include "Module.hh"
-#include "Pompe.hh"
 #include <iostream>
 #include <string>
+#include "Module.hh"
+#include "Pompe.hh"
 
 
 // init la font car on doit la recup dans un fichier
@@ -18,7 +18,7 @@ void initFont(sf::Font &font) {
 int main () {
 	sf::Font font;
 	initFont(font);
-	Pompe p1("P1", &font);
+	Pompe p1(1);
 	
 	// jai juste enlevé le cercle et jessaye d'afficher le text qui est dans la pompe
 	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
@@ -33,9 +33,10 @@ int main () {
 			}
 
 			window.clear();
-			window.draw(p1.getName());
 			window.display();
 	}
+	
+	std::cout << p1.test << std::endl;
 	
 	return 0;
 }

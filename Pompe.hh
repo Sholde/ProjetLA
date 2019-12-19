@@ -10,7 +10,7 @@ class Pompe : public Module {
 	
 	// public field
 	public:
-		Pompe(const char* name, sf::Font *font);
+		Pompe(int test);
 		~Pompe() {};
 		
 		void update() {};
