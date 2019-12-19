@@ -36,7 +36,7 @@ int main () {
 			window.display();
 	}
 	
-	std::cout << p1.test << std::endl;
+	std::cout << p1.getTest() << std::endl;
 	
 	return 0;
 }

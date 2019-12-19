@@ -5,12 +5,15 @@
 
 class Module {
 	// private field
+	int test;
 	
 	// public field
 	public:
-	int test;
 		Module(int test);
 		~Module();
+
+		
+		int getTest() { return test; };
 		
 		//sf::Text getName() { return name; };
 		

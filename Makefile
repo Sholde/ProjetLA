@@ -3,7 +3,7 @@ name=sfml-app
 DEPS=Reservoir.hh Vanne.hh Moteur.hh Module.hh System.hh Pompe.hh
 OBJ=Pompe.o Module.o Main.o
 option=-lsfml-graphics -lsfml-window -lsfml-system
-hidden=@
+hidden=
 
 
 all: compil clear
