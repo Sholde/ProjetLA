@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include "Class.hh"
+#include "Constants.hh"
 #include "Interface.hh"
 
 class Pompe {
@@ -18,8 +19,10 @@ class Pompe {
 	
 	// public field
 	public:
-		Pompe(sf::Text name, float = 100.f, sf::Color = sf::Color::Green);
+		Pompe(float = radius_pompe, sf::Color = sf::Color::Green);
 		~Pompe();
+		
+		void initName(const std::string &name, sf::Font &font, const int &size);
 		
 		// le system appelle cette fonction quand il add ce cercle
 		void initInterface(Interface* interface);

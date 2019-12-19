@@ -15,6 +15,7 @@ class Interface {
 	public:
 		// variable
 		sf::RenderWindow window;
+		sf::Font font;
 		
 		// function
 		Interface(int = WIDTH, int = HEIGTH, const char* = "Interface");

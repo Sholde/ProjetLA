@@ -5,7 +5,14 @@
 
 Interface::Interface(int width, int heigth, const char* name):
 	window(sf::VideoMode(width, heigth), name),
-	composant() {}
+	composant(),
+	font() {
+	
+	if (!font.loadFromFile("arial_narrow_7.ttf"))
+	{
+			exit(1);
+	}
+}
 
 Interface::~Interface() {}
 
