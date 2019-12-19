@@ -8,7 +8,7 @@ class Moteur : public Module {
 	// public field
 	public:
 		Moteur(const char* name);
-		~Moteur();
+		~Moteur() {};
 		
 		void update();
 		void render();

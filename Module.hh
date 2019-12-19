@@ -9,11 +9,13 @@ class Module {
 	
 	// public field
 	public:
-		Module(const char* name);
+		Module(const char* name, sf::Font *font);
 		~Module();
 		
-		virtual void update() = 0;
-		virtual void render() = 0;
+		sf::Text getName() { return name; };
+		
+		virtual void update();
+		virtual void render();
 };
 
 #endif
