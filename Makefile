@@ -1,7 +1,7 @@
 path=/home/user/lib/SFML-2.5.1
 name=sfml-app
 DEPS=Reservoir.hh Vanne.hh Moteur.hh Module.hh System.hh 
-OBJ=
+OBJ=Main.o
 option=-lsfml-graphics -lsfml-window -lsfml-system
 hidden=@
 
