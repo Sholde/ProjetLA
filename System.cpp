@@ -2,6 +2,7 @@
 #include "Class.hh"
 #include "System.hh"
 #include "Cercle.hh"
+#include <iostream>
 
 System::System(int width, int heigth):window(sf::VideoMode(width, heigth), "System"), composant() {}
 
@@ -17,6 +18,7 @@ void System::handleEvent(sf::Event event) {
   {
     if (event.type == sf::Event::Closed)
       window.close();
+      std::cout << "ferme event" << std::endl;
   }
 }
 
@@ -32,4 +34,11 @@ void System::render() {
 		c->render();
 	}
 	window.display();
+}
+
+void System::close() {
+	if(window.isOpen()) {
+		window.close();
+		std::cout << "ferme close" << std::endl;
+	}
 }

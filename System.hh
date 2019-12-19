@@ -31,6 +31,9 @@ class System {
 		
 		// affichage
 		void render();
+		
+		// verifie si la fenetre est ferme et la ferme
+		void close();
 };
 
 #endif
