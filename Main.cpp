@@ -6,11 +6,11 @@
 int main()
 {
   System system;
-  Cercle c1(100.f, sf::Color::Red);
+  Cercle c1(100.f, sf::Color::Red, 1);
 	system.add(&c1);
-	Cercle c3(70.f, sf::Color::Blue);
+	Cercle c3(70.f, sf::Color::Blue, 3);
 	system.add(&c3);
-	Cercle c2(50.f, sf::Color::Green);
+	Cercle c2(50.f, sf::Color::Green, 2);
 	system.add(&c2);
 
   while (system.window.isOpen())

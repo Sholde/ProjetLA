@@ -19,7 +19,7 @@ class Cercle {
 	
 	// public field
 	public:
-		Cercle(float = 100.f, sf::Color = sf::Color::Green);
+		Cercle(float = 100.f, sf::Color = sf::Color::Green, int = 1);
 		~Cercle();
 		
 		// le system appelle cette fonction quand il add ce cercle
