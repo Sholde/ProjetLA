@@ -14,12 +14,14 @@ void System::add(Cercle* c) {
 }
 
 void System::handleEvent(sf::Event event) {
-	while (window.pollEvent(event))
-  {
-    if (event.type == sf::Event::Closed)
-      window.close();
-      std::cout << "ferme event" << std::endl;
-  }
+	if(window.hasFocus()) {
+		while (window.pollEvent(event))
+	  {
+	    if (event.type == sf::Event::Closed)
+	      window.close();
+	      std::cout << "ferme event" << std::endl;
+	  }
+	}
 }
 
 void System::update() {

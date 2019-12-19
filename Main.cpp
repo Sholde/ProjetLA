@@ -21,7 +21,7 @@ int main()
   Cercle c4(100.f, sf::Color::Red, 1);
 	system2.add(&c4);
 
-	while (system.window.isOpen() && system2.window.isOpen())
+	while (system.window.isOpen() || system2.window.isOpen())
 	{
 		sf::Event event;
 		system.update();
