@@ -5,13 +5,13 @@
 #include "Class.hh"
 #include "Module.hh"
 
-class Pompe: public Module {
+class Pompe{
 	// private field
 	bool isActive;
 	
 	// public field
 	public:
-		Pompe(int test);
+		Pompe();
 		~Pompe() {};
 		
 		void update() {};

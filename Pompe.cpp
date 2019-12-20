@@ -3,6 +3,6 @@
 #include "Module.hh"
 #include "Pompe.hh"
 
-Pompe::Pompe(int test) {
+Pompe::Pompe() {
 	this->isActive = false;
 }

@@ -19,9 +19,23 @@ void initFont(sf::Font &font) {
 int main () {
 	sf::Font font;
 	initFont(font);
-	Pompe p1(1);
+	Module m1("m1", font);
 	
-	std::cout << p1.getTest() << std::endl;
+	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+
+	while (window.isOpen())
+	{
+			sf::Event event;
+			while (window.pollEvent(event))
+			{
+					if (event.type == sf::Event::Closed)
+							window.close();
+			}
+
+			window.clear();
+			window.draw(m1.getText());
+			window.display();
+	}
 	
 	return 0;
 }

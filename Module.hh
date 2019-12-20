@@ -7,20 +7,14 @@
 class Module {
 	// private field
 	private:
-		int test;
+		sf::Text name;
 	
 	// public field
 	public:
-		Module(int test = 0);
+		Module(const char* name, sf::Font &font, int size = 30);
 		~Module();
-
 		
-		int getTest();
-		
-		//sf::Text getName() { return name; };
-		
-		virtual void update();
-		virtual void render();
+		sf::Text getText();
 };
 
 #endif

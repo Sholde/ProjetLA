@@ -1,9 +1,9 @@
 path=/home/user/lib/SFML-2.5.1
 name=sfml-app
-DEPS=Class.hh Module.hh Pompe.hh
+DEPS=Class.hh Pompe.hh Module.hh
 OBJ=Pompe.o Module.o Main.o
 option=-lsfml-graphics -lsfml-window -lsfml-system
-hidden=
+hidden=@
 
 
 all: compil clear

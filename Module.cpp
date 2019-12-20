@@ -2,12 +2,12 @@
 #include "Class.hh"
 #include "Module.hh"
 
-Module::Module(int test) {
-	this->test = test;
+Module::Module(const char* name, sf::Font &font, int size)
+	:name(name, font, size) {
 }
 
 Module::~Module() {}
 
-int Module::getTest() { 
-	return test;
+sf::Text Module::getText() {
+	return this->name;
 }
