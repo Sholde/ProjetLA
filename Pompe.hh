@@ -5,13 +5,13 @@
 #include "Class.hh"
 #include "Module.hh"
 
-class Pompe{
+class Pompe: public Module{
 	// private field
 	bool isActive;
 	
 	// public field
 	public:
-		Pompe();
+		Pompe(const char* name, sf::Font &font);
 		~Pompe() {};
 		
 		void update() {};

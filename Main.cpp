@@ -19,7 +19,7 @@ void initFont(sf::Font &font) {
 int main () {
 	sf::Font font;
 	initFont(font);
-	Module m1("m1", font);
+	Pompe p1("p1", font);
 	
 	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
 
@@ -33,7 +33,7 @@ int main () {
 			}
 
 			window.clear();
-			window.draw(m1.getText());
+			window.draw(p1.getText());
 			window.display();
 	}
 	

@@ -3,6 +3,7 @@
 #include "Module.hh"
 #include "Pompe.hh"
 
-Pompe::Pompe() {
+Pompe::Pompe(const char* name, sf::Font &font)
+	:Module(name, font) {
 	this->isActive = false;
 }
