@@ -2,6 +2,7 @@
 #define _System_hh
 
 #include <list>
+#include "Module.hh"
 
 class System {
 	// private field

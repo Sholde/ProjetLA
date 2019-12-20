@@ -1,6 +1,6 @@
 path=/home/user/lib/SFML-2.5.1
 name=sfml-app
-DEPS=Reservoir.hh Vanne.hh Moteur.hh Module.hh System.hh Pompe.hh
+DEPS=Class.hh Module.hh Pompe.hh
 OBJ=Pompe.o Module.o Main.o
 option=-lsfml-graphics -lsfml-window -lsfml-system
 hidden=
@@ -13,7 +13,7 @@ compil: $(OBJ) lien
 	${hidden} echo édition des liens... OK
 
 %.o: %.cpp ${DEPS}
-	${hidden} g++ -c $< -I${path}/include
+	${hidden} g++ -c -o $@ $< -I${path}/include
 
 lien:
 	${hidden} echo création des liens... OK

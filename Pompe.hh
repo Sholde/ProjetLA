@@ -2,9 +2,10 @@
 #define _Pompe_hh
 
 #include <SFML/Graphics.hpp>
+#include "Class.hh"
 #include "Module.hh"
 
-class Pompe : public Module {
+class Pompe: public Module {
 	// private field
 	bool isActive;
 	

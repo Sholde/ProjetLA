@@ -2,18 +2,20 @@
 #define _Module_hh
 
 #include <SFML/Graphics.hpp>
+#include "Class.hh"
 
 class Module {
 	// private field
-	int test;
+	private:
+		int test;
 	
 	// public field
 	public:
-		Module(int test);
+		Module(int test = 0);
 		~Module();
 
 		
-		int getTest() { return test; };
+		int getTest();
 		
 		//sf::Text getName() { return name; };
 		
