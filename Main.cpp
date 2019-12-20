@@ -1,11 +1,5 @@
-#include <SFML/Graphics.hpp>
-#include <iostream>
-#include <string>
-#include "Class.hh"
-#include "Module.hh"
-#include "Pompe.hh"
-#include "System.hh"
-#include "Interface.hh"
+
+#include "Include.hh"
 
 // main
 int main () {

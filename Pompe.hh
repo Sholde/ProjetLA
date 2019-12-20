@@ -4,7 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include "Include.hh"
 
-class Pompe: public Module{
+class Pompe: public Module {
 	// private field
 	bool isActive;
 	bool isFailure;
