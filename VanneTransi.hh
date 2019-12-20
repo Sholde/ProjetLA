@@ -5,6 +5,7 @@
 
 class VanneTransi: public Vanne {
 	
+	// rien a commenté
 	Reservoir *left;
 	Reservoir *right;
 	
