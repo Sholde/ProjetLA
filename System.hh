@@ -6,16 +6,14 @@
 
 class System {
 	// private field
-	list<Module*> composant;
+	std::list<Module*> composant;
 	
 	// public field
 	public:
 		System();
 		~System();
 		
-		void add(Module* module);
-		
-		void update();
+		void update() {};
 		void render();
 };
 

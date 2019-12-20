@@ -1,18 +1,20 @@
 #ifndef _Vanne_hh
 #define _Vanne_hh
 
-class Vanne : public Module {
+#include "Include.hh"
+
+class Vanne: public Module {
 	// private field
-	bool isBroke;
-	bool isOpen;
+	protected:
+		bool isOpen;
 	
 	// public field
 	public:
-		Vanne(const char* name);
+		Vanne();
 		~Vanne();
 		
 		void update();
-		void render();
+		void render() {};
 };
 
 #endif

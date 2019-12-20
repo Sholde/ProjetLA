@@ -1,9 +1,12 @@
 #ifndef _Moteur_hh
 #define _Moteur_hh
 
-class Moteur : public Module {
+#include "Include.hh"
+
+class Moteur: public Module {
 	// private field
 	bool isFeed;
+	Reservoir *reservoir;
 	
 	// public field
 	public:
@@ -11,7 +14,7 @@ class Moteur : public Module {
 		~Moteur() {};
 		
 		void update();
-		void render();
+		void render() {};
 };
 
 #endif

@@ -1,13 +1,6 @@
 #include <SFML/Graphics.hpp>
-#include "Class.hh"
-#include "Module.hh"
+#include "Include.hh"
 
-Module::Module(const char* name, sf::Font &font, int size)
-	:name(name, font, size) {
-}
+Module::Module(const char* name):name(name) {}
 
 Module::~Module() {}
-
-sf::Text Module::getText() {
-	return this->name;
-}

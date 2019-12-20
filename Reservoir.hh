@@ -1,11 +1,14 @@
 #ifndef _Reservoir_hh
 #define _Reservoir_hh
 
-class Reservoir : public Module {
+#include "Include.hh"
+
+class Reservoir: public Module {
 	// private field
 	bool isFull;
 	Pompe main;
 	Pompe second;
+	Moteur *moteur;
 	
 	// public field
 	public:
@@ -13,7 +16,7 @@ class Reservoir : public Module {
 		~Reservoir();
 		
 		void update();
-		void render();
+		void render() {};
 };
 
 #endif

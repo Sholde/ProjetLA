@@ -2,19 +2,22 @@
 #define _Module_hh
 
 #include <SFML/Graphics.hpp>
-#include "Class.hh"
+#include "Include.hh"
+#include <string>
+using namespace std;
 
 class Module {
 	// private field
-	private:
-		sf::Text name;
+	protected:
+		string name;
 	
 	// public field
 	public:
-		Module(const char* name, sf::Font &font, int size = 30);
+		Module(const char* name);
 		~Module();
 		
-		sf::Text getText();
+		void update() {};
+		virtual void render() {};
 };
 
 #endif

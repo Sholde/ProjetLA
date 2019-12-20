@@ -3,5 +3,11 @@
 
 class Module;
 class Pompe;
+class System;
+class Vanne;
+class VanneNormal;
+class VanneTransi;
+class Reservoir;
+class Moteur;
 
 #endif

@@ -1,9 +1,10 @@
 #include <SFML/Graphics.hpp>
-#include "Class.hh"
-#include "Module.hh"
-#include "Pompe.hh"
+#include "Include.hh"
 
-Pompe::Pompe(const char* name, sf::Font &font)
-	:Module(name, font) {
+Pompe::Pompe(const char* name)
+	:Module(name) {
 	this->isActive = false;
+	this->isFailure = false;
 }
+
+void Pompe::render() {}
