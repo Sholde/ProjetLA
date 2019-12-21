@@ -15,7 +15,7 @@ void Reservoir::initMoteur(Moteur *mot) {
 	this->moteur = mot;
 }
 
-void Reservoir::initTransi(VanneTransi* v) {
+void Reservoir::addVanneTransi(VanneTransi *v) {
 	this->vanne_transi.push_back(v);
 }
 
@@ -23,11 +23,17 @@ void Reservoir::initPompe(Pompe *m, Pompe *s) {
 	this->main = m;
 	this->second = s;
 }
+void Reservoir::addVanneNormal(VanneNormal *v) {
+	this->vanne_normal.push_back(v);
+}
 
 
 void Reservoir::render() {
 	cout << this->name << " : " << this->moteur->getName() << " " << this->main->getName() << " " << this->second->getName() << " ";
 	for(Vanne* v : vanne_transi) {
+		cout << v->getName() << " ";
+	}
+	for(Vanne* v : vanne_normal) {
 		cout << v->getName() << " ";
 	}
 	cout << endl;

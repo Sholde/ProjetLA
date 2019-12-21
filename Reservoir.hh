@@ -29,8 +29,9 @@ class Reservoir: public Module {
 		~Reservoir();
 		
 		void initMoteur(Moteur *mot);
-		void initTransi(VanneTransi* v);
+		void addVanneTransi(VanneTransi* v);
 		void initPompe(Pompe *m, Pompe *s);
+		void addVanneNormal(VanneNormal *v);
 		
 		void update();
 		void render();

@@ -19,7 +19,7 @@ class Moteur: public Module {
 		~Moteur();
 		
 		void initReservoir(Reservoir *res);
-		Reservoir *getReservoir();
+		void addVanneNormal(VanneNormal *v);
 		
 		void update();
 		void render();

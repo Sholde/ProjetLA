@@ -14,10 +14,14 @@ void Moteur::initReservoir(Reservoir *res) {
 	this->reservoir = res;
 }
 
-Reservoir *Moteur::getReservoir() {
-	return this->reservoir;
+void Moteur::addVanneNormal(VanneNormal *v) {
+	this->vanne_normal.push_back(v);
 }
 
 void Moteur::render() {
-	cout << this->name << " : " << this->reservoir->getName() << endl;
+	cout << this->name << " : " << this->reservoir->getName() << " ";
+	for(Vanne* v : vanne_normal) {
+		cout << v->getName() << " ";
+	}
+	cout << endl;
 }

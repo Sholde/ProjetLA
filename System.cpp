@@ -65,7 +65,7 @@ System::System():composant() {
 	initVanne(tank2, vt23, tank3);
 	initVanne(tank1, tank2, v13, v12, v23, m1, m2);
 	initVanne(tank2, tank3, v12, v23, v13, m2, m3);
-	initVanne(tank1, tank3, v12, v13, v23, m1, m2);
+	initVanne(tank1, tank3, v12, v13, v23, m1, m3);
 }
 
 System::~System() {
@@ -76,13 +76,17 @@ System::~System() {
 
 void System::initVanne(Reservoir *r1, VanneTransi *v, Reservoir *r2) {
 	v->initReservoir(r1, r2);
-	r1->initTransi(v);
-	r2->initTransi(v);
+	r1->addVanneTransi(v);
+	r2->addVanneTransi(v);
 }
 
 void System::initVanne(Reservoir *r1, Reservoir *r2, VanneNormal *v1, VanneNormal *middle, VanneNormal *v2, Moteur *m1, Moteur * m2) {
 	middle->initLeft(r1, v1, m1);
 	middle->initRight(r2, v2, m2);
+	r1->addVanneNormal(middle);
+	r2->addVanneNormal(middle);
+	m1->addVanneNormal(middle);
+	m2->addVanneNormal(middle);
 }
 
 void System::render() {
