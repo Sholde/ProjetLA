@@ -16,6 +16,8 @@ class Module {
 		Module(const char* name);
 		~Module();
 		
+		string &getName();
+		
 		void update() {};
 		virtual void render() {};
 };

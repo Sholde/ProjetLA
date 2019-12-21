@@ -9,8 +9,8 @@ class Reservoir: public Module {
 	bool isFull;
 	
 	// Pompe
-	Pompe main;
-	Pompe second;
+	Pompe* main;
+	Pompe* second;
 	
 	// Vanne
 	
@@ -25,8 +25,10 @@ class Reservoir: public Module {
 	
 	// public field
 	public:
-		Reservoir(const char* name, Pompe &main, Pompe &second);
+		Reservoir(const char* name);
 		~Reservoir();
+		
+		void initMoteur(Moteur *mot);
 		
 		void update();
 		void render() {};

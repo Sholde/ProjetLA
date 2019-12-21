@@ -16,7 +16,10 @@ class Moteur: public Module {
 	// public field
 	public:
 		Moteur(const char* name);
-		~Moteur() {};
+		~Moteur();
+		
+		void initReservoir(Reservoir *res);
+		Reservoir *getReservoir();
 		
 		void update();
 		void render() {};
