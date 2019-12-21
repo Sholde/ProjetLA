@@ -11,8 +11,10 @@ class VanneTransi: public Vanne {
 	
 	// public field
 	public:
-		VanneTransi();
+		VanneTransi(const char* name);
 		~VanneTransi();
+		
+		void initReservoir(Reservoir *l, Reservoir *r);
 		
 		void update();
 		void render() {};

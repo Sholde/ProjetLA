@@ -1,8 +1,9 @@
 #ifndef _System_hh
 #define _System_hh
 
+#include "Include.hh"
 #include <list>
-#include "Module.hh"
+using namespace std;
 
 class System {
 	// private field
@@ -12,6 +13,8 @@ class System {
 	public:
 		System();
 		~System();
+		
+		void initVanne(Reservoir *r1, VanneTransi *v, Reservoir *r2);
 		
 		void update() {};
 		void render();

@@ -10,7 +10,7 @@ class Vanne: public Module {
 	
 	// public field
 	public:
-		Vanne();
+		Vanne(const char* name);
 		~Vanne();
 		
 		void update();
