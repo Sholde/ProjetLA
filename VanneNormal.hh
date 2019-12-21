@@ -16,11 +16,14 @@ class VanneNormal: public Vanne {
 	
 	// public field
 	public:
-		VanneNormal();
+		VanneNormal(const char* name);
 		~VanneNormal();
 		
+		void initLeft(Reservoir *r, VanneNormal *v, Moteur *m);
+		void initRight(Reservoir *r, VanneNormal *v, Moteur *m);
+		
 		void update();
-		void render() {};
+		void render();
 };
 
 #endif
