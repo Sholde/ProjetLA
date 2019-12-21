@@ -17,7 +17,7 @@ class VanneTransi: public Vanne {
 		void initReservoir(Reservoir *l, Reservoir *r);
 		
 		void update();
-		void render() {};
+		void render();
 };
 
 #endif

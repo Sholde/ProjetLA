@@ -33,7 +33,7 @@ class Reservoir: public Module {
 		void initPompe(Pompe *m, Pompe *s);
 		
 		void update();
-		void render() {};
+		void render();
 };
 
 #endif

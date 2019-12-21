@@ -22,7 +22,7 @@ class Moteur: public Module {
 		Reservoir *getReservoir();
 		
 		void update();
-		void render() {};
+		void render();
 };
 
 #endif

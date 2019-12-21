@@ -1,4 +1,6 @@
 #include "Include.hh"
+#include <iostream>
+using namespace std;
 
 Moteur::Moteur(const char* name):Module(name) {
 	
@@ -14,4 +16,8 @@ void Moteur::initReservoir(Reservoir *res) {
 
 Reservoir *Moteur::getReservoir() {
 	return this->reservoir;
+}
+
+void Moteur::render() {
+	cout << this->name << " : " << this->reservoir->getName() << endl;
 }

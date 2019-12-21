@@ -69,3 +69,9 @@ void System::initVanne(Reservoir *r1, VanneTransi *v, Reservoir *r2) {
 	r1->initTransi(v);
 	r2->initTransi(v);
 }
+
+void System::render() {
+	for(Module* m : composant) {
+		m->render();
+	}
+}
