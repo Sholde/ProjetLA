@@ -5,3 +5,7 @@ Vanne::Vanne(const char* name):Module(name) {
 }
 
 Vanne::~Vanne() {}
+
+bool Vanne::getOpen() {
+	return this->isOpen;
+}

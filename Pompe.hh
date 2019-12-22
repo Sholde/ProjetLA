@@ -14,6 +14,9 @@ class Pompe: public Module {
 		Pompe(const char* name);
 		~Pompe() {};
 		
+		bool getActive();
+		void setActive(bool boolean);
+		
 		void update() {};
 		void render();
 };

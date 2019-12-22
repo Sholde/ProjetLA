@@ -17,7 +17,7 @@ class System {
 		void initVanne(Reservoir *r1, VanneTransi *v, Reservoir *r2);
 		void initVanne(Reservoir *r1, Reservoir *r2, VanneNormal *v1, VanneNormal *middle, VanneNormal *v2, Moteur *m1, Moteur * m2);
 		
-		void update() {};
+		void update();
 		void render();
 };
 

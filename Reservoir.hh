@@ -33,6 +33,9 @@ class Reservoir: public Module {
 		void initPompe(Pompe *m, Pompe *s);
 		void addVanneNormal(VanneNormal *v);
 		
+		bool checkPompe();
+		bool checkfeed();
+		
 		void update();
 		void render();
 };

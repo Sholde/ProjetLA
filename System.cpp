@@ -89,6 +89,16 @@ void System::initVanne(Reservoir *r1, Reservoir *r2, VanneNormal *v1, VanneNorma
 	m2->addVanneNormal(middle);
 }
 
+void System::update() {
+	for(Module* m : composant) {
+		if(dynamic_cast<Moteur*>(m))
+			m->update();
+		else if(dynamic_cast<Reservoir*>(m))
+			m->update();
+	}
+}
+
+
 void System::render() {
 	for(Module* m : composant) {
 		m->render();

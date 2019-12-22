@@ -4,12 +4,10 @@
 using namespace std;
 
 Reservoir::Reservoir(const char* name):Module(name) {
-	
+	this->isFull = true;
 }
 
-Reservoir::~Reservoir() {
-	
-}
+Reservoir::~Reservoir() {}
 
 void Reservoir::initMoteur(Moteur *mot) {
 	this->moteur = mot;
@@ -21,12 +19,36 @@ void Reservoir::addVanneTransi(VanneTransi *v) {
 
 void Reservoir::initPompe(Pompe *m, Pompe *s) {
 	this->main = m;
+	this->main->setActive(true);
 	this->second = s;
 }
+
 void Reservoir::addVanneNormal(VanneNormal *v) {
 	this->vanne_normal.push_back(v);
 }
 
+bool Reservoir::checkPompe() {
+	return this->main->getActive() || this->second->getActive();
+}
+
+bool Reservoir::checkfeed() {
+	if(this->isFull && this->checkPompe())
+		return true;
+	return false;
+}
+
+void Reservoir::update() {
+	if(!this->isFull) {
+		for(VanneTransi* v : vanne_transi) {
+			if(v->getOpen()) {
+				if(v->getLeft() != this && v->getLeft()->isFull)
+					this->isFull = true;
+				if(v->getRight() != this && v->getRight()->isFull)
+					this->isFull = true;
+			}
+		}
+	}
+}
 
 void Reservoir::render() {
 	cout << this->name << " : " << this->moteur->getName() << " " << this->main->getName() << " " << this->second->getName() << " ";

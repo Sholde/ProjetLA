@@ -13,6 +13,14 @@ void VanneTransi::initReservoir(Reservoir *l, Reservoir *r) {
 	this->left = l;
 }
 
+Reservoir *VanneTransi::getLeft() {
+	return this->left;
+}
+
+Reservoir *VanneTransi::getRight() {
+	return this->right;
+}
+
 void VanneTransi::render() {
 	cout << this->getName() << " : " << this->left->getName() << " " << this->right->getName() << endl;
 }

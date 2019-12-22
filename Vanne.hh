@@ -13,8 +13,11 @@ class Vanne: public Module {
 		Vanne(const char* name);
 		~Vanne();
 		
-		void update();
+		bool getOpen();
+		
+		void update() {};
 		void render() {};
+
 };
 
 #endif

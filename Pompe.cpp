@@ -9,6 +9,14 @@ Pompe::Pompe(const char* name)
 	this->isFailure = false;
 }
 
+bool Pompe::getActive() {
+	return this->isActive;
+}
+
+void Pompe::setActive(bool boolean) {
+	this->isActive = boolean;
+}
+
 void Pompe::render() {
 	;
 }
