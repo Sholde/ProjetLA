@@ -2,9 +2,7 @@
 #include <iostream>
 using namespace std;
 
-VanneNormal::VanneNormal(const char* name):Vanne(name) {
-	
-}
+VanneNormal::VanneNormal(const char* name, int x, int y):Vanne(name, x, y) {}
 
 VanneNormal::~VanneNormal() {}
 

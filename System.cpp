@@ -5,16 +5,16 @@
 using namespace std;
 
 System::System():composant() {
-	Moteur *m1 = new Moteur("m1");
-	Moteur *m2 = new Moteur("m2");
-	Moteur *m3 = new Moteur("m3");
+	Moteur *m1 = new Moteur("m1", WIDTH/4, HEIGHT - HEIGHT/4);
+	Moteur *m2 = new Moteur("m2", WIDTH/2, HEIGHT - HEIGHT/4);
+	Moteur *m3 = new Moteur("m3", WIDTH - WIDTH/4, HEIGHT - HEIGHT/4);
 	this->composant.push_back(m1);
 	this->composant.push_back(m2);
 	this->composant.push_back(m3);
 	
-	Reservoir *tank1 = new Reservoir("tank1");
-	Reservoir *tank2 = new Reservoir("tank2");
-	Reservoir *tank3 = new Reservoir("tank3");
+	Reservoir *tank1 = new Reservoir("tank1", WIDTH/4, HEIGHT/10);
+	Reservoir *tank2 = new Reservoir("tank2", WIDTH/2, HEIGHT/10);
+	Reservoir *tank3 = new Reservoir("tank3", WIDTH - WIDTH/4, HEIGHT/10);
 	this->composant.push_back(tank1);
 	this->composant.push_back(tank2);
 	this->composant.push_back(tank3);
@@ -102,6 +102,8 @@ void System::update() {
 void System::render(Interface *interface) {
 	for(Module* m : composant) {
 		if(dynamic_cast<Moteur*>(m))
+			m->render(interface);
+		else if(dynamic_cast<Reservoir*>(m))
 			m->render(interface);
 	}
 }

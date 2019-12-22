@@ -9,10 +9,11 @@ class Module {
 	// private field
 	protected:
 		string name;
+		Point point;
 	
 	// public field
 	public:
-		Module(const char* name);
+		Module(const char* name, int = 0, int = 0);
 		~Module();
 		
 		string &getName();

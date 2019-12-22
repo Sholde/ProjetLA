@@ -17,7 +17,7 @@ class Interface {
 	
 	// public field
 	public:
-		Interface(const char* name, int = 800, int = 400);
+		Interface(const char* name, int = WIDTH, int = HEIGHT);
 		~Interface();
 		
 		void initSystem(System *s);
@@ -25,6 +25,7 @@ class Interface {
 		void start();
 		
 		friend class Moteur;
+		friend class Reservoir;
 };
 
 #endif

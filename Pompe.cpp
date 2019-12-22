@@ -3,8 +3,8 @@
 #include <iostream>
 using namespace std;
 
-Pompe::Pompe(const char* name)
-	:Module(name) {
+Pompe::Pompe(const char* name, int x, int y)
+	:Module(name, x, y) {
 	this->isActive = false;
 	this->isFailure = false;
 }

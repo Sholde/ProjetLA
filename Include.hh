@@ -3,6 +3,7 @@
 
 #include "Constants.hh"
 #include "Class.hh"
+#include "Point.hh"
 #include "Module.hh"
 #include "Pompe.hh"
 #include "System.hh"

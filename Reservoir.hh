@@ -25,7 +25,7 @@ class Reservoir: public Module {
 	
 	// public field
 	public:
-		Reservoir(const char* name);
+		Reservoir(const char* name, int = 0, int = 0);
 		~Reservoir();
 		
 		void initMoteur(Moteur *mot);
@@ -37,7 +37,7 @@ class Reservoir: public Module {
 		bool checkfeed();
 		
 		void update();
-		void render();
+		void render(Interface *interface);
 };
 
 #endif

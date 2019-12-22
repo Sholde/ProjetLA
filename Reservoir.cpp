@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-Reservoir::Reservoir(const char* name):Module(name) {
+Reservoir::Reservoir(const char* name, int x, int y):Module(name, x, y) {
 	this->isFull = true;
 }
 
@@ -50,13 +50,8 @@ void Reservoir::update() {
 	}
 }
 
-void Reservoir::render() {
-	cout << this->name << " : " << this->moteur->getName() << " " << this->main->getName() << " " << this->second->getName() << " ";
-	for(Vanne* v : vanne_transi) {
-		cout << v->getName() << " ";
-	}
-	for(Vanne* v : vanne_normal) {
-		cout << v->getName() << " ";
-	}
-	cout << endl;
+void Reservoir::render(Interface *interface) {
+	sf::Text text(this->name, interface->font, 30);
+	text.setPosition(this->point.getX(), this->point.getY());
+	interface->window.draw(text);
 }

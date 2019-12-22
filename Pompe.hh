@@ -11,7 +11,7 @@ class Pompe: public Module {
 	
 	// public field
 	public:
-		Pompe(const char* name);
+		Pompe(const char* name, int = 0, int = 0);
 		~Pompe() {};
 		
 		bool getActive();

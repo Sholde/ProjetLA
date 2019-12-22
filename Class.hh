@@ -1,6 +1,7 @@
 #ifndef _Class_hh
 #define _Class_hh
 
+class Point;
 class Module;
 class Pompe;
 class System;
