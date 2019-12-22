@@ -9,5 +9,6 @@ class VanneNormal;
 class VanneTransi;
 class Reservoir;
 class Moteur;
+class Interface;
 
 #endif

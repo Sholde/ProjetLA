@@ -99,8 +99,9 @@ void System::update() {
 }
 
 
-void System::render() {
+void System::render(Interface *interface) {
 	for(Module* m : composant) {
-		m->render();
+		if(dynamic_cast<Moteur*>(m))
+			m->render(interface);
 	}
 }

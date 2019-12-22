@@ -23,14 +23,9 @@ void Moteur::update() {
 		this->isFeed = true;
 	else
 		this->isFeed = false;
-	cout << " update  " << this->isFeed << endl;
 }
 
 
-void Moteur::render() {
-	cout << this->name << " : " << this->reservoir->getName() << " ";
-	for(Vanne* v : vanne_normal) {
-		cout << v->getName() << " ";
-	}
-	cout << endl;
+void Moteur::render(Interface *interface) {
+	interface->window.draw(sf::Text(this->name, interface->font, 30));
 }

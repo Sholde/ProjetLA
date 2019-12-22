@@ -18,7 +18,7 @@ class Module {
 		string &getName();
 		
 		virtual void update() {};
-		virtual void render() {};
+		virtual void render(Interface *interface) {};
 };
 
 #endif

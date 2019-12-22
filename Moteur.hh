@@ -22,7 +22,7 @@ class Moteur: public Module {
 		void addVanneNormal(VanneNormal *v);
 		
 		void update();
-		void render();
+		void render(Interface *interface);
 };
 
 #endif
