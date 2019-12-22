@@ -7,10 +7,10 @@
 class Interface {
 	
 	// private field
-	int width;
-	int height;
 	sf::Font font;
 	System* system;
+	int time = 60;
+	int fps = 60;
 	
 	protected:
 		sf::RenderWindow window;
