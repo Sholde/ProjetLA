@@ -9,6 +9,9 @@ class Pompe: public Module {
 	bool isActive;
 	bool isFailure;
 	
+	sf::Vector2f pos_circle;
+	float radius;
+	
 	// public field
 	public:
 		Pompe(const char* name, int = 0, int = 0);
@@ -17,8 +20,10 @@ class Pompe: public Module {
 		bool getActive();
 		void setActive(bool boolean);
 		
-		void update() {};
-		void render();
+		void update();
+		void render(Interface *interface);
+		
+		friend void draw_circle(Interface *interface, sf::Vector2f pos, float radius, sf::Color color);
 };
 
 #endif

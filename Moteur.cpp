@@ -2,7 +2,10 @@
 #include <iostream>
 using namespace std;
 
-Moteur::Moteur(const char* name, int x, int y):Module(name, x, y) {
+Moteur::Moteur(const char* name, int x, int y)
+		:Module(name, x, y),
+		pos_rect(x - 5, y - 30),
+		size_rect(45.f, 100.f) {
 	this->isFeed = false;
 }
 
@@ -19,23 +22,19 @@ void Moteur::addVanneNormal(VanneNormal *v) {
 }
 
 void Moteur::update() {
-	if(this->reservoir->checkfeed())
+	if(this->reservoir->checkfeed()) {
 		this->isFeed = true;
-	else
+		this->color = sf::Color::Green;
+	}
+	else {
 		this->isFeed = false;
+		this->color = sf::Color::Red;
+	}
 }
 
 
 void Moteur::render(Interface *interface) {
-	sf::RectangleShape rect(sf::Vector2f(45.f, 100.f));
-	rect.setPosition(sf::Vector2f(this->point.getX() - 5, this->point.getY() - 30));
-	if(this->isFeed)
-		rect.setFillColor(sf::Color::Green);
-	else
-		rect.setFillColor(sf::Color::Red);
-	interface->window.draw(rect);
+	draw_rectangle(interface, this->pos_rect, this->size_rect, this->color);
 	
-	sf::Text text(this->name, interface->font, 30);
-	text.setPosition(this->point.getX(), this->point.getY());
-	interface->window.draw(text);
+	draw_text(interface, this->pos_text, this->name, interface->font, 30, sf::Color::White);
 }

@@ -23,6 +23,9 @@ class Reservoir: public Module {
 	// alimente un seul moteur direct
 	Moteur *moteur;
 	
+	sf::Vector2f pos_rect;
+	sf::Vector2f size_rect;
+	
 	// public field
 	public:
 		Reservoir(const char* name, int = 0, int = 0);
@@ -38,6 +41,8 @@ class Reservoir: public Module {
 		
 		void update();
 		void render(Interface *interface);
+		
+		friend void draw_rectangle(Interface *interface, sf::Vector2f pos, sf::Vector2f size, sf::Color color);
 };
 
 #endif

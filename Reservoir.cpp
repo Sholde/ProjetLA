@@ -3,7 +3,10 @@
 #include <iostream>
 using namespace std;
 
-Reservoir::Reservoir(const char* name, int x, int y):Module(name, x, y) {
+Reservoir::Reservoir(const char* name, int x, int y)
+		:Module(name, x, y),
+		pos_rect(x - 25, y - 20),
+		size_rect(120.f, 130.f) {
 	this->isFull = true;
 }
 
@@ -48,10 +51,23 @@ void Reservoir::update() {
 			}
 		}
 	}
+	
+	if(this->isFull) {
+		this->color = sf::Color::Green;
+	}
+	else {
+		this->color = sf::Color::Red;
+	}
+	
+	this->main->update();
+	this->second->update();
 }
 
 void Reservoir::render(Interface *interface) {
-	sf::Text text(this->name, interface->font, 30);
-	text.setPosition(this->point.getX(), this->point.getY());
-	interface->window.draw(text);
+	draw_rectangle(interface, this->pos_rect, this->size_rect, this->color);
+	
+	draw_text(interface, this->pos_text, this->name, interface->font, 30, sf::Color::White);
+	
+	this->main->render(interface);
+	this->second->render(interface);
 }
