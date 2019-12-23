@@ -21,4 +21,6 @@ void Vanne::render(Interface *interface) {
 	
 	
 	draw_text(interface->statement, this->pos_text, this->name, interface->font, 25, sf::Color::Black);
+	
+	draw_text(interface->dashboard, this->pos_text, this->name, interface->font, 25, sf::Color::White);
 }
