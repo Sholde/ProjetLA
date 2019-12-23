@@ -11,18 +11,19 @@ class Interface {
 	System* system;
 	int time = 60;
 	int fps = 60;
-	
-	protected:
-		sf::RenderWindow window;
+	sf::RenderWindow statement;
+	sf::RenderWindow dashboard;
 	
 	// public field
 	public:
-		Interface(const char* name, int = WIDTH, int = HEIGHT);
+		Interface(int = WIDTH, int = HEIGHT);
 		~Interface();
 		
 		void initSystem(System *s);
 		
 		void start();
+		void render();
+		void handleEvent(sf::Event &);
 		
 		friend void draw_rectangle(Interface *interface, sf::Vector2f pos, sf::Vector2f size, sf::Color color);
 		friend void draw_circle(Interface *interface, sf::Vector2f pos, float radius, sf::Color color);

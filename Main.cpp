@@ -6,9 +6,9 @@
 int main () {
 	System system;
 	
-	Interface statement("Statement");
-	statement.initSystem(&system);
-	statement.start();
+	Interface interface;
+	interface.initSystem(&system);
+	interface.start();
 	
 	return 0;
 }

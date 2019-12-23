@@ -2,9 +2,13 @@
 #include <SFML/Graphics.hpp>
 #include "Include.hh"
 
-Interface::Interface(const char* name, int width, int height):window(sf::VideoMode(width, height), name), font() {
+Interface::Interface(int width, int height)
+		:statement(sf::VideoMode(width, height), "Statement"),
+		dashboard(sf::VideoMode(width, height), "Dashboard")
+		,font() {
+			
 	if (!this->font.loadFromFile("arial_narrow_7.ttf")) {
-	exit(1);
+		exit(1);
 	}
 }
 
@@ -15,7 +19,7 @@ void Interface::initSystem(System *s) {
 }
 
 void Interface::start() {
-	while (window.isOpen())
+	while(statement.isOpen() && dashboard.isOpen())
 	{
 		time++;
 		if(time >= fps) {
@@ -23,16 +27,41 @@ void Interface::start() {
 			sf::Event event;
 			// update
 			system->update();
-			while (window.pollEvent(event))
-			{
-				if (event.type == sf::Event::Closed)
-					window.close();
-			}
+			
+			// handle event
+			this->handleEvent(event);
 
 			// render
-			window.clear();
-			system->render(this);
-			window.display();
+			this->render();
+		}
+	}
+}
+
+void Interface::render() {
+	statement.clear();
+	dashboard.clear();
+	system->render(this);
+	statement.display();
+	dashboard.clear();
+}
+
+void Interface::handleEvent(sf::Event &event) {
+	if(statement.hasFocus()) {
+		while(statement.pollEvent(event))
+		{
+			if(event.type == sf::Event::Closed) {
+				statement.close();
+				dashboard.close();
+			}
+		}
+	}
+	else if(dashboard.hasFocus()) {
+		while(dashboard.pollEvent(event))
+		{
+			if(event.type == sf::Event::Closed) {
+				statement.close();
+				dashboard.close();
+			}
 		}
 	}
 }
