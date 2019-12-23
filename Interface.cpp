@@ -42,7 +42,7 @@ void Interface::render() {
 	dashboard.clear();
 	system->render(this);
 	statement.display();
-	dashboard.clear();
+	dashboard.display();
 }
 
 void Interface::handleEvent(sf::Event &event) {
