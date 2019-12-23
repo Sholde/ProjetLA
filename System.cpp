@@ -101,11 +101,6 @@ void System::update() {
 
 void System::render(Interface *interface) {
 	for(Module* m : composant) {
-		if(dynamic_cast<Moteur*>(m))
-			m->render(interface);
-		else if(dynamic_cast<Reservoir*>(m))
-			m->render(interface);
-		else if(dynamic_cast<Vanne*>(m))
-			m->render(interface);
+		m->render(interface);
 	}
 }
