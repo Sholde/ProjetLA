@@ -1,10 +1,12 @@
+
+#include <SFML/Graphics.hpp>
 #include "Include.hh"
 #include <iostream>
 using namespace std;
 
-Moteur::Moteur(const char* name, int x, int y)
-		:Module(name, x, y),
-		pos_rect(x - 5, y - 30),
+Moteur::Moteur(const char* name, sf::Vector2f pos)
+		:Module(name, pos),
+		pos_rect(pos.x - 5, pos.y - 30),
 		size_rect(45.f, 100.f) {
 	this->isFeed = false;
 }

@@ -1,8 +1,8 @@
 #include "Include.hh"
 
-Vanne::Vanne(const char* name, int x, int y)
-		:Module(name, x - 15, y + 40),
-		pos_circle(x - 22.5, y + 30) {
+Vanne::Vanne(const char* name, sf::Vector2f pos)
+		:Module(name, sf::Vector2f(pos.x - 15, pos.y + 40)),
+		pos_circle(pos.x - 22.5, pos.y + 30) {
 	this->radius = 28.f;
 	this->isOpen = false;
 }

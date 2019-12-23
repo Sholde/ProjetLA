@@ -3,9 +3,9 @@
 #include <string>
 using namespace std;
 
-Module::Module(const char* name, int x, int y, sf::Color color)
+Module::Module(const char* name, sf::Vector2f pos, sf::Color color)
 		:name(name),
-		pos_text(x, y),
+		pos_text(pos),
 		color(color) {}
 
 Module::~Module() {}

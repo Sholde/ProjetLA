@@ -14,7 +14,7 @@ class Pompe: public Module {
 	
 	// public field
 	public:
-		Pompe(const char* name, int = 0, int = 0);
+		Pompe(const char* name, sf::Vector2f pos);
 		~Pompe() {};
 		
 		bool getActive();

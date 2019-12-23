@@ -1,6 +1,7 @@
 #ifndef _System_hh
 #define _System_hh
 
+#include <SFML/Graphics.hpp>
 #include "Include.hh"
 #include <list>
 using namespace std;

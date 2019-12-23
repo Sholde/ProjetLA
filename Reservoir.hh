@@ -28,7 +28,7 @@ class Reservoir: public Module {
 	
 	// public field
 	public:
-		Reservoir(const char* name, int = 0, int = 0);
+		Reservoir(const char* name, sf::Vector2f pos);
 		~Reservoir();
 		
 		void initMoteur(Moteur *mot);

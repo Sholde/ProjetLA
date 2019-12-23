@@ -3,9 +3,9 @@
 #include <iostream>
 using namespace std;
 
-Pompe::Pompe(const char* name, int x, int y)
-		:Module(name, x - 15, y + 40),
-		pos_circle(x - 27.5, y + 30) {
+Pompe::Pompe(const char* name, sf::Vector2f pos)
+		:Module(name, sf::Vector2f(pos.x - 15, pos.y + 40)),
+		pos_circle(pos.x - 27.5, pos.y + 30) {
 	this->radius = 28.f;
 	this->isActive = false;
 	this->isFailure = false;

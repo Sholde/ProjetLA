@@ -3,9 +3,9 @@
 #include <iostream>
 using namespace std;
 
-Reservoir::Reservoir(const char* name, int x, int y)
-		:Module(name, x, y),
-		pos_rect(x - 25, y - 20),
+Reservoir::Reservoir(const char* name, sf::Vector2f pos)
+		:Module(name, pos),
+		pos_rect(pos.x - 25, pos.y - 20),
 		size_rect(120.f, 130.f) {
 	this->isFull = true;
 }

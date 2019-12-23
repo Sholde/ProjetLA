@@ -1,6 +1,7 @@
 #ifndef _Moteur_hh
 #define _Moteur_hh
 
+#include <SFML/Graphics.hpp>
 #include "Include.hh"
 
 class Moteur: public Module {
@@ -18,7 +19,7 @@ class Moteur: public Module {
 	
 	// public field
 	public:
-		Moteur(const char* name, int = 0, int = 0);
+		Moteur(const char* name, sf::Vector2f = sf::Vector2f(0, 0));
 		~Moteur();
 		
 		void initReservoir(Reservoir *res);
