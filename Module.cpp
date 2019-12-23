@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-Module::Module(const char* name, sf::Vector2f pos, sf::Color color)
+Module::Module(const char* name, const sf::Vector2f &pos, sf::Color color)
 		:name(name),
 		pos_text(pos),
 		color(color) {}

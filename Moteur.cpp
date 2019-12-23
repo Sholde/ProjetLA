@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 
-Moteur::Moteur(const char* name, sf::Vector2f pos)
+Moteur::Moteur(const char* name, const sf::Vector2f &pos)
 		:Module(name, pos),
 		pos_rect(pos.x - 5, pos.y - 30),
 		size_rect(45.f, 100.f) {

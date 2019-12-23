@@ -19,7 +19,7 @@ class Moteur: public Module {
 	
 	// public field
 	public:
-		Moteur(const char* name, sf::Vector2f = sf::Vector2f(0, 0));
+		Moteur(const char* name, const sf::Vector2f &pos);
 		~Moteur();
 		
 		void initReservoir(Reservoir *res);

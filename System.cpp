@@ -6,67 +6,96 @@
 using namespace std;
 
 System::System():composant() {
-	Moteur *m1 = new Moteur("m1", sf::Vector2f(WIDTH/6, HEIGHT - HEIGHT/4));
-	Moteur *m2 = new Moteur("m2", sf::Vector2f(WIDTH/2, HEIGHT - HEIGHT/4));
-	Moteur *m3 = new Moteur("m3", sf::Vector2f(WIDTH - WIDTH/6, HEIGHT - HEIGHT/4));
+	sf::Vector2f vect;
+	vect.x = WIDTH/6;
+	vect.y = HEIGHT - HEIGHT/4;
+	Moteur *m1 = new Moteur("m1", vect);
+	vect.x = WIDTH/2;
+	vect.y = HEIGHT - HEIGHT/4;
+	Moteur *m2 = new Moteur("m2", vect);
+	vect.x = WIDTH - WIDTH/6;
+	vect.y = HEIGHT - HEIGHT/4;
+	Moteur *m3 = new Moteur("m3", vect);
 	this->composant.push_back(m1);
 	this->composant.push_back(m2);
 	this->composant.push_back(m3);
 	
-	//~ Reservoir *tank1 = new Reservoir("tank1", WIDTH/6 - 10, HEIGHT/10 - 10);
-	//~ Reservoir *tank2 = new Reservoir("tank2", WIDTH/2 - 10, HEIGHT/10 - 10);
-	//~ Reservoir *tank3 = new Reservoir("tank3", WIDTH - WIDTH/6 - 10, HEIGHT/10 - 10);
-	//~ this->composant.push_back(tank1);
-	//~ this->composant.push_back(tank2);
-	//~ this->composant.push_back(tank3);
+	vect.x = WIDTH/6 - 10;
+	vect.y = HEIGHT/10 - 10;
+	Reservoir *tank1 = new Reservoir("tank1", vect);
+	vect.x = WIDTH/2 - 10;
+	vect.y = HEIGHT/10 - 10;
+	Reservoir *tank2 = new Reservoir("tank2", vect);
+	vect.x = WIDTH - WIDTH/6 - 10;
+	vect.y = HEIGHT/10 - 10;
+	Reservoir *tank3 = new Reservoir("tank3", vect);
+	this->composant.push_back(tank1);
+	this->composant.push_back(tank2);
+	this->composant.push_back(tank3);
 	
-	//~ VanneTransi *vt12 = new VanneTransi("vt12", WIDTH/3 + 15, HEIGHT/10 - 10);
-	//~ VanneTransi *vt23 = new VanneTransi("vt23", WIDTH - WIDTH/3 + 15, HEIGHT/10 - 10);
-	//~ this->composant.push_back(vt12);
-	//~ this->composant.push_back(vt23);
+	vect.x = WIDTH/3 + 15;
+	vect.y = HEIGHT/10 - 10;
+	VanneTransi *vt12 = new VanneTransi("vt12", vect);
+	vect.x = WIDTH - WIDTH/3 + 15;
+	vect.y = HEIGHT/10 - 10;
+	VanneTransi *vt23 = new VanneTransi("vt23", vect);
+	this->composant.push_back(vt12);
+	this->composant.push_back(vt23);
 	
-	//~ // Pompe
-	//~ Pompe *p11 = new Pompe("p11", WIDTH/6 - 5, HEIGHT/10);
-	//~ Pompe *p12 = new Pompe("p12", WIDTH/6 + 53, HEIGHT/10);
-	//~ this->composant.push_back(p11);
-	//~ this->composant.push_back(p12);
+	// Pompe
+	vect.x = WIDTH/6 - 5;
+	vect.y = HEIGHT/10;
+	Pompe *p11 = new Pompe("p11", vect);
+	vect.x = WIDTH/6 + 53;
+	Pompe *p12 = new Pompe("p12", vect);
+	this->composant.push_back(p11);
+	this->composant.push_back(p12);
 	
-	//~ tank1->initPompe(p11, p12);
+	tank1->initPompe(p11, p12);
 	
-	//~ Pompe *p21 = new Pompe("p21", WIDTH/2 - 5, HEIGHT/10);
-	//~ Pompe *p22 = new Pompe("p22", WIDTH/2 + 53, HEIGHT/10);
-	//~ this->composant.push_back(p21);
-	//~ this->composant.push_back(p22);
+	vect.x = WIDTH/2 - 5;
+	Pompe *p21 = new Pompe("p21", vect);
+	vect.x = WIDTH/2 + 53;
+	Pompe *p22 = new Pompe("p22", vect);
+	this->composant.push_back(p21);
+	this->composant.push_back(p22);
 	
-	//~ tank2->initPompe(p21, p22);
+	tank2->initPompe(p21, p22);
 	
-	//~ Pompe *p31 = new Pompe("p31", WIDTH - WIDTH/6 - 5, HEIGHT/10);
-	//~ Pompe *p32 = new Pompe("p32", WIDTH - WIDTH/6 + 53, HEIGHT/10);
-	//~ this->composant.push_back(p31);
-	//~ this->composant.push_back(p32);
+	vect.x = WIDTH/6 - 5;
+	Pompe *p31 = new Pompe("p31", vect);
+	vect.x = WIDTH/6 + 53;
+	Pompe *p32 = new Pompe("p32", vect);
+	this->composant.push_back(p31);
+	this->composant.push_back(p32);
 	
-	//~ tank3->initPompe(p31, p32);
+	tank3->initPompe(p31, p32);
 	
-	//~ VanneNormal *v12 = new VanneNormal("v12", WIDTH/3 + 15, HEIGHT - HEIGHT/2);
-	//~ VanneNormal *v23 = new VanneNormal("v23", WIDTH - WIDTH/3 + 15, HEIGHT - HEIGHT/2);
-	//~ VanneNormal *v13 = new VanneNormal("v13", WIDTH/2 + 15, HEIGHT/4);
-	//~ this->composant.push_back(v12);
-	//~ this->composant.push_back(v23);
-	//~ this->composant.push_back(v13);
+	vect.x = WIDTH/3 + 15;
+	vect.y = HEIGHT - HEIGHT/2;
+	VanneNormal *v12 = new VanneNormal("v12",vect);
+	vect.x = WIDTH - WIDTH/3 + 15;
+	VanneNormal *v23 = new VanneNormal("v23", vect);
+	vect.x = WIDTH/2 + 15;
+	vect.y = HEIGHT/4;
+	VanneNormal *v13 = new VanneNormal("v13", vect);
+	this->composant.push_back(v12);
+	this->composant.push_back(v23);
+	this->composant.push_back(v13);
 	
-	//~ m1->initReservoir(tank1);
-	//~ m2->initReservoir(tank2);
-	//~ m3->initReservoir(tank3);
+	m1->initReservoir(tank1);
+	m2->initReservoir(tank2);
+	m3->initReservoir(tank3);
 	
-	//~ tank1->initMoteur(m1);
-	//~ tank2->initMoteur(m2);
-	//~ tank3->initMoteur(m3);
+	tank1->initMoteur(m1);
+	tank2->initMoteur(m2);
+	tank3->initMoteur(m3);
 	
-	//~ initVanne(tank1, vt12, tank2);
-	//~ initVanne(tank2, vt23, tank3);
-	//~ initVanne(tank1, tank2, v13, v12, v23, m1, m2);
-	//~ initVanne(tank2, tank3, v12, v23, v13, m2, m3);
-	//~ initVanne(tank1, tank3, v12, v13, v23, m1, m3);
+	initVanne(tank1, vt12, tank2);
+	initVanne(tank2, vt23, tank3);
+	initVanne(tank1, tank2, v13, v12, v23, m1, m2);
+	initVanne(tank2, tank3, v12, v23, v13, m2, m3);
+	initVanne(tank1, tank3, v12, v13, v23, m1, m3);
 }
 
 System::~System() {
