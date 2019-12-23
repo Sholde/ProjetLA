@@ -20,7 +20,7 @@ class Pompe: public Module {
 		
 		bool getActive();
 		bool getIsMain();
-		void setActive(bool boolean);
+		void setActive();
 		void setIsMain();
 		
 		void update();

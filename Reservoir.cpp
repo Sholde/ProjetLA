@@ -23,7 +23,7 @@ void Reservoir::addVanneTransi(VanneTransi *v) {
 
 void Reservoir::initPompe(Pompe *m, Pompe *s) {
 	this->main = m;
-	this->main->setActive(true);
+	this->main->setActive();
 	this->main->setIsMain();
 	this->second = s;
 }
@@ -53,8 +53,7 @@ void Reservoir::handleClic(int &x, int &y) {
 	if(x >= pos.x && x <= pos.x + size.x
 		&& y >= pos.y && y <= pos.y + size.y) {
 		
-		this->main->setActive(false);
-		this->second->setActive(true);
+		this->second->setActive();
 	}
 }
 

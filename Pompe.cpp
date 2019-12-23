@@ -20,8 +20,8 @@ bool Pompe::getIsMain() {
 	return this->isMain;
 }
 
-void Pompe::setActive(bool boolean) {
-	this->isActive = boolean;
+void Pompe::setActive() {
+	this->isActive = !this->isActive;
 }
 
 void Pompe::setIsMain() {
