@@ -9,6 +9,7 @@ Pompe::Pompe(const char* name, const sf::Vector2f &st, const sf::Vector2f &db)
 	this->radius = 28.f;
 	this->isActive = false;
 	this->isFailure = false;
+	this->isMain = false;
 }
 
 bool Pompe::getActive() {
@@ -17,6 +18,10 @@ bool Pompe::getActive() {
 
 void Pompe::setActive(bool boolean) {
 	this->isActive = boolean;
+}
+
+void Pompe::setIsMain() {
+	this->isMain = true;
 }
 
 void Pompe::update() {
@@ -37,6 +42,8 @@ void Pompe::render(Interface *interface) {
 	
 	draw_text(interface->statement, this->pos_st, this->name, interface->font, 25, sf::Color::Black);
 	
-	draw_text(interface->dashboard, this->pos_db, this->name, interface->font, 25, sf::Color::White);
+	if(!this->isMain) {
+		draw_text(interface->dashboard, this->pos_db, this->name, interface->font, 25, sf::Color::White);
+	}
 }
 

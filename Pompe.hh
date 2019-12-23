@@ -8,6 +8,7 @@ class Pompe: public Module {
 	// private field
 	bool isActive;
 	bool isFailure;
+	bool isMain;
 	
 	sf::Vector2f pos_circle;
 	float radius;
@@ -19,6 +20,7 @@ class Pompe: public Module {
 		
 		bool getActive();
 		void setActive(bool boolean);
+		void setIsMain();
 		
 		void update();
 		void render(Interface *interface);
