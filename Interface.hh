@@ -25,7 +25,6 @@ class Interface {
 		void render();
 		void handleEvent(sf::Event &);
 		
-		friend void draw_rectangle(Interface *interface, sf::Vector2f pos, sf::Vector2f size, sf::Color color);
 		friend void draw_circle(Interface *interface, sf::Vector2f pos, float radius, sf::Color color);
 		friend void draw_text(Interface *interface, sf::Vector2f pos, string name, sf::Font font, int size, sf::Color color);
 		

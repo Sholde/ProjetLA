@@ -30,11 +30,11 @@ void Pompe::update() {
 
 void Pompe::render(Interface *interface) {
 	int DECAL = 3;
-	draw_circle(interface, this->pos_circle, this->radius, sf::Color::Black);
+	draw_circle(interface->statement, this->pos_circle, this->radius, sf::Color::Black);
 	sf::Vector2f tmp = sf::Vector2f(this->pos_circle.x + DECAL, this->pos_circle.y + DECAL);
-	draw_circle(interface, tmp, this->radius - DECAL, this->color);
+	draw_circle(interface->statement, tmp, this->radius - DECAL, this->color);
 	
 	
-	draw_text(interface, this->pos_text, this->name, interface->font, 25, sf::Color::Black);
+	draw_text(interface->statement, this->pos_text, this->name, interface->font, 25, sf::Color::Black);
 }
 

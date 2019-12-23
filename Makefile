@@ -1,6 +1,6 @@
 path=/home/user/lib/SFML-2.5.1
 name=sfml-app
-DEPS=Constants.hh Class.hh Interface.hh Point.hh Pompe.hh Module.hh System.hh Include.hh Reservoir.hh Moteur.hh Vanne.hh VanneTransi.hh VanneNormal.hh
+DEPS=Constants.hh Class.hh Draw.hh Interface.hh Point.hh Pompe.hh Module.hh System.hh Include.hh Reservoir.hh Moteur.hh Vanne.hh VanneTransi.hh VanneNormal.hh
 OBJ=Draw.o Interface.o Point.o Pompe.o Module.o Main.o System.o Reservoir.o Moteur.o Vanne.o VanneTransi.o VanneNormal.o
 option=-lsfml-graphics -lsfml-window -lsfml-system
 hidden=@

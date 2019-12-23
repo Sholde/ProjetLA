@@ -36,7 +36,7 @@ void Moteur::update() {
 
 
 void Moteur::render(Interface *interface) {
-	draw_rectangle(interface, this->pos_rect, this->size_rect, this->color);
+	draw_rectangle(interface->statement, this->pos_rect, this->size_rect, this->color);
 	
-	draw_text(interface, this->pos_text, this->name, interface->font, 30, sf::Color::Black);
+	draw_text(interface->statement, this->pos_text, this->name, interface->font, 30, sf::Color::Black);
 }

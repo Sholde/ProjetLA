@@ -19,8 +19,6 @@ class Vanne: public Module {
 		
 		void update() {};
 		void render(Interface *interface);
-		
-		friend void draw_circle(Interface *interface, sf::Vector2f pos, float radius, sf::Color color);
 };
 
 #endif
