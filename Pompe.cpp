@@ -43,6 +43,8 @@ void Pompe::render(Interface *interface) {
 	draw_text(interface->statement, this->pos_st, this->name, interface->font, 25, sf::Color::Black);
 	
 	if(!this->isMain) {
+		draw_rectangle(interface->dashboard, sf::Vector2f(this->pos_db.x - 30, this->pos_db.y - 2.5), sf::Vector2f(100, 40), sf::Color::White);
+		draw_rectangle(interface->dashboard, sf::Vector2f(this->pos_db.x - 25, this->pos_db.y + 2.5), sf::Vector2f(90, 30), sf::Color::Black);
 		draw_text(interface->dashboard, this->pos_db, this->name, interface->font, 25, sf::Color::White);
 	}
 }
