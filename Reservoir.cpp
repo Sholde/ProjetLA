@@ -40,6 +40,10 @@ bool Reservoir::checkfeed() {
 	return false;
 }
 
+void Reservoir::setFull(bool boolean) {
+	this->isFull = boolean;
+}
+
 void Reservoir::update() {
 	if(!this->isFull) {
 		for(VanneTransi* v : vanne_transi) {

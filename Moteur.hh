@@ -24,6 +24,8 @@ class Moteur: public Module {
 		void initReservoir(Reservoir *res);
 		void addVanneNormal(VanneNormal *v);
 		
+		void setFeed(bool boolean);
+		
 		void update();
 		void render(Interface *interface);
 		

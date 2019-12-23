@@ -18,18 +18,18 @@ void Interface::start() {
 	while (window.isOpen())
 	{
 		time++;
-		sf::Event event;
-		// update
-		system->update();
-		while (window.pollEvent(event))
-		{
-			if (event.type == sf::Event::Closed)
-				window.close();
-		}
-
-		// render
 		if(time >= fps) {
 			time = 0;
+			sf::Event event;
+			// update
+			system->update();
+			while (window.pollEvent(event))
+			{
+				if (event.type == sf::Event::Closed)
+					window.close();
+			}
+
+			// render
 			window.clear();
 			system->render(this);
 			window.display();

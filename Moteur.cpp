@@ -9,9 +9,7 @@ Moteur::Moteur(const char* name, int x, int y)
 	this->isFeed = false;
 }
 
-Moteur::~Moteur() {
-	
-}
+Moteur::~Moteur() {}
 
 void Moteur::initReservoir(Reservoir *res) {
 	this->reservoir = res;
@@ -19,6 +17,10 @@ void Moteur::initReservoir(Reservoir *res) {
 
 void Moteur::addVanneNormal(VanneNormal *v) {
 	this->vanne_normal.push_back(v);
+}
+
+void Moteur::setFeed(bool boolean) {
+	this->isFeed = boolean;
 }
 
 void Moteur::update() {

@@ -39,6 +39,8 @@ class Reservoir: public Module {
 		bool checkPompe();
 		bool checkfeed();
 		
+		void setFull(bool boolean);
+		
 		void update();
 		void render(Interface *interface);
 		

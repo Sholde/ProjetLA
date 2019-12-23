@@ -90,11 +90,20 @@ void System::initVanne(Reservoir *r1, Reservoir *r2, VanneNormal *v1, VanneNorma
 }
 
 void System::update() {
+	x++;
 	for(Module* m : composant) {
 		if(dynamic_cast<Moteur*>(m))
 			m->update();
 		else if(dynamic_cast<Reservoir*>(m))
 			m->update();
+	}
+	if(x == 1000) {
+		for(Module* m : composant) {
+			Reservoir* res = dynamic_cast<Reservoir*>(m);
+			if(res) {
+				res->setFull(false);
+			}
+		}
 	}
 }
 

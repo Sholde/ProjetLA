@@ -8,6 +8,7 @@ using namespace std;
 class System {
 	// private field
 	std::list<Module*> composant;
+	int x = 0;
 	
 	// public field
 	public:
