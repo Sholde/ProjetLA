@@ -12,6 +12,7 @@ class Pompe: public Module {
 	
 	sf::Vector2f pos_circle;
 	float radius;
+	Box box;
 	
 	// public field
 	public:

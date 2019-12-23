@@ -29,6 +29,7 @@ class Interface {
 		friend class Reservoir;
 		friend class Pompe;
 		friend class Vanne;
+		friend class Box;
 };
 
 #endif

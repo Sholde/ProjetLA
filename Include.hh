@@ -4,6 +4,7 @@
 #include "Constants.hh"
 #include "Class.hh"
 #include "Draw.hh"
+#include "Box.hh"
 #include "Module.hh"
 #include "Pompe.hh"
 #include "System.hh"
