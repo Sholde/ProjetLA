@@ -15,7 +15,7 @@ class Module {
 	
 	// public field
 	public:
-		Module(const char* name, int = 0, int = 0, sf::Color = sf::Color(200, 200, 200));
+		Module(const char* name, int = 0, int = 0, sf::Color = sf::Color::Red);
 		~Module();
 		
 		string &getName();

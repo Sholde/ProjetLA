@@ -19,8 +19,8 @@ System::System():composant() {
 	this->composant.push_back(tank2);
 	this->composant.push_back(tank3);
 	
-	VanneTransi *vt12 = new VanneTransi("vt12");
-	VanneTransi *vt23 = new VanneTransi("vt23");
+	VanneTransi *vt12 = new VanneTransi("vt12", WIDTH/3 + 15, HEIGHT/10 - 10);
+	VanneTransi *vt23 = new VanneTransi("vt23", WIDTH - WIDTH/3 + 15, HEIGHT/10 - 10);
 	this->composant.push_back(vt12);
 	this->composant.push_back(vt23);
 	
@@ -46,9 +46,9 @@ System::System():composant() {
 	
 	tank3->initPompe(p31, p32);
 	
-	VanneNormal *v12 = new VanneNormal("v12");
-	VanneNormal *v23 = new VanneNormal("v23");
-	VanneNormal *v13 = new VanneNormal("v13");
+	VanneNormal *v12 = new VanneNormal("v12", WIDTH/3 + 15, HEIGHT - HEIGHT/2);
+	VanneNormal *v23 = new VanneNormal("v23", WIDTH - WIDTH/3 + 15, HEIGHT - HEIGHT/2);
+	VanneNormal *v13 = new VanneNormal("v13", WIDTH/2 + 15, HEIGHT/4);
 	this->composant.push_back(v12);
 	this->composant.push_back(v23);
 	this->composant.push_back(v13);
@@ -104,6 +104,8 @@ void System::render(Interface *interface) {
 		if(dynamic_cast<Moteur*>(m))
 			m->render(interface);
 		else if(dynamic_cast<Reservoir*>(m))
+			m->render(interface);
+		else if(dynamic_cast<Vanne*>(m))
 			m->render(interface);
 	}
 }

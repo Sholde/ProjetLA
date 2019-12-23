@@ -7,6 +7,8 @@ class Vanne: public Module {
 	// private field
 	protected:
 		bool isOpen;
+		sf::Vector2f pos_circle;
+		float radius;
 	
 	// public field
 	public:
@@ -16,8 +18,9 @@ class Vanne: public Module {
 		bool getOpen();
 		
 		void update() {};
-		void render() {};
-
+		void render(Interface *interface);
+		
+		friend void draw_circle(Interface *interface, sf::Vector2f pos, float radius, sf::Color color);
 };
 
 #endif

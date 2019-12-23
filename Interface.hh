@@ -31,6 +31,7 @@ class Interface {
 		friend class Moteur;
 		friend class Reservoir;
 		friend class Pompe;
+		friend class Vanne;
 };
 
 #endif
