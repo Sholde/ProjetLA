@@ -23,18 +23,18 @@ System::System():composant() {
 	
 	vect.x = WIDTH/6 - 10;
 	vect.y = HEIGHT/10 - 10;
-	db.x = WIDTH/6 + 53;
-	db.y = HEIGHT/3;
+	db.x = db_p12_x;
+	db.y = db_p12_y;
 	Reservoir *tank1 = new Reservoir("tank1", vect, db);
 	vect.x = WIDTH/2 - 10;
 	vect.y = HEIGHT/10 - 10;
-	db.x = WIDTH/2 + 53;
-	db.y = HEIGHT/3;
+	db.x = db_p22_x;
+	db.y = db_p22_y;
 	Reservoir *tank2 = new Reservoir("tank2", vect, db);
 	vect.x = WIDTH - WIDTH/6 - 10;
 	vect.y = HEIGHT/10 - 10;
-	db.x = WIDTH - WIDTH/6 + 53;
-	db.y = HEIGHT/3;
+	db.x = db_p32_x;
+	db.y = db_p32_y;
 	Reservoir *tank3 = new Reservoir("tank3", vect, db);
 	this->composant.push_back(tank1);
 	this->composant.push_back(tank2);
@@ -52,13 +52,12 @@ System::System():composant() {
 	this->composant.push_back(vt23);
 	
 	// Pompe
-	db.y = HEIGHT/3;
 	vect.x = WIDTH/6 - 5;
 	vect.y = HEIGHT/10;
-	db.x = vect.x;
 	Pompe *p11 = new Pompe("p11", vect, db);
 	vect.x = WIDTH/6 + 53;
-	db.x = vect.x;
+	db.x = db_p12_x;
+	db.y = db_p12_y;
 	Pompe *p12 = new Pompe("p12", vect, db);
 	this->composant.push_back(p11);
 	this->composant.push_back(p12);
@@ -66,10 +65,10 @@ System::System():composant() {
 	tank1->initPompe(p11, p12);
 	
 	vect.x = WIDTH/2 - 5;
-	db.x = vect.x;
 	Pompe *p21 = new Pompe("p21", vect, db);
 	vect.x = WIDTH/2 + 53;
-	db.x = vect.x;
+	db.x = db_p22_x;
+	db.y = db_p22_y;
 	Pompe *p22 = new Pompe("p22", vect, db);
 	this->composant.push_back(p21);
 	this->composant.push_back(p22);
@@ -77,10 +76,10 @@ System::System():composant() {
 	tank2->initPompe(p21, p22);
 	
 	vect.x = WIDTH - WIDTH/6 - 5;
-	db.x = vect.x;
 	Pompe *p31 = new Pompe("p31", vect, db);
 	vect.x = WIDTH - WIDTH/6 + 53;
-	db.x = vect.x;
+	db.x = db_p32_x;
+	db.y = db_p32_y;
 	Pompe *p32 = new Pompe("p32", vect, db);
 	this->composant.push_back(p31);
 	this->composant.push_back(p32);
