@@ -12,7 +12,7 @@ class Vanne: public Module {
 	
 	// public field
 	public:
-		Vanne(const char* name, sf::Vector2f pos);
+		Vanne(const char* name, const sf::Vector2f &st, const sf::Vector2f &db);
 		~Vanne();
 		
 		bool getOpen();

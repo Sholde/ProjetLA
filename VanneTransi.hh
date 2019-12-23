@@ -11,7 +11,7 @@ class VanneTransi: public Vanne {
 	
 	// public field
 	public:
-		VanneTransi(const char* name, sf::Vector2f pos);
+		VanneTransi(const char* name, const sf::Vector2f &st, const sf::Vector2f &db);
 		~VanneTransi();
 		
 		void initReservoir(Reservoir *l, Reservoir *r);

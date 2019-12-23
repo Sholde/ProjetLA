@@ -4,9 +4,9 @@
 #include <iostream>
 using namespace std;
 
-Moteur::Moteur(const char* name, const sf::Vector2f &pos)
-		:Module(name, pos),
-		pos_rect(pos.x - 5, pos.y - 30),
+Moteur::Moteur(const char* name, const sf::Vector2f &st)
+		:Module(name, st),
+		pos_rect(st.x - 5, st.y - 30),
 		size_rect(45.f, 100.f) {
 	this->isFeed = false;
 }
@@ -40,5 +40,5 @@ void Moteur::update() {
 void Moteur::render(Interface *interface) {
 	draw_rectangle(interface->statement, this->pos_rect, this->size_rect, this->color);
 	
-	draw_text(interface->statement, this->pos_text, this->name, interface->font, 30, sf::Color::Black);
+	draw_text(interface->statement, this->pos_st, this->name, interface->font, 30, sf::Color::Black);
 }

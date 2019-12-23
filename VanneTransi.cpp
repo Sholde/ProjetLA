@@ -2,8 +2,8 @@
 #include <iostream>
 using namespace std;
 
-VanneTransi::VanneTransi(const char* name, sf::Vector2f pos)
-		:Vanne(name, pos) {}
+VanneTransi::VanneTransi(const char* name, const sf::Vector2f &st, const sf::Vector2f &db)
+		:Vanne(name, st, db) {}
 
 VanneTransi::~VanneTransi() {}
 
@@ -20,6 +20,4 @@ Reservoir *VanneTransi::getRight() {
 	return this->right;
 }
 
-void VanneTransi::render() {
-	cout << this->getName() << " : " << this->left->getName() << " " << this->right->getName() << endl;
-}
+void VanneTransi::render() {}

@@ -3,9 +3,9 @@
 #include <iostream>
 using namespace std;
 
-Reservoir::Reservoir(const char* name, sf::Vector2f pos)
-		:Module(name, pos),
-		pos_rect(pos.x - 25, pos.y - 20),
+Reservoir::Reservoir(const char* name, const sf::Vector2f &st)
+		:Module(name, st),
+		pos_rect(st.x - 25, st.y - 20),
 		size_rect(120.f, 130.f) {
 	this->isFull = true;
 }
@@ -70,7 +70,7 @@ void Reservoir::update() {
 void Reservoir::render(Interface *interface) {
 	draw_rectangle(interface->statement, this->pos_rect, this->size_rect, this->color);
 	
-	draw_text(interface->statement, this->pos_text, this->name, interface->font, 30, sf::Color::Black);
+	draw_text(interface->statement, this->pos_st, this->name, interface->font, 30, sf::Color::Black);
 	
 	this->main->render(interface);
 	this->second->render(interface);

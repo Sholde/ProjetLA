@@ -7,6 +7,7 @@ using namespace std;
 
 System::System():composant() {
 	sf::Vector2f vect;
+	sf::Vector2f db;
 	vect.x = WIDTH/6;
 	vect.y = HEIGHT - HEIGHT/4;
 	Moteur *m1 = new Moteur("m1", vect);
@@ -35,37 +36,46 @@ System::System():composant() {
 	
 	vect.x = WIDTH/3 + 15;
 	vect.y = HEIGHT/10 - 10;
-	VanneTransi *vt12 = new VanneTransi("vt12", vect);
+	db = vect;
+	VanneTransi *vt12 = new VanneTransi("vt12", vect, db);
 	vect.x = WIDTH - WIDTH/3 + 15;
 	vect.y = HEIGHT/10 - 10;
-	VanneTransi *vt23 = new VanneTransi("vt23", vect);
+	db = vect;
+	VanneTransi *vt23 = new VanneTransi("vt23", vect, db);
 	this->composant.push_back(vt12);
 	this->composant.push_back(vt23);
 	
 	// Pompe
+	db.y = HEIGHT/3;
 	vect.x = WIDTH/6 - 5;
 	vect.y = HEIGHT/10;
-	Pompe *p11 = new Pompe("p11", vect);
+	db.x = vect.x;
+	Pompe *p11 = new Pompe("p11", vect, db);
 	vect.x = WIDTH/6 + 53;
-	Pompe *p12 = new Pompe("p12", vect);
+	db.x = vect.x;
+	Pompe *p12 = new Pompe("p12", vect, db);
 	this->composant.push_back(p11);
 	this->composant.push_back(p12);
 	
 	tank1->initPompe(p11, p12);
 	
 	vect.x = WIDTH/2 - 5;
-	Pompe *p21 = new Pompe("p21", vect);
+	db.x = vect.x;
+	Pompe *p21 = new Pompe("p21", vect, db);
 	vect.x = WIDTH/2 + 53;
-	Pompe *p22 = new Pompe("p22", vect);
+	db.x = vect.x;
+	Pompe *p22 = new Pompe("p22", vect, db);
 	this->composant.push_back(p21);
 	this->composant.push_back(p22);
 	
 	tank2->initPompe(p21, p22);
 	
-	vect.x = WIDTH/6 - 5;
-	Pompe *p31 = new Pompe("p31", vect);
-	vect.x = WIDTH/6 + 53;
-	Pompe *p32 = new Pompe("p32", vect);
+	vect.x = WIDTH - WIDTH/6 - 5;
+	db.x = vect.x;
+	Pompe *p31 = new Pompe("p31", vect, db);
+	vect.x = WIDTH - WIDTH/6 + 53;
+	db.x = vect.x;
+	Pompe *p32 = new Pompe("p32", vect, db);
 	this->composant.push_back(p31);
 	this->composant.push_back(p32);
 	
@@ -73,12 +83,16 @@ System::System():composant() {
 	
 	vect.x = WIDTH/3 + 15;
 	vect.y = HEIGHT - HEIGHT/2;
-	VanneNormal *v12 = new VanneNormal("v12",vect);
+	db.x = WIDTH/4;
+	db.y = HEIGHT - HEIGHT/4;
+	VanneNormal *v12 = new VanneNormal("v12",vect, db);
 	vect.x = WIDTH - WIDTH/3 + 15;
-	VanneNormal *v23 = new VanneNormal("v23", vect);
+	db.x = WIDTH/2;
+	VanneNormal *v23 = new VanneNormal("v23", vect, db);
 	vect.x = WIDTH/2 + 15;
 	vect.y = HEIGHT/4;
-	VanneNormal *v13 = new VanneNormal("v13", vect);
+	db.x = WIDTH - WIDTH/4;
+	VanneNormal *v13 = new VanneNormal("v13", vect, db);
 	this->composant.push_back(v12);
 	this->composant.push_back(v23);
 	this->composant.push_back(v13);

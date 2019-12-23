@@ -1,8 +1,8 @@
 #include "Include.hh"
 
-Vanne::Vanne(const char* name, sf::Vector2f pos)
-		:Module(name, sf::Vector2f(pos.x - 15, pos.y + 40)),
-		pos_circle(pos.x - 22.5, pos.y + 30) {
+Vanne::Vanne(const char* name, const sf::Vector2f &st, const sf::Vector2f &db)
+		:Module(name, sf::Vector2f(st.x - 15, st.y + 40), db),
+		pos_circle(st.x - 22.5, st.y + 30) {
 	this->radius = 28.f;
 	this->isOpen = false;
 }
@@ -20,7 +20,7 @@ void Vanne::render(Interface *interface) {
 	draw_circle(interface->statement, tmp, this->radius - DECAL, this->color);
 	
 	
-	draw_text(interface->statement, this->pos_text, this->name, interface->font, 25, sf::Color::Black);
+	draw_text(interface->statement, this->pos_st, this->name, interface->font, 25, sf::Color::Black);
 	
-	draw_text(interface->dashboard, this->pos_text, this->name, interface->font, 25, sf::Color::White);
+	draw_text(interface->dashboard, this->pos_db, this->name, interface->font, 25, sf::Color::White);
 }

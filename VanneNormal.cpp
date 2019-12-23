@@ -2,8 +2,8 @@
 #include <iostream>
 using namespace std;
 
-VanneNormal::VanneNormal(const char* name, sf::Vector2f pos)
-		:Vanne(name, pos) {}
+VanneNormal::VanneNormal(const char* name, const sf::Vector2f &st, const sf::Vector2f &db)
+		:Vanne(name, st, db) {}
 
 VanneNormal::~VanneNormal() {}
 
@@ -19,14 +19,4 @@ void VanneNormal::initRight(Reservoir *r, VanneNormal *v, Moteur *m) {
 	this->right.push_back(m);
 }
 
-void VanneNormal::render() {
-	cout << this->getName() << " : " << endl << "\t";
-	for(Module* m : left) {
-		cout << m->getName() << " ";
-	}
-	cout << endl << "\t";
-	for(Module* m : right) {
-		cout << m->getName() << " ";
-	}
-	cout << endl;
-}
+void VanneNormal::render() {}
