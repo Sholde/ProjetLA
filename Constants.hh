@@ -13,4 +13,9 @@
 #define db_p32_x 650
 #define db_p32_y 200
 
+#define box_size_x 100
+#define box_size_y 40
+
+#define box_margin 5
+
 #endif

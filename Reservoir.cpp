@@ -7,7 +7,7 @@ Reservoir::Reservoir(const char* name, const sf::Vector2f &st, const sf::Vector2
 		:Module(name, st),
 		pos_rect(st.x - 25, st.y - 20),
 		size_rect(120.f, 130.f),
-		box(sf::Vector2f(db.x - 30, db.y), 100, 40, 5) {
+		box(sf::Vector2f(db.x - 30, db.y), box_size_x, box_size_y, box_margin) {
 	this->isFull = true;
 }
 
