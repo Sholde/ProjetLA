@@ -1,6 +1,8 @@
 
 #include <SFML/Graphics.hpp>
 #include "Include.hh"
+#include <iostream>
+using namespace std;
 
 Interface::Interface(int width, int height)
 		:statement(sf::VideoMode(width, height), "Statement"),
@@ -49,19 +51,30 @@ void Interface::handleEvent(sf::Event &event) {
 	if(statement.hasFocus()) {
 		while(statement.pollEvent(event))
 		{
-			if(event.type == sf::Event::Closed) {
-				statement.close();
-				dashboard.close();
-			}
+			this->closeEvent(event);
+			this->clicEvent(event);
 		}
 	}
 	else if(dashboard.hasFocus()) {
 		while(dashboard.pollEvent(event))
 		{
-			if(event.type == sf::Event::Closed) {
-				statement.close();
-				dashboard.close();
-			}
+			this->closeEvent(event);
+			this->clicEvent(event);
 		}
+	}
+}
+
+void Interface::closeEvent(sf::Event &event) {
+	if(event.type == sf::Event::Closed) {
+		statement.close();
+		dashboard.close();
+	}
+}
+
+void Interface::clicEvent(sf::Event &event) {
+	if(event.type == sf::Event::MouseButtonPressed) {
+		int x = event.mouseButton.x;
+		int y = event.mouseButton.y;
+		this->system->handleClic(x, y);
 	}
 }

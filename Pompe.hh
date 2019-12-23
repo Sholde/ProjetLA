@@ -12,7 +12,6 @@ class Pompe: public Module {
 	
 	sf::Vector2f pos_circle;
 	float radius;
-	Box box;
 	
 	// public field
 	public:
@@ -20,6 +19,7 @@ class Pompe: public Module {
 		~Pompe() {};
 		
 		bool getActive();
+		bool getIsMain();
 		void setActive(bool boolean);
 		void setIsMain();
 		

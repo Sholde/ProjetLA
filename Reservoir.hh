@@ -26,9 +26,11 @@ class Reservoir: public Module {
 	sf::Vector2f pos_rect;
 	sf::Vector2f size_rect;
 	
+	Box box;
+	
 	// public field
 	public:
-		Reservoir(const char* name, const sf::Vector2f &st);
+		Reservoir(const char* name, const sf::Vector2f &st, const sf::Vector2f &db);
 		~Reservoir();
 		
 		void initMoteur(Moteur *mot);
@@ -40,6 +42,8 @@ class Reservoir: public Module {
 		bool checkfeed();
 		
 		void setFull(bool boolean);
+		
+		void handleClic(int &x, int &y);
 		
 		void update();
 		void render(Interface *interface);

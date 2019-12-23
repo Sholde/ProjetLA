@@ -7,13 +7,15 @@ class Box {
 	// private field
 	sf::RectangleShape edge;
 	sf::RectangleShape inside;
-	sf::Vector2f size;
 	int margin;
 	
 	//public field
 	public:
 		Box(sf::Vector2f pos, int x, int y, int margin);
 		~Box();
+		
+		sf::Vector2f getPoint();
+		sf::Vector2f getSize();
 		
 		void render(Interface *interface);
 };

@@ -24,6 +24,8 @@ class Interface {
 		void start();
 		void render();
 		void handleEvent(sf::Event &);
+		void clicEvent(sf::Event &);
+		void closeEvent(sf::Event &);
 		
 		friend class Moteur;
 		friend class Reservoir;

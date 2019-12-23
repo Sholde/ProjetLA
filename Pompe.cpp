@@ -5,8 +5,7 @@ using namespace std;
 
 Pompe::Pompe(const char* name, const sf::Vector2f &st, const sf::Vector2f &db)
 		:Module(name, sf::Vector2f(st.x - 15, st.y + 40), db),
-		pos_circle(st.x - 27.5, st.y + 30),
-		box(sf::Vector2f(db.x - 30, db.y), 100, 40, 5) {
+		pos_circle(st.x - 27.5, st.y + 30) {
 	this->radius = 28.f;
 	this->isActive = false;
 	this->isFailure = false;
@@ -15,6 +14,10 @@ Pompe::Pompe(const char* name, const sf::Vector2f &st, const sf::Vector2f &db)
 
 bool Pompe::getActive() {
 	return this->isActive;
+}
+
+bool Pompe::getIsMain() {
+	return this->isMain;
 }
 
 void Pompe::setActive(bool boolean) {
@@ -44,7 +47,6 @@ void Pompe::render(Interface *interface) {
 	draw_text(interface->statement, this->pos_st, this->name, interface->font, 25, sf::Color::Black);
 	
 	if(!this->isMain) {
-		this->box.render(interface);
 		draw_text(interface->dashboard, this->pos_db, this->name, interface->font, 25, sf::Color::White);
 	}
 }

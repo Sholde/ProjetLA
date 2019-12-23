@@ -23,13 +23,19 @@ System::System():composant() {
 	
 	vect.x = WIDTH/6 - 10;
 	vect.y = HEIGHT/10 - 10;
-	Reservoir *tank1 = new Reservoir("tank1", vect);
+	db.x = WIDTH/6 + 53;
+	db.y = HEIGHT/3;
+	Reservoir *tank1 = new Reservoir("tank1", vect, db);
 	vect.x = WIDTH/2 - 10;
 	vect.y = HEIGHT/10 - 10;
-	Reservoir *tank2 = new Reservoir("tank2", vect);
+	db.x = WIDTH/2 + 53;
+	db.y = HEIGHT/3;
+	Reservoir *tank2 = new Reservoir("tank2", vect, db);
 	vect.x = WIDTH - WIDTH/6 - 10;
 	vect.y = HEIGHT/10 - 10;
-	Reservoir *tank3 = new Reservoir("tank3", vect);
+	db.x = WIDTH - WIDTH/6 + 53;
+	db.y = HEIGHT/3;
+	Reservoir *tank3 = new Reservoir("tank3", vect, db);
 	this->composant.push_back(tank1);
 	this->composant.push_back(tank2);
 	this->composant.push_back(tank3);
@@ -131,6 +137,16 @@ void System::initVanne(Reservoir *r1, Reservoir *r2, VanneNormal *v1, VanneNorma
 	r2->addVanneNormal(middle);
 	m1->addVanneNormal(middle);
 	m2->addVanneNormal(middle);
+}
+
+// A COMPLETER
+void System::handleClic(int &x, int &y) {
+	for(Module* m : composant) {
+		Reservoir* r = dynamic_cast<Reservoir*>(m);
+		if(r) {
+			r->handleClic(x, y);
+		}
+	}
 }
 
 void System::update() {

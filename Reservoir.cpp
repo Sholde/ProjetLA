@@ -3,10 +3,11 @@
 #include <iostream>
 using namespace std;
 
-Reservoir::Reservoir(const char* name, const sf::Vector2f &st)
+Reservoir::Reservoir(const char* name, const sf::Vector2f &st, const sf::Vector2f &db)
 		:Module(name, st),
 		pos_rect(st.x - 25, st.y - 20),
-		size_rect(120.f, 130.f) {
+		size_rect(120.f, 130.f),
+		box(sf::Vector2f(db.x - 30, db.y), 100, 40, 5) {
 	this->isFull = true;
 }
 
@@ -45,6 +46,18 @@ void Reservoir::setFull(bool boolean) {
 	this->isFull = boolean;
 }
 
+void Reservoir::handleClic(int &x, int &y) {
+	sf::Vector2f pos = this->box.getPoint();
+	sf::Vector2f size = this->box.getSize();
+	
+	if(x >= pos.x && x <= pos.x + size.x
+		&& y >= pos.y && y <= pos.y + size.y) {
+		
+		this->main->setActive(false);
+		this->second->setActive(true);
+	}
+}
+
 void Reservoir::update() {
 	if(!this->isFull) {
 		for(VanneTransi* v : vanne_transi) {
@@ -73,6 +86,7 @@ void Reservoir::render(Interface *interface) {
 	
 	draw_text(interface->statement, this->pos_st, this->name, interface->font, 30, sf::Color::Black);
 	
+	this->box.render(interface);
 	this->main->render(interface);
 	this->second->render(interface);
 }

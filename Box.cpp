@@ -14,6 +14,14 @@ Box::Box(sf::Vector2f pos, int x, int y, int margin)
 
 Box::~Box() {}
 
+sf::Vector2f Box::getPoint() {
+	return this->edge.getPosition();
+}
+
+sf::Vector2f Box::getSize() {
+	return this->edge.getSize();
+}
+
 void Box::render(Interface *interface) {
 	interface->dashboard.draw(edge);
 	interface->dashboard.draw(inside);
