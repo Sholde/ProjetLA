@@ -9,7 +9,3 @@ Module::Module(const char* name, const sf::Vector2f &st, sf::Vector2f db)
 		pos_st(st) {}
 
 Module::~Module() {}
-
-string &Module::getName() {
-	return this->name;
-}

@@ -18,8 +18,6 @@ class Module {
 		Module(const char* name, const sf::Vector2f &st, sf::Vector2f = sf::Vector2f(0, 0));
 		~Module();
 		
-		string &getName();
-		
 		virtual void handleClic(int &x, int &y) {};
 		virtual void update() {};
 		virtual void render(Interface *interface) {};
