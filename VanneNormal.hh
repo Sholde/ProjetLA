@@ -21,7 +21,7 @@ class VanneNormal: public Vanne {
 		
 		void initLeft(Reservoir *r, VanneNormal *v, Moteur *m);
 		void initRight(Reservoir *r, VanneNormal *v, Moteur *m);
-		bool open();
+		void open();
 		//~ void update();
 		void render();
 };

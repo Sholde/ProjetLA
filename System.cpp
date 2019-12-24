@@ -26,6 +26,9 @@ System::System():composant() {
 	db.x = db_p12_x;
 	db.y = db_p12_y;
 	Reservoir *tank1 = new Reservoir("tank1", vect);
+	// tmp
+	tank1->setFull(false);
+	
 	vect.x = st_tank2_x;
 	vect.y = st_tank2_y;
 	db.x = db_p22_x;

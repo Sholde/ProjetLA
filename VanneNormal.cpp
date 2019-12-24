@@ -21,6 +21,6 @@ void VanneNormal::initRight(Reservoir *r, VanneNormal *v, Moteur *m) {
 
 void VanneNormal::render() {}
 
-bool VanneNormal::open() {
-	return true;
+void VanneNormal::open() {
+	this->isOpen = !this->isOpen;
 }

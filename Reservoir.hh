@@ -27,6 +27,7 @@ class Reservoir: public Module {
 		bool checkPompe();
 		bool checkfeed();
 		
+		bool getFull();
 		void setFull(bool boolean);
 		
 		void update();

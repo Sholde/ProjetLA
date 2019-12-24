@@ -41,6 +41,11 @@ bool Reservoir::checkfeed() {
 	return false;
 }
 
+bool Reservoir::getFull() {
+	return this->isFull;
+}
+
+
 void Reservoir::setFull(bool boolean) {
 	this->isFull = boolean;
 }

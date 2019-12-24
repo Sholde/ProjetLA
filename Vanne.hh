@@ -20,7 +20,7 @@ class Vanne: public Module {
 		bool getOpen();
 		void handleClic(int &x, int &y);
 		
-		virtual bool open() { return false; }; /* non utilisé */ 
+		virtual void open() {};
 		void update();
 		void render(Interface *interface);
 };
