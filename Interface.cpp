@@ -6,8 +6,8 @@ using namespace std;
 
 Interface::Interface(int width, int height)
 		:statement(sf::VideoMode(width, height), "Statement"),
-		dashboard(sf::VideoMode(width, height), "Dashboard")
-		,font() {
+		dashboard(sf::VideoMode(width, height), "Dashboard"),
+		font() {
 			
 	if (!this->font.loadFromFile("arial_narrow_7.ttf")) {
 		exit(1);
@@ -72,9 +72,11 @@ void Interface::closeEvent(sf::Event &event) {
 }
 
 void Interface::clicEvent(sf::Event &event) {
-	if(event.type == sf::Event::MouseButtonPressed) {
-		int x = event.mouseButton.x;
-		int y = event.mouseButton.y;
-		this->system->handleClic(x, y);
+	if(dashboard.hasFocus()) {
+		if(event.type == sf::Event::MouseButtonPressed) {
+			int x = event.mouseButton.x;
+			int y = event.mouseButton.y;
+			this->system->handleClic(x, y);
+		}
 	}
 }

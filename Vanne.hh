@@ -10,6 +10,7 @@ class Vanne: public Module {
 		sf::Vector2f pos_circle;
 		float radius;
 		Box box;
+		BoxCircle box_circle;
 	
 	// public field
 	public:

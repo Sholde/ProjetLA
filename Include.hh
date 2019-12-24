@@ -5,6 +5,7 @@
 #include "Class.hh"
 #include "Draw.hh"
 #include "Box.hh"
+#include "BoxCircle.hh"
 #include "Module.hh"
 #include "Pompe.hh"
 #include "System.hh"

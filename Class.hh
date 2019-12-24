@@ -2,6 +2,7 @@
 #define _Class_hh
 
 class Box;
+class BoxCircle;
 class Module;
 class Pompe;
 class System;

@@ -138,6 +138,10 @@ void System::initVanne(Reservoir *r1, Reservoir *r2, VanneNormal *v1, VanneNorma
 	m2->addVanneNormal(middle);
 }
 
+void createIssue() {
+	;
+}
+
 void System::handleClic(int &x, int &y) {
 	for(Module* m : composant) {
 		m->handleClic(x, y);
@@ -149,7 +153,6 @@ void System::update() {
 		m->update();
 	}
 }
-
 
 void System::render(Interface *interface) {
 	for(Module* m : composant) {
