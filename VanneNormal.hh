@@ -6,13 +6,13 @@
 
 class VanneNormal: public Vanne {
 	
-	// tous les modules qui arrive de gauche
-	std::list<Module*> left;
+	Reservoir *rl;
+	VanneNormal *vl;
+	Moteur *ml;
 	
-	// tous les modules qui arrive de droite
-	std::list<Module*> right;
-	
-	// il y aura juste a callculer si le carburant n'arrive pas des deux coté
+	Reservoir *rr;
+	VanneNormal *vr;
+	Moteur *mr;
 	
 	// public field
 	public:
@@ -22,7 +22,7 @@ class VanneNormal: public Vanne {
 		void initLeft(Reservoir *r, VanneNormal *v, Moteur *m);
 		void initRight(Reservoir *r, VanneNormal *v, Moteur *m);
 		void open();
-		void update() {};
+		void update();
 		void render();
 };
 

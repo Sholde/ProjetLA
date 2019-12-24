@@ -17,7 +17,10 @@ void Moteur::initReservoir(Reservoir *res) {
 }
 
 void Moteur::addVanneNormal(VanneNormal *v) {
-	this->vanne_normal.push_back(v);
+	if(!this->v1)
+		this->v1 = v;
+	else if(!this->v2)
+		this->v2 = v;
 }
 
 void Moteur::setFeed(bool boolean) {

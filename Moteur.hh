@@ -7,7 +7,8 @@
 class Moteur: public Module {
 	// private field
 	bool isFeed;
-	vector<VanneNormal*> vanne_normal;
+	VanneNormal* v1;
+	VanneNormal* v2;
 	Reservoir *reservoir;
 	Box rect;
 	
