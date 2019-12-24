@@ -21,3 +21,7 @@ Reservoir *VanneTransi::getRight() {
 }
 
 void VanneTransi::render() {}
+
+bool VanneTransi::open(){
+	return (left == nullptr) ^ (right == nullptr); /* dans le cas ou les deux sont vides*/ 
+}

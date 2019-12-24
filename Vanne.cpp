@@ -23,8 +23,10 @@ void Vanne::handleClic(int &x, int &y) {
 	
 	if(x >= pos.x && x <= pos.x + size.x
 		&& y >= pos.y && y <= pos.y + size.y) {
-		
-		this->isOpen = !this->isOpen;
+		if(this->open())
+		{
+			this->isOpen = !this->isOpen;
+		}
 	}
 }
 
