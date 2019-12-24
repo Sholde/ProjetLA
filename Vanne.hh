@@ -21,7 +21,7 @@ class Vanne: public Module {
 		void handleClic(int &x, int &y);
 		
 		virtual void open() {};
-		void update();
+		virtual void update();
 		void render(Interface *interface);
 };
 

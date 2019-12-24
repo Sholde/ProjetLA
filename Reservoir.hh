@@ -20,6 +20,9 @@ class Reservoir: public Module {
 		Reservoir(const char* name, int capacity, const sf::Vector2f &st);
 		~Reservoir();
 		
+		int &getCapacity();
+		void setCapacity(int &capacity);
+		
 		void initMoteur(Moteur *mot);
 		void addVanneTransi(VanneTransi* v);
 		void initPompe(Pompe *m, Pompe *s);

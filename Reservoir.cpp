@@ -15,6 +15,14 @@ Reservoir::Reservoir(const char* name, int capacity, const sf::Vector2f &st)
 
 Reservoir::~Reservoir() {}
 
+int &Reservoir::getCapacity() {
+	return this->capacity;
+}
+
+void Reservoir::setCapacity(int &capacity) {
+	this->capacity = capacity;
+}
+
 void Reservoir::initMoteur(Moteur *mot) {
 	this->moteur = mot;
 }
@@ -58,19 +66,10 @@ void Reservoir::update() {
 	if(this->checkPompe() && this->capacity > 0)
 		this->capacity--;
 	
-	if(this->capacity <= 0)
+	if(this->capacity > 0)
+		this->isFull = true;
+	else
 		this->isFull = false;
-		
-	if(!this->isFull) {
-		for(VanneTransi* v : vanne_transi) {
-			if(v->getOpen()) {
-				if(v->getLeft() != this && v->getLeft()->isFull)
-					this->isFull = true;
-				if(v->getRight() != this && v->getRight()->isFull)
-					this->isFull = true;
-			}
-		}
-	}
 	
 	if(this->isFull) {
 		this->rect.setColor(sf::Color::Green);

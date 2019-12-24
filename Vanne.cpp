@@ -28,14 +28,7 @@ void Vanne::handleClic(int &x, int &y) {
 	}
 }
 
-void Vanne::update() {
-	if(this->isOpen) {
-		this->circle.setColor(sf::Color::Green);
-	}
-	else {
-		this->circle.setColor(sf::Color::Red);
-	}
-}
+void Vanne::update() {}
 
 void Vanne::render(Interface *interface) {
 	this->circle.render(interface);

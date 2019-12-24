@@ -20,10 +20,33 @@ Reservoir *VanneTransi::getRight() {
 	return this->right;
 }
 
+void VanneTransi::share() {
+	int capacity = (this->left->getCapacity() + this->right->getCapacity()) / 2;
+	this->left->setCapacity(capacity);
+	this->right->setCapacity(capacity);
+}
+
+void VanneTransi::update() {
+	if(this->isOpen) {
+		this->share();
+	}
+	
+	if(this->isOpen) {
+		this->circle.setColor(sf::Color::Green);
+	}
+	else {
+		this->circle.setColor(sf::Color::Red);
+	}
+}
+
 void VanneTransi::render() {}
 
 void VanneTransi::open() {
-	if(!this->left->getFull() || !this->right->getFull()) {
-		this->isOpen = !this->isOpen;
+	if(this->isOpen) {
+		this->isOpen = false;
+	}
+	else {
+		this->share();
+		this->isOpen = true;
 	}
 }
