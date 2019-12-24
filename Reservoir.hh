@@ -13,11 +13,10 @@ class Reservoir: public Module {
 	vector<VanneTransi*> vanne_transi;
 	Moteur *moteur;
 	Box rect;
-	Box button;
 	
 	// public field
 	public:
-		Reservoir(const char* name, const sf::Vector2f &st, const sf::Vector2f &db);
+		Reservoir(const char* name, const sf::Vector2f &st);
 		~Reservoir();
 		
 		void initMoteur(Moteur *mot);
@@ -29,8 +28,6 @@ class Reservoir: public Module {
 		bool checkfeed();
 		
 		void setFull(bool boolean);
-		
-		void handleClic(int &x, int &y);
 		
 		void update();
 		void render(Interface *interface);

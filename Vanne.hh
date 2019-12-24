@@ -9,6 +9,7 @@ class Vanne: public Module {
 		bool isOpen;
 		Box button;
 		BoxCircle circle;
+		sf::Vector2f pos_db;
 	
 	// public field
 	public:

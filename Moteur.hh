@@ -7,13 +7,8 @@
 class Moteur: public Module {
 	// private field
 	bool isFeed;
-	
-	// vecteur ou il y aura 2 vanne normal
 	vector<VanneNormal*> vanne_normal;
-	
-	// réservoir qui alimente direct
 	Reservoir *reservoir;
-	
 	Box rect;
 	
 	// public field

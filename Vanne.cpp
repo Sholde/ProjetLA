@@ -4,9 +4,10 @@
 using namespace std;
 
 Vanne::Vanne(const char* name, const sf::Vector2f &st, const sf::Vector2f &db)
-		:Module(name, sf::Vector2f(st.x - 15, st.y + 40), db),
+		:Module(name, sf::Vector2f(st.x - 15, st.y + 40)),
 		button(sf::Vector2f(db.x - 30, db.y), 100, 40, 5),
-		circle(sf::Vector2f(st.x - 22.5, st.y + 30), 28, 5) {
+		circle(sf::Vector2f(st.x - 22.5, st.y + 30), 28, 5),
+		pos_db(db) {
 	this->isOpen = false;
 }
 

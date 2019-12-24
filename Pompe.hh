@@ -9,8 +9,9 @@ class Pompe: public Module {
 	bool isActive;
 	bool isFailure;
 	bool isMain;
-	
 	BoxCircle circle;
+	Box button;
+	sf::Vector2f pos_db;
 	
 	// public field
 	public:
@@ -21,6 +22,7 @@ class Pompe: public Module {
 		bool getIsMain();
 		void setActive();
 		void setIsMain();
+		void handleClic(int &x, int &y);
 		
 		void update();
 		void render(Interface *interface);
