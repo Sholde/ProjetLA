@@ -22,7 +22,11 @@ sf::Vector2f Box::getSize() {
 	return this->edge.getSize();
 }
 
-void Box::render(Interface *interface) {
-	interface->dashboard.draw(edge);
-	interface->dashboard.draw(inside);
+void Box::setColor(sf::Color color) {
+	this->inside.setFillColor(color);
+}
+
+void Box::render(sf::RenderWindow &window) {
+	window.draw(edge);
+	window.draw(inside);
 }

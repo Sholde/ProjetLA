@@ -14,8 +14,7 @@ class Moteur: public Module {
 	// réservoir qui alimente direct
 	Reservoir *reservoir;
 	
-	sf::Vector2f pos_rect;
-	sf::Vector2f size_rect;
+	Box box;
 	
 	// public field
 	public:

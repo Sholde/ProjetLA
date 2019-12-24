@@ -16,8 +16,9 @@ class Box {
 		
 		sf::Vector2f getPoint();
 		sf::Vector2f getSize();
+		void setColor(sf::Color color);
 		
-		void render(Interface *interface);
+		void render(sf::RenderWindow &window);
 };
 
 #endif

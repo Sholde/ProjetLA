@@ -7,8 +7,6 @@ class Vanne: public Module {
 	// private field
 	protected:
 		bool isOpen;
-		sf::Vector2f pos_circle;
-		float radius;
 		Box box;
 		BoxCircle box_circle;
 	

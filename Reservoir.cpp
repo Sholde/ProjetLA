@@ -5,9 +5,8 @@ using namespace std;
 
 Reservoir::Reservoir(const char* name, const sf::Vector2f &st, const sf::Vector2f &db)
 		:Module(name, st),
-		pos_rect(st.x - 25, st.y - 20),
-		size_rect(120.f, 130.f),
-		box(sf::Vector2f(db.x - 30, db.y), box_size_x, box_size_y, box_margin) {
+		rect(sf::Vector2f(st.x - 25, st.y - 20), 120, 130, 5),
+		button(sf::Vector2f(db.x - 30, db.y), box_size_x, box_size_y, box_margin) {
 	this->isFull = true;
 }
 
@@ -48,8 +47,8 @@ void Reservoir::setFull(bool boolean) {
 }
 
 void Reservoir::handleClic(int &x, int &y) {
-	sf::Vector2f pos = this->box.getPoint();
-	sf::Vector2f size = this->box.getSize();
+	sf::Vector2f pos = this->button.getPoint();
+	sf::Vector2f size = this->button.getSize();
 	
 	if(x >= pos.x && x <= pos.x + size.x
 		&& y >= pos.y && y <= pos.y + size.y) {
@@ -76,17 +75,17 @@ void Reservoir::update() {
 	else {
 		this->color = sf::Color::Red;
 	}
+	this->rect.setColor(this->color);
 	
 	this->main->update();
 	this->second->update();
 }
 
 void Reservoir::render(Interface *interface) {
-	draw_rectangle(interface->statement, this->pos_rect, this->size_rect, this->color);
-	
+	this->rect.render(interface->statement);
 	draw_text(interface->statement, this->pos_st, this->name, interface->font, 30, sf::Color::Black);
 	
-	this->box.render(interface);
+	this->button.render(interface->dashboard);
 	this->main->render(interface);
 	this->second->render(interface);
 }

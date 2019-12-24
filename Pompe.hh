@@ -10,8 +10,7 @@ class Pompe: public Module {
 	bool isFailure;
 	bool isMain;
 	
-	sf::Vector2f pos_circle;
-	float radius;
+	BoxCircle box_circle;
 	
 	// public field
 	public:

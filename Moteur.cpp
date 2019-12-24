@@ -6,8 +6,7 @@ using namespace std;
 
 Moteur::Moteur(const char* name, const sf::Vector2f &st)
 		:Module(name, st),
-		pos_rect(st.x - 5, st.y - 30),
-		size_rect(45.f, 100.f) {
+		box(sf::Vector2f(st.x - 5, st.y - 30), 45, 100, 5) {
 	this->isFeed = false;
 }
 
@@ -34,11 +33,12 @@ void Moteur::update() {
 		this->isFeed = false;
 		this->color = sf::Color::Red;
 	}
+	this->box.setColor(this->color);
 }
 
 
 void Moteur::render(Interface *interface) {
-	draw_rectangle(interface->statement, this->pos_rect, this->size_rect, this->color);
+	this->box.render(interface->statement);
 	
 	draw_text(interface->statement, this->pos_st, this->name, interface->font, 30, sf::Color::Black);
 }
