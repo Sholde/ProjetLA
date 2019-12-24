@@ -7,6 +7,7 @@
 class Reservoir: public Module {
 	// private field
 	bool isFull;
+	int capacity;
 	Pompe* main;
 	Pompe* second;
 	vector<VanneNormal*> vanne_normal;
@@ -16,7 +17,7 @@ class Reservoir: public Module {
 	
 	// public field
 	public:
-		Reservoir(const char* name, const sf::Vector2f &st);
+		Reservoir(const char* name, int capacity, const sf::Vector2f &st);
 		~Reservoir();
 		
 		void initMoteur(Moteur *mot);

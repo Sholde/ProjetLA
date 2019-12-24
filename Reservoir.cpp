@@ -3,10 +3,14 @@
 #include <iostream>
 using namespace std;
 
-Reservoir::Reservoir(const char* name, const sf::Vector2f &st)
+Reservoir::Reservoir(const char* name, int capacity, const sf::Vector2f &st)
 		:Module(name, st),
 		rect(sf::Vector2f(st.x - st_res_x, st.y - st_res_y), st_size_res_x, st_size_res_y, MARGIN) {
-	this->isFull = true;
+	this->capacity = capacity;
+	if(this->capacity > 0)
+		this->isFull = true;
+	else
+		this->isFull = false;
 }
 
 Reservoir::~Reservoir() {}
@@ -51,6 +55,12 @@ void Reservoir::setFull(bool boolean) {
 }
 
 void Reservoir::update() {
+	if(this->checkPompe() && this->capacity > 0)
+		this->capacity--;
+	
+	if(this->capacity <= 0)
+		this->isFull = false;
+		
 	if(!this->isFull) {
 		for(VanneTransi* v : vanne_transi) {
 			if(v->getOpen()) {

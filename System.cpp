@@ -25,20 +25,17 @@ System::System():composant() {
 	vect.y = st_tank1_y;
 	db.x = db_p12_x;
 	db.y = db_p12_y;
-	Reservoir *tank1 = new Reservoir("tank1", vect);
-	// tmp
-	tank1->setFull(false);
-	
+	Reservoir *tank1 = new Reservoir("tank1", 1000, vect);
 	vect.x = st_tank2_x;
 	vect.y = st_tank2_y;
 	db.x = db_p22_x;
 	db.y = db_p22_y;
-	Reservoir *tank2 = new Reservoir("tank2", vect);
+	Reservoir *tank2 = new Reservoir("tank2", 500, vect);
 	vect.x = st_tank3_x;
 	vect.y = st_tank3_y;
 	db.x = db_p32_x;
 	db.y = db_p32_y;
-	Reservoir *tank3 = new Reservoir("tank3", vect);
+	Reservoir *tank3 = new Reservoir("tank3", 1000, vect);
 	this->composant.push_back(tank1);
 	this->composant.push_back(tank2);
 	this->composant.push_back(tank3);
