@@ -5,7 +5,7 @@ using namespace std;
 
 Reservoir::Reservoir(const char* name, const sf::Vector2f &st)
 		:Module(name, st),
-		rect(sf::Vector2f(st.x - 25, st.y - 20), 120, 130, 5) {
+		rect(sf::Vector2f(st.x - st_res_x, st.y - st_res_y), st_size_res_x, st_size_res_y, MARGIN) {
 	this->isFull = true;
 }
 

@@ -4,8 +4,8 @@
 using namespace std;
 
 Pompe::Pompe(const char* name, const sf::Vector2f &st)
-		:Module(name, sf::Vector2f(st.x - 15, st.y + 40)),
-		circle(sf::Vector2f(st.x - 27.5, st.y + 30), 28, 5),
+		:Module(name, st),
+		circle(sf::Vector2f(st.x - st_pompe_x, st.y - st_pompe_y), st_pompe_radius, MARGIN),
 		button(sf::Vector2f(0, 0), box_size_x, box_size_y, box_margin) {
 	this->isActive = false;
 	this->isFailure = false;
@@ -13,8 +13,8 @@ Pompe::Pompe(const char* name, const sf::Vector2f &st)
 }
 
 Pompe::Pompe(const char* name, const sf::Vector2f &st, const sf::Vector2f &db)
-		:Module(name, sf::Vector2f(st.x - 15, st.y + 40)),
-		circle(sf::Vector2f(st.x - 27.5, st.y + 30), 28, 5),
+		:Module(name, st),
+		circle(sf::Vector2f(st.x - st_pompe_x, st.y - st_pompe_y), st_pompe_radius, MARGIN),
 		button(sf::Vector2f(db.x - 30, db.y), box_size_x, box_size_y, box_margin),
 		pos_db(db) {
 	this->isActive = false;
