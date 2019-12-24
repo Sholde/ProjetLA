@@ -15,6 +15,7 @@ class Pompe: public Module {
 	
 	// public field
 	public:
+		Pompe(const char* name, const sf::Vector2f &st);
 		Pompe(const char* name, const sf::Vector2f &st, const sf::Vector2f &db);
 		~Pompe() {};
 		

@@ -54,9 +54,7 @@ System::System():composant() {
 	// Pompe
 	vect.x = WIDTH/6 - 5;
 	vect.y = HEIGHT/10;
-	db.x = 0;
-	db.y = 0;
-	Pompe *p11 = new Pompe("p11", vect, db);
+	Pompe *p11 = new Pompe("p11", vect);
 	vect.x = WIDTH/6 + 53;
 	db.x = db_p12_x;
 	db.y = db_p12_y;
@@ -67,9 +65,7 @@ System::System():composant() {
 	tank1->initPompe(p11, p12);
 	
 	vect.x = WIDTH/2 - 5;
-	db.x = 0;
-	db.y = 0;
-	Pompe *p21 = new Pompe("p21", vect, db);
+	Pompe *p21 = new Pompe("p21", vect);
 	vect.x = WIDTH/2 + 53;
 	db.x = db_p22_x;
 	db.y = db_p22_y;
@@ -80,9 +76,7 @@ System::System():composant() {
 	tank2->initPompe(p21, p22);
 	
 	vect.x = WIDTH - WIDTH/6 - 5;
-	db.x = 0;
-	db.y = 0;
-	Pompe *p31 = new Pompe("p31", vect, db);
+	Pompe *p31 = new Pompe("p31", vect);
 	vect.x = WIDTH - WIDTH/6 + 53;
 	db.x = db_p32_x;
 	db.y = db_p32_y;

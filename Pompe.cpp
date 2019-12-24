@@ -3,6 +3,15 @@
 #include <iostream>
 using namespace std;
 
+Pompe::Pompe(const char* name, const sf::Vector2f &st)
+		:Module(name, sf::Vector2f(st.x - 15, st.y + 40)),
+		circle(sf::Vector2f(st.x - 27.5, st.y + 30), 28, 5),
+		button(sf::Vector2f(0, 0), box_size_x, box_size_y, box_margin) {
+	this->isActive = false;
+	this->isFailure = false;
+	this->isMain = true;
+}
+
 Pompe::Pompe(const char* name, const sf::Vector2f &st, const sf::Vector2f &db)
 		:Module(name, sf::Vector2f(st.x - 15, st.y + 40)),
 		circle(sf::Vector2f(st.x - 27.5, st.y + 30), 28, 5),
@@ -30,14 +39,15 @@ void Pompe::setIsMain() {
 }
 
 void Pompe::handleClic(int &x, int &y) {
-	sf::Vector2f pos = this->button.getPoint();
-	sf::Vector2f size = this->button.getSize();
-	
-	if(x >= pos.x && x <= pos.x + size.x
-		&& y >= pos.y && y <= pos.y + size.y) {
+	if(!this->isMain) {
+		sf::Vector2f pos = this->button.getPoint();
+		sf::Vector2f size = this->button.getSize();
 		
-		this->isActive = !this->isActive;
-		cout << "here" << endl;
+		if(x >= pos.x && x <= pos.x + size.x
+			&& y >= pos.y && y <= pos.y + size.y) {
+			
+			this->isActive = !this->isActive;
+		}
 	}
 }
 
