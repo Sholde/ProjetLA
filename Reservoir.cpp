@@ -70,12 +70,11 @@ void Reservoir::update() {
 	}
 	
 	if(this->isFull) {
-		this->color = sf::Color::Green;
+		this->rect.setColor(sf::Color::Green);
 	}
 	else {
-		this->color = sf::Color::Red;
+		this->rect.setColor(sf::Color::Red);
 	}
-	this->rect.setColor(this->color);
 	
 	this->main->update();
 	this->second->update();

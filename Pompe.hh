@@ -10,7 +10,7 @@ class Pompe: public Module {
 	bool isFailure;
 	bool isMain;
 	
-	BoxCircle box_circle;
+	BoxCircle circle;
 	
 	// public field
 	public:

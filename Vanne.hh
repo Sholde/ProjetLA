@@ -7,8 +7,8 @@ class Vanne: public Module {
 	// private field
 	protected:
 		bool isOpen;
-		Box box;
-		BoxCircle box_circle;
+		Box button;
+		BoxCircle circle;
 	
 	// public field
 	public:

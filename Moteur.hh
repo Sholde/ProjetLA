@@ -14,7 +14,7 @@ class Moteur: public Module {
 	// réservoir qui alimente direct
 	Reservoir *reservoir;
 	
-	Box box;
+	Box rect;
 	
 	// public field
 	public:
