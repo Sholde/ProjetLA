@@ -90,14 +90,29 @@
 
 // dashboard
 
-#define db_p12_x 150
-#define db_p12_y 200
+// vanne
+
+#define db_decal 30
+
+#define db_v12_x 200
+#define db_v12_y 420
+
+#define db_v23_x 600
+#define db_v23_y 420
+
+#define db_v13_x 400
+#define db_v13_y 420
+
+// pompe
+
+#define db_p12_x 200
+#define db_p12_y 250
 
 #define db_p22_x 400
-#define db_p22_y 200
+#define db_p22_y 250
 
-#define db_p32_x 650
-#define db_p32_y 200
+#define db_p32_x 600
+#define db_p32_y 250
 
 #define box_size_x 100
 #define box_size_y 40

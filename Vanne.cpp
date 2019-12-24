@@ -5,7 +5,7 @@ using namespace std;
 
 Vanne::Vanne(const char* name, const sf::Vector2f &st, const sf::Vector2f &db)
 		:Module(name, st),
-		button(sf::Vector2f(db.x - 30, db.y), 100, 40, 5),
+		button(sf::Vector2f(db.x - db_decal, db.y), box_size_x, box_size_y, box_margin),
 		circle(sf::Vector2f(st.x - st_vanne_x, st.y - st_vanne_y), st_vanne_radius, MARGIN),
 		pos_db(db) {
 	this->isOpen = false;

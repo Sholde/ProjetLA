@@ -44,8 +44,6 @@ System::System():composant() {
 	vect.y = st_vt12_y;
 	db = vect;
 	VanneTransi *vt12 = new VanneTransi("vt12", vect, db);
-	vect.x = WIDTH - WIDTH/3 + 15;
-	vect.y = HEIGHT/10 - 10;
 	vect.x = st_vt23_x;
 	vect.y = st_vt23_y;
 	db = vect;
@@ -95,16 +93,18 @@ System::System():composant() {
 	
 	vect.x = st_v12_x;
 	vect.y = st_v12_y;
-	db.x = WIDTH/4;
-	db.y = HEIGHT - HEIGHT/4;
+	db.x = db_v12_x;
+	db.y = db_v12_y;
 	VanneNormal *v12 = new VanneNormal("v12",vect, db);
 	vect.x = st_v23_x;
 	vect.y = st_v23_y;
-	db.x = WIDTH/2;
+	db.x = db_v23_x;
+	db.y = db_v23_y;
 	VanneNormal *v23 = new VanneNormal("v23", vect, db);
 	vect.x = st_v13_x;
 	vect.y = st_v13_y;
-	db.x = WIDTH - WIDTH/4;
+	db.x = db_v13_x;
+	db.y = db_v13_y;
 	VanneNormal *v13 = new VanneNormal("v13", vect, db);
 	this->composant.push_back(v12);
 	this->composant.push_back(v23);
