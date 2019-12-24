@@ -21,6 +21,7 @@ class Module {
 		
 		string &getName();
 		
+		virtual void handleClic(int &x, int &y) {};
 		virtual void update() {};
 		virtual void render(Interface *interface) {};
 };

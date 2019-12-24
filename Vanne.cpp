@@ -1,4 +1,7 @@
 #include "Include.hh"
+#include <iostream>
+#include <string>
+using namespace std;
 
 Vanne::Vanne(const char* name, const sf::Vector2f &st, const sf::Vector2f &db)
 		:Module(name, sf::Vector2f(st.x - 15, st.y + 40), db),
@@ -12,6 +15,27 @@ Vanne::~Vanne() {}
 
 bool Vanne::getOpen() {
 	return this->isOpen;
+}
+
+void Vanne::handleClic(int &x, int &y) {
+	sf::Vector2f pos = this->box.getPoint();
+	sf::Vector2f size = this->box.getSize();
+	
+	if(x >= pos.x && x <= pos.x + size.x
+		&& y >= pos.y && y <= pos.y + size.y) {
+		
+		this->isOpen = !this->isOpen;
+		cout << "here" << endl;
+	}
+}
+
+void Vanne::update() {
+	if(this->isOpen) {
+		this->color = sf::Color::Green;
+	}
+	else {
+		this->color = sf::Color::Red;
+	}
 }
 
 void Vanne::render(Interface *interface) {

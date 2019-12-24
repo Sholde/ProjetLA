@@ -23,7 +23,8 @@ void Reservoir::addVanneTransi(VanneTransi *v) {
 
 void Reservoir::initPompe(Pompe *m, Pompe *s) {
 	this->main = m;
-	this->main->setActive();
+	// tmp
+	// this->main->setActive();
 	this->main->setIsMain();
 	this->second = s;
 }

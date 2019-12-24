@@ -19,7 +19,7 @@ class VanneTransi: public Vanne {
 		Reservoir *getLeft();
 		Reservoir *getRight();
 		
-		void update() {};
+		//void update();
 		void render();
 };
 

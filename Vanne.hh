@@ -17,8 +17,9 @@ class Vanne: public Module {
 		~Vanne();
 		
 		bool getOpen();
+		void handleClic(int &x, int &y);
 		
-		void update() {};
+		void update();
 		void render(Interface *interface);
 };
 
