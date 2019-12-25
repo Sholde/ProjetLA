@@ -38,11 +38,11 @@ void Pompe::setIsMain() {
 	this->isMain = true;
 }
 
-void Pompe::checkFeed() {
+bool Pompe::checkFeed() {
 	if(this->isFailure || !this->isActive)
-		this->isFeed =  false;
+		return false;
 	else
-		this->isFeed = true;
+		return true;
 }
 
 void Pompe::handleClic(int &x, int &y) {
@@ -59,7 +59,7 @@ void Pompe::handleClic(int &x, int &y) {
 }
 
 void Pompe::update() {
-	if(this->isFeed) {
+	if(this->isActive) {
 		this->circle.setColor(sf::Color::Green);
 	}
 	else {

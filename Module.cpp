@@ -5,14 +5,6 @@ using namespace std;
 
 Module::Module(const char* name, const sf::Vector2f &st)
 		:name(name),
-		pos_st(st) {
-	
-	this->isFeed = false;
-}
+		pos_st(st) {}
 
 Module::~Module() {}
-
-
-bool &Module::getFeed() {
-	return this->isFeed;
-}
