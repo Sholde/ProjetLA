@@ -17,6 +17,7 @@ class Box {
 		sf::Vector2f getPoint();
 		sf::Vector2f getSize();
 		void setColor(sf::Color color);
+		bool isClicOn(int &x, int &y);
 		
 		void render(sf::RenderWindow &window);
 };

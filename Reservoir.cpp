@@ -72,16 +72,16 @@ void Reservoir::update() {
 		this->isFull = true;
 	else
 		this->isFull = false;
-	
+}
+
+void Reservoir::render(Interface *interface) {
 	if(this->isFull) {
 		this->rect.setColor(sf::Color::Green);
 	}
 	else {
 		this->rect.setColor(sf::Color::Red);
 	}
-}
-
-void Reservoir::render(Interface *interface) {
+	
 	this->rect.render(interface->statement);
 	draw_text(interface->statement, this->pos_st, this->name, interface->font, 30, sf::Color::Black);
 	

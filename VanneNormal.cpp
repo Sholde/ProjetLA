@@ -65,12 +65,17 @@ bool VanneNormal::checkFeed(Reservoir *r1, Reservoir *r2) {
 	return false;
 }
 
+bool VanneNormal::isComming2side() {
+	bool left = this->rl->checkFeed() || this->vl->checkFeed(rl, rr);
+	bool right = this->rr->checkFeed() || this->vr->checkFeed(rl, rr);
+	return left && right;
+}
+
 void VanneNormal::update() {
 	if(this->isOpen) {
-		this->circle.setColor(sf::Color::Green);
-	}
-	else {
-		this->circle.setColor(sf::Color::Red);
+		if(this->isComming2side()) {
+			this->isOpen = false;
+		}
 	}
 }
 
@@ -79,9 +84,7 @@ void VanneNormal::open() {
 		this->isOpen = false;
 	}
 	else {
-		bool left = this->rl->checkFeed() || this->vl->checkFeed(rl, rr);
-		bool right = this->rr->checkFeed() || this->vr->checkFeed(rl, rr);
-		if(!(left && right)) {
+		if(!this->isComming2side()) {
 			this->isOpen = true;
 		}
 	}

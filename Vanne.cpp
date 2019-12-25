@@ -18,17 +18,19 @@ bool Vanne::getOpen() {
 }
 
 void Vanne::handleClic(int &x, int &y) {
-	sf::Vector2f pos = this->button.getPoint();
-	sf::Vector2f size = this->button.getSize();
-	
-	if(x >= pos.x && x <= pos.x + size.x
-		&& y >= pos.y && y <= pos.y + size.y) {
-		
+	if(this->button.isClicOn(x, y)) {
 		this->open();
 	}
 }
 
 void Vanne::render(Interface *interface) {
+	if(this->isOpen) {
+		this->circle.setColor(sf::Color::Green);
+	}
+	else {
+		this->circle.setColor(sf::Color::Red);
+	}
+	
 	this->circle.render(interface);
 	draw_text(interface->statement, this->pos_st, this->name, interface->font, 25, sf::Color::Black);
 	

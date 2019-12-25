@@ -26,6 +26,14 @@ void Box::setColor(sf::Color color) {
 	this->inside.setFillColor(color);
 }
 
+bool Box::isClicOn(int &x, int &y) {
+	sf::Vector2f pos = this->edge.getPosition();
+	sf::Vector2f size = this->edge.getSize();
+	
+	return (x >= pos.x && x <= pos.x + size.x
+			&& y >= pos.y && y <= pos.y + size.y);
+}
+
 void Box::render(sf::RenderWindow &window) {
 	window.draw(edge);
 	window.draw(inside);

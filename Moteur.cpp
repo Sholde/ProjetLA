@@ -35,17 +35,17 @@ void Moteur::checkFeed() {
 
 void Moteur::update() {
 	this->checkFeed();
-	
+}
+
+
+void Moteur::render(Interface *interface) {
 	if(this->isFeed) {
 		this->rect.setColor(sf::Color::Green);
 	}
 	else {
 		this->rect.setColor(sf::Color::Red);
 	}
-}
-
-
-void Moteur::render(Interface *interface) {
+	
 	this->rect.render(interface->statement);
 	
 	draw_text(interface->statement, this->pos_st, this->name, interface->font, 30, sf::Color::Black);

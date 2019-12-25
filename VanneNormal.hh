@@ -22,9 +22,12 @@ class VanneNormal: public Vanne {
 		void initLeft(Reservoir *r, VanneNormal *v, Moteur *m);
 		void initRight(Reservoir *r, VanneNormal *v, Moteur *m);
 		void open();
+		
 		bool caseOneRes(Reservoir *r1);
 		bool caseTwoRes(Reservoir *r1, Reservoir *r2);
 		bool checkFeed(Reservoir *r1, Reservoir *r2 = nullptr);
+		
+		bool isComming2side();
 		
 		void update();
 };

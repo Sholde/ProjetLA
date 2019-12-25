@@ -22,13 +22,6 @@ void VanneTransi::update() {
 	if(this->isOpen) {
 		this->share();
 	}
-	
-	if(this->isOpen) {
-		this->circle.setColor(sf::Color::Green);
-	}
-	else {
-		this->circle.setColor(sf::Color::Red);
-	}
 }
 
 void VanneTransi::open() {
