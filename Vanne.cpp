@@ -28,8 +28,6 @@ void Vanne::handleClic(int &x, int &y) {
 	}
 }
 
-void Vanne::update() {}
-
 void Vanne::render(Interface *interface) {
 	this->circle.render(interface);
 	draw_text(interface->statement, this->pos_st, this->name, interface->font, 25, sf::Color::Black);

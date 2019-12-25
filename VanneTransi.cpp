@@ -12,14 +12,6 @@ void VanneTransi::initReservoir(Reservoir *l, Reservoir *r) {
 	this->left = l;
 }
 
-Reservoir *VanneTransi::getLeft() {
-	return this->left;
-}
-
-Reservoir *VanneTransi::getRight() {
-	return this->right;
-}
-
 void VanneTransi::share() {
 	int capacity = (this->left->getCapacity() + this->right->getCapacity()) / 2;
 	this->left->setCapacity(capacity);
@@ -39,14 +31,11 @@ void VanneTransi::update() {
 	}
 }
 
-void VanneTransi::render() {}
-
 void VanneTransi::open() {
 	if(this->isOpen) {
 		this->isOpen = false;
 	}
 	else {
-		this->share();
 		this->isOpen = true;
 	}
 }

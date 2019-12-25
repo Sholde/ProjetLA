@@ -63,14 +63,13 @@ void Reservoir::setFull(bool boolean) {
 }
 
 void Reservoir::update() {
-	
-	if(this->checkFeed()) {
-		this->isFull = true;
-	}
-	
-	if(this->capacity > 0) {
+
+	if(this->checkFeed() && this->capacity > 0) {
 		this->capacity--;
 	}
+	
+	if(this->capacity > 0) 
+		this->isFull = true;
 	else
 		this->isFull = false;
 	
