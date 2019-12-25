@@ -29,7 +29,7 @@ class Reservoir: public Module {
 		void addVanneNormal(VanneNormal *v);
 		
 		bool checkPompe();
-		bool checkfeed();
+		void checkFeed();
 		
 		bool getFull();
 		void setFull(bool boolean);

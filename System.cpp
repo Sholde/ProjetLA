@@ -158,6 +158,9 @@ void System::handleClic(int &x, int &y) {
 
 void System::update() {
 	for(Module* m : composant) {
+		m->checkFeed();
+	}
+	for(Module* m : composant) {
 		m->update();
 	}
 }

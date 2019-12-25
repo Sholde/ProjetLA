@@ -6,7 +6,6 @@
 
 class Moteur: public Module {
 	// private field
-	bool isFeed;
 	VanneNormal* v1;
 	VanneNormal* v2;
 	Reservoir *reservoir;
@@ -20,6 +19,7 @@ class Moteur: public Module {
 		void initReservoir(Reservoir *res);
 		void addVanneNormal(VanneNormal *v);
 		
+		void checkFeed();
 		void setFeed(bool boolean);
 		
 		void update();

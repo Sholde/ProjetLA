@@ -11,12 +11,16 @@ class Module {
 	protected:
 		string name;
 		sf::Vector2f pos_st;
+		bool isFeed;
 	
 	// public field
 	public:
 		Module(const char* name, const sf::Vector2f &st);
 		~Module();
 		
+		bool &getFeed();
+		
+		virtual void checkFeed() {};
 		virtual void handleClic(int &x, int &y) {};
 		virtual void update() {};
 		virtual void render(Interface *interface) {};

@@ -44,26 +44,28 @@ void Reservoir::addVanneNormal(VanneNormal *v) {
 }
 
 bool Reservoir::checkPompe() {
-	return this->main->getActive() || this->second->getActive();
+	return this->main->getFeed() || this->second->getFeed();
 }
 
-bool Reservoir::checkfeed() {
-	if(this->isFull && this->checkPompe())
-		return true;
-	return false;
+void Reservoir::checkFeed() {
+	if(this->capacity > 0 && this->checkPompe())
+		this->isFeed =  true;
+	else
+		this->isFeed = false;
 }
 
 bool Reservoir::getFull() {
 	return this->isFull;
 }
 
-
 void Reservoir::setFull(bool boolean) {
 	this->isFull = boolean;
 }
 
 void Reservoir::update() {
-	if(this->checkPompe() && this->capacity > 0)
+	this->checkFeed();
+	
+	if(this->isFeed)
 		this->capacity--;
 	
 	if(this->capacity > 0)

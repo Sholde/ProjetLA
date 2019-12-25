@@ -38,6 +38,13 @@ void Pompe::setIsMain() {
 	this->isMain = true;
 }
 
+void Pompe::checkFeed() {
+	if(this->isFailure || !this->isActive)
+		this->isFeed =  false;
+	else
+		this->isFeed = true;
+}
+
 void Pompe::handleClic(int &x, int &y) {
 	if(!this->isMain) {
 		sf::Vector2f pos = this->button.getPoint();
@@ -52,7 +59,7 @@ void Pompe::handleClic(int &x, int &y) {
 }
 
 void Pompe::update() {
-	if(this->isActive) {
+	if(this->isFeed) {
 		this->circle.setColor(sf::Color::Green);
 	}
 	else {

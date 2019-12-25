@@ -23,6 +23,8 @@ class Pompe: public Module {
 		bool getIsMain();
 		void setActive();
 		void setIsMain();
+		
+		void checkFeed();
 		void handleClic(int &x, int &y);
 		
 		void update();

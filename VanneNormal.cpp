@@ -19,6 +19,17 @@ void VanneNormal::initRight(Reservoir *r, VanneNormal *v, Moteur *m) {
 	this->mr = m;
 }
 
+void VanneNormal::checkFeed() {
+	bool left = this->rl->getFeed() || this->vl->getFeed();
+	bool right = this->rr->getFeed() || this->vr->getFeed();
+	if(this->isOpen && (left ^ right)) {
+		this->isFeed = true;
+	}
+	else {
+		this->isFeed = false;
+	}
+}
+
 void VanneNormal::update() {}
 
 void VanneNormal::render() {}
@@ -28,8 +39,8 @@ void VanneNormal::open() {
 		this->isOpen = false;
 	}
 	else {
-		bool left = this->rl->checkfeed();
-		bool right = this->rr->checkfeed();
+		bool left = this->rl->getFeed() || this->vl->getFeed();
+		bool right = this->rr->getFeed() || this->vr->getFeed();
 		if(!(left && right))
 			this->isOpen = true;
 	}

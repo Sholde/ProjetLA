@@ -7,7 +7,6 @@ using namespace std;
 Moteur::Moteur(const char* name, const sf::Vector2f &st)
 		:Module(name, st),
 		rect(sf::Vector2f(st.x - st_mot_x, st.y - st_mot_y), st_size_mot_x, st_size_mot_y, MARGIN) {
-	this->isFeed = false;
 }
 
 Moteur::~Moteur() {}
@@ -23,17 +22,24 @@ void Moteur::addVanneNormal(VanneNormal *v) {
 		this->v2 = v;
 }
 
+void Moteur::checkFeed() {
+	if(this->reservoir->getFeed() || this->v1->getFeed() || this->v2->getFeed()) {
+		this->isFeed = true;
+	}
+	else {
+		this->isFeed = false;
+	}
+}
+
 void Moteur::setFeed(bool boolean) {
 	this->isFeed = boolean;
 }
 
 void Moteur::update() {
-	if(this->reservoir->checkfeed()) {
-		this->isFeed = true;
+	if(this->isFeed) {
 		this->rect.setColor(sf::Color::Green);
 	}
 	else {
-		this->isFeed = false;
 		this->rect.setColor(sf::Color::Red);
 	}
 }
