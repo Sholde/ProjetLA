@@ -158,11 +158,6 @@ void System::handleClic(int &x, int &y) {
 
 void System::update() {
 	for(Module* m : composant) {
-		Moteur *mot = dynamic_cast<Moteur*>(m);
-		if(mot)
-			mot->checkFeed();
-	}
-	for(Module* m : composant) {
 		m->update();
 	}
 }

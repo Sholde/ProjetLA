@@ -26,13 +26,13 @@ bool VanneNormal::checkFeed(Reservoir *r1, Reservoir *r2) {
 				if(this->rl->checkFeed()) {
 					return true;
 				}
-				return this->checkFeed(r1, rl);
+				return this->vl->checkFeed(r1, rl);
 			}
 			else if(this->rr != r1) {
 				if(this->rr->checkFeed()) {
 					return true;
 				}
-				return this->checkFeed(r1, rr);
+				return this->vr->checkFeed(r1, rr);
 			}
 			else
 				return false;

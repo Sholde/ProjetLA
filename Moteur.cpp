@@ -34,6 +34,8 @@ void Moteur::checkFeed() {
 }
 
 void Moteur::update() {
+	this->checkFeed();
+	
 	if(this->isFeed) {
 		this->rect.setColor(sf::Color::Green);
 	}
