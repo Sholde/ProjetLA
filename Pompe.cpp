@@ -55,7 +55,7 @@ void Pompe::handleClicDashboard(int &x, int &y) {
 
 void Pompe::handleClicStatement(int &x,int &y) {
 	if(this->isClickOn(x ,y)) {
-		this->isFailure = false;
+		this->isFailure = true;
 		this->isActive = false;
 	}
 }
