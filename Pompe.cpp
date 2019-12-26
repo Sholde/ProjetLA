@@ -53,6 +53,18 @@ void Pompe::handleClicDashboard(int &x, int &y) {
 	}
 }
 
+void Pompe::handleClicStatement(int &x,int &y) {
+	if(this->isMain && this->isClickOn(x ,y))
+	{
+		this->isFailure = !this->isFailure;
+		this->isActive = !this->isActive;
+	}
+}
+
+bool Pompe::isClickOn(int &x,int &y) {
+	return this->circle.isClicOn(x ,y);
+}
+
 void Pompe::update() {
 	if(this->isFailure && this->isActive) {
 		this->isActive = false;
@@ -66,6 +78,9 @@ void Pompe::render(Interface *interface) {
 	else {
 		this->circle.setColor(sf::Color::Red);
 	}
+	if(this->isFailure) {
+		this->circle.setColor(sf::Color::Yellow);
+	}
 	
 	this->circle.render(interface);
 	draw_text(interface->statement, this->pos_st, this->name, interface->font, 25, sf::Color::Black);
@@ -75,4 +90,3 @@ void Pompe::render(Interface *interface) {
 		draw_text(interface->dashboard, this->pos_db, this->name, interface->font, 25, sf::Color::White);
 	}
 }
-

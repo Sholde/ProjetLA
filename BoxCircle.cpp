@@ -1,6 +1,6 @@
 
 #include "Include.hh"
-
+#include <iostream>
 BoxCircle::BoxCircle(sf::Vector2f pos, int radius, int margin)
 		:edge(radius),
 		inside(radius - margin) {
@@ -25,4 +25,17 @@ sf::Vector2f BoxCircle::getPoint() {
 void BoxCircle::render(Interface *interface) {
 	interface->statement.draw(edge);
 	interface->statement.draw(inside);
+}
+
+bool BoxCircle::isClicOn(int &x,int &y)
+{
+	sf::Vector2f pos = this->edge.getPosition();
+	if(pos.x + 2 * edge.getRadius() > x &&
+			pos.x < x &&
+			pos.y + 2 * edge.getRadius() > y && 
+			pos.y < y)
+			{
+				return true;
+			}
+		return false;
 }
