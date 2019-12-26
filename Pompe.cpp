@@ -45,7 +45,7 @@ bool Pompe::checkFeed() {
 		return true;
 }
 
-void Pompe::handleClic(int &x, int &y) {
+void Pompe::handleClicDashboard(int &x, int &y) {
 	if(!this->isMain) {
 		if(this->button.isClicOn(x, y)) {
 			this->isActive = !this->isActive;

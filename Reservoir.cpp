@@ -65,16 +65,27 @@ void Reservoir::setFull(bool boolean) {
 	this->isFull = boolean;
 }
 
-void Reservoir::update() {
+void Reservoir::handleClicStatement(int &x, int &y) {
+	if(this->rect.isClicOn(x, y)) {
+		this->isFull = false;
+		this->capacity = 0;
+	}
+}
 
+void Reservoir::update() {
 	if(this->checkFeed() && this->capacity > 0) {
+		if(this->checkAllPompe()) {
+			this->capacity--;
+		}
 		this->capacity--;
 	}
 	
 	if(this->capacity > 0) 
 		this->isFull = true;
-	else
+	else {
 		this->isFull = false;
+		this->capacity = 0;
+	}
 }
 
 void Reservoir::render(Interface *interface) {

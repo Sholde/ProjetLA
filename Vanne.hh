@@ -18,7 +18,7 @@ class Vanne: public Module {
 		~Vanne();
 		
 		bool getOpen();
-		void handleClic(int &x, int &y);
+		void handleClicDashboard(int &x, int &y);
 		
 		virtual void open() {};
 		virtual void update() {};

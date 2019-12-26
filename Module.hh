@@ -17,7 +17,8 @@ class Module {
 		Module(const char* name, const sf::Vector2f &st);
 		~Module();
 		
-		virtual void handleClic(int &x, int &y) {};
+		virtual void handleClicStatement(int &x, int &y) {};
+		virtual void handleClicDashboard(int &x, int &y) {};
 		virtual void update() {};
 		virtual void render(Interface *interface) {};
 };

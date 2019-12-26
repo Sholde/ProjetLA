@@ -17,7 +17,7 @@ bool Vanne::getOpen() {
 	return this->isOpen;
 }
 
-void Vanne::handleClic(int &x, int &y) {
+void Vanne::handleClicDashboard(int &x, int &y) {
 	if(this->button.isClicOn(x, y)) {
 		this->open();
 	}

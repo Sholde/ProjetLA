@@ -72,11 +72,14 @@ void Interface::closeEvent(sf::Event &event) {
 }
 
 void Interface::clicEvent(sf::Event &event) {
-	if(dashboard.hasFocus()) {
-		if(event.type == sf::Event::MouseButtonPressed) {
-			int x = event.mouseButton.x;
-			int y = event.mouseButton.y;
-			this->system->handleClic(x, y);
+	if(event.type == sf::Event::MouseButtonPressed) {
+		int x = event.mouseButton.x;
+		int y = event.mouseButton.y;
+		if(dashboard.hasFocus()) {
+			this->system->handleClicDashboard(x, y);
+		}
+		if(statement.hasFocus()) {
+			this->system->handleClicStatement(x, y);
 		}
 	}
 }

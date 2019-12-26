@@ -5,7 +5,7 @@
 #define HEIGHT 600
 
 #define cap_1_max 5000
-#define cap_2_max 200
+#define cap_2_max 2500
 
 // statement
 

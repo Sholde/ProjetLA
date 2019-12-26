@@ -35,6 +35,8 @@ class Reservoir: public Module {
 		bool getFull();
 		void setFull(bool boolean);
 		
+		void handleClicStatement(int &x, int &y);
+		
 		void update();
 		void render(Interface *interface);
 };

@@ -25,7 +25,7 @@ class Pompe: public Module {
 		void setIsMain();
 		
 		bool checkFeed();
-		void handleClic(int &x, int &y);
+		void handleClicDashboard(int &x, int &y);
 		
 		void update();
 		void render(Interface *interface);

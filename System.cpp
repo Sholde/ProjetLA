@@ -146,30 +146,16 @@ void System::initVanne(Reservoir *r1, Reservoir *r2, VanneNormal *v1, VanneNorma
 	m2->addVanneNormal(middle);
 }
 
-void createIssue() {
-	;
-}
-
-void System::handleClic(int &x, int &y) {
+void System::handleClicStatement(int &x, int &y) {
 	for(Module *m : composant) {
-		m->handleClic(x, y);
+		m->handleClicStatement(x, y);
 	}
 }
 
-void System::checkPompeMoteur() {
-	//~ int countModule = 0;
-	//~ int countPompeRes = 0;
-	//~ for(Module *m : composant) {
-		//~ Moteur *mot = dynamic_cast<Moteur*>(m);
-		//~ if(mot && mot->getFeed())
-			//~ countModule++;
-			
-		//~ Reservoir *res = dynamic_cast<Reservoir*>(m);
-		//~ if(res && res->checkFeed())
-			//~ countPompeRes++;
-	//~ }
-	//~ if(res
-	;
+void System::handleClicDashboard(int &x, int &y) {
+	for(Module *m : composant) {
+		m->handleClicDashboard(x, y);
+	}
 }
 
 void System::update() {
