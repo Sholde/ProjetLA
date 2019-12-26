@@ -4,11 +4,13 @@
 
 // main
 int main () {
-	System system;
-	
-	Interface interface;
-	interface.initSystem(&system);
-	interface.start();
+	Utilisateur user;
+	if(user.connection()) {
+		System system;
+		Interface interface;
+		interface.initSystem(&system);
+		interface.start();
+	}
 	
 	return 0;
 }
