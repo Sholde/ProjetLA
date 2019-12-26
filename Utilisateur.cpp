@@ -23,9 +23,14 @@ bool Utilisateur::connection() {
 	cout << "Enter your password : ";
 	cin >> password;
 	
-	if(this->j["username"] == username && this->j["password"] == password) {
+	if(!this->j[username].empty() && this->j[username]["password"] == password) {
+		if(this->j[username]["history"] == nullptr) {
+			std::ofstream o("file.json");
+			this->j[username]["history"] = 5;
+			o << this->j;
+		}
 		return true;
 	}
-	cout << "Error" << endl;
+	cout << "Error connection" << endl;
 	return false;
 }
