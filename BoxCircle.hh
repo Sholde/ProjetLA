@@ -15,7 +15,9 @@ class BoxCircle {
 		~BoxCircle();
 		
 		void setColor(sf::Color color);
-		sf::Vector2f getPoint();
+		sf::Vector2f getPoint(); /* Donne la position haut gauche */
+		
+		bool isClicOn(int &x,int &y);
 		
 		void render(Interface *interface);
 };
