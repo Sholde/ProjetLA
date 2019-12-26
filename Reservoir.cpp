@@ -19,7 +19,7 @@ int &Reservoir::getCapacity() {
 	return this->capacity;
 }
 
-void Reservoir::setCapacity(int &capacity) {
+void Reservoir::setCapacity(int capacity) {
 	this->capacity = capacity;
 }
 

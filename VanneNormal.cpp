@@ -96,7 +96,7 @@ bool VanneNormal::isComming2side() {
 
 void VanneNormal::update() {
 	if(this->isOpen) {
-		if(this->isComming2side()) {
+		if(this->isComming2side() || !this->allPompeIsActive()) {
 			this->isOpen = false;
 		}
 	}
@@ -107,7 +107,7 @@ void VanneNormal::open() {
 		this->isOpen = false;
 	}
 	else {
-		if(!this->isComming2side() && this->allPompeIsActive()) {
+		if(!this->isComming2side() && this->allPompeIsActive() && !this->vl->getOpen() && !this->vr->getOpen()) {
 			this->isOpen = true;
 		}
 	}
