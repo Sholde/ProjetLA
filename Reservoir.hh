@@ -21,7 +21,7 @@ class Reservoir: public Module {
 		~Reservoir();
 		
 		int &getCapacity();
-		void setCapacity(int &capacity);
+		void setCapacity(int capacity);
 		
 		void initMoteur(Moteur *mot);
 		void addVanneTransi(VanneTransi* v);

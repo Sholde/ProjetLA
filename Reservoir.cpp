@@ -19,7 +19,7 @@ int &Reservoir::getCapacity() {
 	return this->capacity;
 }
 
-void Reservoir::setCapacity(int &capacity) {
+void Reservoir::setCapacity(int capacity) {
 	this->capacity = capacity;
 }
 
@@ -33,7 +33,7 @@ void Reservoir::addVanneTransi(VanneTransi *v) {
 
 void Reservoir::initPompe(Pompe *m, Pompe *s) {
 	this->main = m;
-	this->main->setActive();
+	//~ this->main->setActive();
 	this->main->setIsMain();
 	this->second = s;
 }

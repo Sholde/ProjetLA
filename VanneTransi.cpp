@@ -13,9 +13,14 @@ void VanneTransi::initReservoir(Reservoir *l, Reservoir *r) {
 }
 
 void VanneTransi::share() {
-	int capacity = (this->left->getCapacity() + this->right->getCapacity()) / 2;
-	this->left->setCapacity(capacity);
-	this->right->setCapacity(capacity);
+	if(this->left->getCapacity() > this->right->getCapacity()) {
+		this->left->setCapacity(this->left->getCapacity() - this->flow);
+		this->right->setCapacity(this->right->getCapacity() + this->flow);
+	}
+	else {
+		this->left->setCapacity(this->left->getCapacity() + this->flow);
+		this->right->setCapacity(this->right->getCapacity() - this->flow);
+	}
 }
 
 void VanneTransi::update() {
