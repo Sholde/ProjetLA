@@ -17,9 +17,6 @@ System::System():composant() {
 	vect.x = st_m3_x;
 	vect.y = st_m3_y;
 	Moteur *m3 = new Moteur("m3", vect);
-	this->composant.push_back(m1);
-	this->composant.push_back(m2);
-	this->composant.push_back(m3);
 	
 	vect.x = st_tank1_x;
 	vect.y = st_tank1_y;
@@ -36,9 +33,6 @@ System::System():composant() {
 	db.x = db_p32_x;
 	db.y = db_p32_y;
 	Reservoir *tank3 = new Reservoir("tank3", cap_1_max, vect);
-	this->composant.push_back(tank1);
-	this->composant.push_back(tank2);
-	this->composant.push_back(tank3);
 	
 	vect.x = st_vt12_x;
 	vect.y = st_vt12_y;
@@ -48,8 +42,6 @@ System::System():composant() {
 	vect.y = st_vt23_y;
 	db = vect;
 	VanneTransi *vt23 = new VanneTransi("vt23", vect, db);
-	this->composant.push_back(vt12);
-	this->composant.push_back(vt23);
 	
 	// Pompe
 	vect.x = st_p11_x;
@@ -60,10 +52,6 @@ System::System():composant() {
 	db.x = db_p12_x;
 	db.y = db_p12_y;
 	Pompe *p12 = new Pompe("p12", vect, db);
-	this->composant.push_back(p11);
-	this->composant.push_back(p12);
-	
-	tank1->initPompe(p11, p12);
 	
 	vect.x = st_p21_x;
 	vect.y = st_p21_y;
@@ -73,10 +61,6 @@ System::System():composant() {
 	db.x = db_p22_x;
 	db.y = db_p22_y;
 	Pompe *p22 = new Pompe("p22", vect, db);
-	this->composant.push_back(p21);
-	this->composant.push_back(p22);
-	
-	tank2->initPompe(p21, p22);
 	
 	vect.x = st_p31_x;
 	vect.y = st_p31_y;
@@ -86,10 +70,6 @@ System::System():composant() {
 	db.x = db_p32_x;
 	db.y = db_p32_y;
 	Pompe *p32 = new Pompe("p32", vect, db);
-	this->composant.push_back(p31);
-	this->composant.push_back(p32);
-	
-	tank3->initPompe(p31, p32);
 	
 	vect.x = st_v12_x;
 	vect.y = st_v12_y;
@@ -106,9 +86,36 @@ System::System():composant() {
 	db.x = db_v13_x;
 	db.y = db_v13_y;
 	VanneNormal *v13 = new VanneNormal("v13", vect, db);
+	
+	// Init liste
+	
+	this->composant.push_back(tank1);
+	this->composant.push_back(tank2);
+	this->composant.push_back(tank3);
+	
+	this->composant.push_back(vt12);
+	this->composant.push_back(vt23);
+	
+	this->composant.push_back(p11);
+	this->composant.push_back(p12);
+	
+	this->composant.push_back(p21);
+	this->composant.push_back(p22);
+	
+	this->composant.push_back(p31);
+	this->composant.push_back(p32);
+	
 	this->composant.push_back(v12);
 	this->composant.push_back(v23);
 	this->composant.push_back(v13);
+	
+	this->composant.push_back(m1);
+	this->composant.push_back(m2);
+	this->composant.push_back(m3);
+	
+	tank1->initPompe(p11, p12);
+	tank2->initPompe(p21, p22);
+	tank3->initPompe(p31, p32);
 	
 	m1->initReservoir(tank1);
 	m2->initReservoir(tank2);
