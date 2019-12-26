@@ -151,19 +151,35 @@ void createIssue() {
 }
 
 void System::handleClic(int &x, int &y) {
-	for(Module* m : composant) {
+	for(Module *m : composant) {
 		m->handleClic(x, y);
 	}
 }
 
+void System::checkPompeMoteur() {
+	//~ int countModule = 0;
+	//~ int countPompeRes = 0;
+	//~ for(Module *m : composant) {
+		//~ Moteur *mot = dynamic_cast<Moteur*>(m);
+		//~ if(mot && mot->getFeed())
+			//~ countModule++;
+			
+		//~ Reservoir *res = dynamic_cast<Reservoir*>(m);
+		//~ if(res && res->checkFeed())
+			//~ countPompeRes++;
+	//~ }
+	//~ if(res
+	;
+}
+
 void System::update() {
-	for(Module* m : composant) {
+	for(Module *m : composant) {
 		m->update();
 	}
 }
 
 void System::render(Interface *interface) {
-	for(Module* m : composant) {
+	for(Module *m : composant) {
 		m->render(interface);
 	}
 }

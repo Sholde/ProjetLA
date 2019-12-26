@@ -33,14 +33,17 @@ void Reservoir::addVanneTransi(VanneTransi *v) {
 
 void Reservoir::initPompe(Pompe *m, Pompe *s) {
 	this->main = m;
-	// tmp
-	// this->main->setActive();
+	this->main->setActive();
 	this->main->setIsMain();
 	this->second = s;
 }
 
 void Reservoir::addVanneNormal(VanneNormal *v) {
 	this->vanne_normal.push_back(v);
+}
+
+bool Reservoir::checkAllPompe() {
+	return this->main->checkFeed() && this->second->checkFeed();
 }
 
 bool Reservoir::checkPompe() {

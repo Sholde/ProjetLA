@@ -65,9 +65,32 @@ bool VanneNormal::checkFeed(Reservoir *r1, Reservoir *r2) {
 	return false;
 }
 
+bool VanneNormal::allPompeIsActive() {
+	bool left = this->rl->checkFeed();
+	bool right = this->rr->checkFeed();
+	if(left) {
+		if(this->rl->checkAllPompe()) {
+			return true;
+		}
+		return false;
+	}
+	else if(right) {
+		if(this->rr->checkAllPompe()) {
+			return true;
+		}
+		return false;
+	}
+}
+
+//~ bool VanneNormal::isComming2side() {
+	//~ bool left = this->rl->checkFeed() || this->vl->checkFeed(rl, rr);
+	//~ bool right = this->rr->checkFeed() || this->vr->checkFeed(rl, rr);
+	//~ return left && right;
+//~ }
+
 bool VanneNormal::isComming2side() {
-	bool left = this->rl->checkFeed() || this->vl->checkFeed(rl, rr);
-	bool right = this->rr->checkFeed() || this->vr->checkFeed(rl, rr);
+	bool left = this->rl->checkFeed();
+	bool right = this->rr->checkFeed();
 	return left && right;
 }
 
@@ -84,7 +107,7 @@ void VanneNormal::open() {
 		this->isOpen = false;
 	}
 	else {
-		if(!this->isComming2side()) {
+		if(!this->isComming2side() && this->allPompeIsActive()) {
 			this->isOpen = true;
 		}
 	}

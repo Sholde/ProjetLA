@@ -21,6 +21,7 @@ class System {
 		
 		void createIssue();
 		void handleClic(int &x, int &y);
+		void checkPompeMoteur();
 		
 		void update();
 		void render(Interface *interface);
