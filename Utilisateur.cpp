@@ -66,7 +66,8 @@ void Utilisateur::printHistory() {
 	}
 	
 	while(i < size) {
-		cout << "Note : " << this->j[this->user]["history"][i] << endl;
+		cout << "Note : " << this->j[this->user]["note"][i] << endl;
+		cout << "History : " << this->j[this->user]["history"][i] << endl;
 		i++;
 	}
 	cout << endl;
