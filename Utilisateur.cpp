@@ -7,6 +7,8 @@ using json = nlohmann::json;
 #include <fstream>
 using namespace std;
 
+#include <ctime>
+
 Utilisateur::Utilisateur():j(), user() {
 	this->play = false;
 	this->history = false;
@@ -55,6 +57,10 @@ bool Utilisateur::getPlay() {
 }
 
 void Utilisateur::printHistory() {
+	time_t now = time(0);
+	struct tm nowLocal;
+	nowLocal = *localtime(&now);
+	cout << nowLocal.tm_mday << "/" << nowLocal.tm_mon+1 << "/" << nowLocal.tm_year+1900 << " " << nowLocal.tm_hour << ":" << nowLocal.tm_min << endl;
 	cout << "History :"<< endl << endl;
 	
 	int i = 0;
@@ -66,7 +72,8 @@ void Utilisateur::printHistory() {
 	}
 	
 	while(i < size) {
-		cout << "Note : " << this->j[this->user]["note"][i] << endl;
+		cout << "Date : " << this->j[this->user]["date"][i] << endl;
+		cout << "Rating : " << this->j[this->user]["rating"][i] << endl;
 		cout << "History : " << this->j[this->user]["history"][i] << endl;
 		i++;
 	}
