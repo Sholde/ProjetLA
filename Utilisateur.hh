@@ -3,18 +3,25 @@
 
 #include <nlohmann/json.hpp>
 using json = nlohmann::json;
-
-#include "Include.hh"
+#include <string>
+using namespace std;
 
 class Utilisateur {
 	
 	json j;
+	string user;
+	bool history;
+	bool play;
 	
 	public:
 		Utilisateur();
 		~Utilisateur();
 		
 		bool connection();
+		void choose();
+		bool getPlay();
+		bool getHistory();
+		void printHistory();
 };
 
 #endif
