@@ -2,22 +2,39 @@
 ## INFO
 ########
 
-On fait un readme.txt car le .md sur geany il souvre pas, alors certes
-sur github ca rend bien mais quand on va présenté on ira pas sur github.
+On utilise 2 librairie externes.
 
 ########
 ## LIBRAIRIE GRAPHIQUE
 ########
 
-On utilise SFML.
+On utilise SFML version 2.5.1.
 
 ########
 ## INSTALLATION
 ########
 
-Si vous n'avez pas installé la librairie dans le path par défault
-(comme moi) il suffit de spécifié dans le makefile le chemin absolu
-dans la variable path.
+1er cas: (débrouiller vous)
+sudo apt-get install libsfml-dev
+
+2eme cas: (le cas qu'on a choisis)
+https://www.sfml-dev.org/download/sfml/2.5.1/
+Installer la lib et spécifier le chemin dans le makefile.
+
+
+########
+## LIBRAIRIE JSON
+########
+
+On utilise la librairies de nlohmann.
+
+########
+## INSTALLATION
+########
+
+git clone https://github.com/nlohmann/json.git
+
+Et ensuite il faut specifier dans le makefile la ou vous l'avez installez.
 
 ########
 ## COMPILATION
