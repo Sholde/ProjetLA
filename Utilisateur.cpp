@@ -63,7 +63,6 @@ void Utilisateur::printHistory() {
 	cout << nowLocal.tm_mday << "/" << nowLocal.tm_mon+1 << "/" << nowLocal.tm_year+1900 << " " << nowLocal.tm_hour << ":" << nowLocal.tm_min << endl;
 	cout << "History :"<< endl << endl;
 	
-	int i = 0;
 	int size = this->j[this->user]["history"].size();
 	
 	if(size == 0) {
@@ -71,11 +70,11 @@ void Utilisateur::printHistory() {
 		return;
 	}
 	
-	while(i < size) {
-		cout << "Date : " << this->j[this->user]["date"][i] << endl;
-		cout << "Rating : " << this->j[this->user]["rating"][i] << endl;
-		cout << "History : " << this->j[this->user]["history"][i] << endl;
-		i++;
+	while(size > 0) {
+		size--;
+		cout << "Date : " << this->j[this->user]["date"][size] << endl;
+		cout << "Rating : " << this->j[this->user]["rating"][size] << endl;
+		cout << "History : " << this->j[this->user]["history"][size] << endl;
+		cout << endl;
 	}
-	cout << endl;
 }
