@@ -1,7 +1,7 @@
 #ifndef _Constants_hh
 #define _Constants_hh
 
-#define WIDTH 600
+#define WIDTH 800
 #define HEIGHT 600
 
 #define cap_1_max 5000
@@ -97,25 +97,31 @@
 
 #define db_decal 30
 
-#define db_v12_x 200
-#define db_v12_y 420
+#define db_v12_x 50
+#define db_v12_y 320
 
-#define db_v23_x 600
-#define db_v23_y 420
+#define db_v23_x 230
+#define db_v23_y 320
 
 #define db_v13_x 400
-#define db_v13_y 420
+#define db_v13_y 320
+
+#define db_vt12_x 140
+#define db_vt12_y 50
+
+#define db_vt23_x 310
+#define db_vt23_y 50
 
 // pompe
 
-#define db_p12_x 200
-#define db_p12_y 250
+#define db_p12_x 50
+#define db_p12_y 170
 
-#define db_p22_x 400
-#define db_p22_y 250
+#define db_p22_x 230
+#define db_p22_y 170
 
-#define db_p32_x 600
-#define db_p32_y 250
+#define db_p32_x 400
+#define db_p32_y 170
 
 #define box_size_x 100
 #define box_size_y 40

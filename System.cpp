@@ -36,11 +36,13 @@ System::System():composant() {
 	
 	vect.x = st_vt12_x;
 	vect.y = st_vt12_y;
-	db = vect;
+	db.x = db_vt12_x;
+	db.y = db_vt12_y;
 	VanneTransi *vt12 = new VanneTransi("vt12", vect, db);
 	vect.x = st_vt23_x;
 	vect.y = st_vt23_y;
-	db = vect;
+	db.x = db_vt23_x;
+	db.y = db_vt23_y;
 	VanneTransi *vt23 = new VanneTransi("vt23", vect, db);
 	
 	// Pompe
