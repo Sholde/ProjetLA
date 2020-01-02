@@ -1,7 +1,7 @@
 #ifndef _Constants_hh
 #define _Constants_hh
 
-#define WIDTH 800
+#define WIDTH 600
 #define HEIGHT 600
 
 #define cap_1_max 5000

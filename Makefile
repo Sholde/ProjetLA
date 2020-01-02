@@ -9,24 +9,25 @@ hidden=@
 
 all: compil
 
-compil: $(OBJ) Utilisateur Main lien
+compil: $(OBJ) Utilisateur Main
+	${hidden} echo -n édition des liens...  
 	${hidden} g++ $(OBJ) Utilisateur.o Main.o -o ${name} -L${sfml}/lib ${option}
-	${hidden} echo édition des liens... OK
+	${hidden} echo OK
 
 %.o: %.cpp ${DEPS}
+	${hidden} echo -n compilation de $@... 
 	${hidden} g++ -c -o $@ $< -I${sfml}/include
-	${hidden} echo compilation $@... OK
+	${hidden} echo OK
 	
 Utilisateur: Utilisateur.cpp Utilisateur.hh ${DEPS}
+	${hidden} echo -n compilation de Utilisateur.o... 
 	${hidden} g++ -c -o Utilisateur.o $< -I${json}/include
-	${hidden} echo compilation Utilisateur.o... OK
+	${hidden} echo OK
 	
 Main: Main.cpp ${DEPS}
+	${hidden} echo -n compilation de Main.o... 
 	${hidden} g++ -c -o Main.o $< -I${sfml}/include -I${json}/include
-	${hidden} echo compilation Main.o... OK
-
-lien:
-	${hidden} echo && echo création des liens... OK
+	${hidden} echo OK
 
 run:
 	${hidden} export LD_LIBRARY_PATH=${sfml}/lib && echo starting... && ./${name} && echo ending...
