@@ -85,29 +85,25 @@ void Utilisateur::addRating(int rate) {
 }
 
 void Utilisateur::addDate() {
-	time_t now = time(0);
-	struct tm nowLocal;
-	nowLocal = *localtime(&now);
-	string date;
-	date += nowLocal.tm_mday;
-	date += "/";
-	date += nowLocal.tm_mon+1;
-	date += "/";
-	date += nowLocal.tm_year+1900;
-	date += " ";
-	date += nowLocal.tm_hour;
-	date += ":";
-	date += nowLocal.tm_min;
+	time_t rawtime;
+  struct tm * timeinfo;
+  char buffer[80];
+
+  time (&rawtime);
+  timeinfo = localtime(&rawtime);
+
+  strftime(buffer,sizeof(buffer),"%d-%m-%Y %H:%M:%S",timeinfo);
+  string str(buffer);
 	int size = this->j[this->user]["date"].size();
-	this->j[this->user]["date"][size] = date;
+	this->j[this->user]["date"][size] = str;
 }
 
 void Utilisateur::addHistory() {
 	int size = this->j[this->user]["history"].size();
-	this->j[this->user]["history"][size] = "noting";
+	this->j[this->user]["history"][size] = "nothing";
 }
 
 void Utilisateur::printJson() {
-	std::ofstream o("file.json");
+	ofstream o("file.json");
 	o << this->j;
 }
