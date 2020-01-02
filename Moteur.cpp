@@ -33,6 +33,10 @@ void Moteur::checkFeed() {
 	}
 }
 
+bool Moteur::getFeed() {
+	return this->isFeed;
+}
+
 void Moteur::update() {
 	this->checkFeed();
 }

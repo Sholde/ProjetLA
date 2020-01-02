@@ -21,6 +21,7 @@ class Moteur: public Module {
 		void addVanneNormal(VanneNormal *v);
 		
 		void checkFeed();
+		bool getFeed();
 		
 		void update();
 		void render(Interface *interface);

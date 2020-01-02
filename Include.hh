@@ -15,5 +15,6 @@
 #include "VanneTransi.hh"
 #include "VanneNormal.hh"
 #include "Interface.hh"
+#include "Utilisateur.hh"
 
 #endif

@@ -22,6 +22,11 @@ class Utilisateur {
 		bool getPlay();
 		bool getHistory();
 		void printHistory();
+		
+		void addRating(int rate);
+		void addDate();
+		void addHistory();
+		void printJson();
 };
 
 #endif

@@ -3,6 +3,7 @@
 #include "Include.hh"
 #include <iostream>
 using namespace std;
+#include "Utilisateur.hh"
 
 Interface::Interface(int width, int height)
 		:statement(sf::VideoMode(width, height), "Statement"),
@@ -18,6 +19,10 @@ Interface::~Interface() {}
 
 void Interface::initSystem(System *s) {
 	this->system = s;
+}
+
+void Interface::initUser(Utilisateur *u) {
+	this->user = u;
 }
 
 void Interface::start() {
@@ -68,7 +73,20 @@ void Interface::closeEvent(sf::Event &event) {
 	if(event.type == sf::Event::Closed) {
 		statement.close();
 		dashboard.close();
+		this->printHistory();
 	}
+}
+
+void Interface::printHistory() {
+	if(this->system->checkMoteur()) {
+		this->user->addRating(10);
+	}
+	else {
+		this->user->addRating(0);
+	}
+	this->user->addDate();
+	this->user->addHistory();
+	this->user->printJson();
 }
 
 void Interface::clicEvent(sf::Event &event) {

@@ -8,3 +8,5 @@ Module::Module(const char* name, const sf::Vector2f &st)
 		pos_st(st) {}
 
 Module::~Module() {}
+
+bool Module::getFeed() { return true; }

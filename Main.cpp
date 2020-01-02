@@ -12,6 +12,7 @@ int main () {
 			System system;
 			Interface interface;
 			interface.initSystem(&system);
+			interface.initUser(&user);
 			interface.start();
 		}
 		else if(user.getHistory()) {

@@ -21,6 +21,7 @@ class Module {
 		virtual void handleClicDashboard(int &x, int &y) {};
 		virtual void update() {};
 		virtual void render(Interface *interface) {};
+		virtual bool getFeed();
 };
 
 #endif

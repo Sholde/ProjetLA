@@ -3,12 +3,14 @@
 
 #include <SFML/Graphics.hpp>
 #include "Include.hh"
+#include "Utilisateur.hh"
 
 class Interface {
 	
 	// private field
 	sf::Font font;
 	System* system;
+	Utilisateur* user;
 	int time = 60;
 	int fps = 60;
 	sf::RenderWindow statement;
@@ -20,12 +22,14 @@ class Interface {
 		~Interface();
 		
 		void initSystem(System *s);
+		void initUser(Utilisateur *u);
 		
 		void start();
 		void render();
 		void handleEvent(sf::Event &);
 		void clicEvent(sf::Event &);
 		void closeEvent(sf::Event &);
+		void printHistory();
 		
 		friend class Moteur;
 		friend class Reservoir;

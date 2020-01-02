@@ -23,6 +23,7 @@ class System {
 		void handleClicStatement(int &x, int &y);
 		void handleClicDashboard(int &x, int &y);
 		void checkPompeMoteur();
+		bool checkMoteur();
 		
 		void update();
 		void render(Interface *interface);

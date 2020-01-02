@@ -155,6 +155,14 @@ void System::initVanne(Reservoir *r1, Reservoir *r2, VanneNormal *v1, VanneNorma
 	m2->addVanneNormal(middle);
 }
 
+bool System::checkMoteur() {
+	bool boolean = true;
+	for(Module *m : composant) {
+		boolean = boolean && m->getFeed();
+	}
+	return boolean;
+}
+
 void System::handleClicStatement(int &x, int &y) {
 	for(Module *m : composant) {
 		m->handleClicStatement(x, y);

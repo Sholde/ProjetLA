@@ -12,5 +12,6 @@ class VanneTransi;
 class Reservoir;
 class Moteur;
 class Interface;
+class Utilisateur;
 
 #endif
