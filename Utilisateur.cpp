@@ -88,7 +88,15 @@ void Utilisateur::printHistory() {
 }
 
 void Utilisateur::addRating(int rate) {
-	this->j[this->user]["rating"][this->number] = rate;
+	int size = this->j[this->user]["rating"].size();
+	// cond qui test si on a deja ajouter des point
+	if(size == this->number) {
+		this->j[this->user]["rating"][this->number] = rate;
+	}
+	else {
+		int tmp = this->j[this->user]["rating"][this->number];
+		this->j[this->user]["rating"][this->number] = tmp + rate;
+	}
 }
 
 void Utilisateur::addDate() {
@@ -104,8 +112,9 @@ void Utilisateur::addDate() {
 	this->j[this->user]["date"][this->number] = str;
 }
 
-void Utilisateur::addHistory() {
-	this->j[this->user]["history"][this->number] = "nothing";
+void Utilisateur::addHistory(string str) {
+	int size = this->j[this->user]["history"][this->number].size();
+	this->j[this->user]["history"][this->number][size] = str;
 }
 
 void Utilisateur::printJson() {

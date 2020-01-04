@@ -26,7 +26,7 @@ class Utilisateur {
 		
 		void addRating(int rate);
 		void addDate();
-		void addHistory();
+		void addHistory(string str);
 		void printJson();
 };
 

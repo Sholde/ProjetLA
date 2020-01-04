@@ -85,7 +85,8 @@ void Interface::printHistory() {
 		this->user->addRating(0);
 	}
 	this->user->addDate();
-	this->user->addHistory();
+	this->user->addHistory("test 1");
+	this->user->addHistory("test 2");
 	this->user->printJson();
 }
 
