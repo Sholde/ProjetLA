@@ -81,6 +81,7 @@ void Interface::printHistory() {
 	if(!this->system->checkMoteur()) {
 		this->user->zero();
 	}
+	this->user->checkRating();
 	this->user->addDate();
 	this->user->printJson();
 }

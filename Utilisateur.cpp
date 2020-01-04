@@ -82,8 +82,15 @@ void Utilisateur::printHistory() {
 		size--;
 		cout << "Date : " << this->j[this->user]["date"][size] << endl;
 		cout << "Rating : " << this->j[this->user]["rating"][size] << endl;
-		cout << "History : " << this->j[this->user]["history"][size] << endl;
-		cout << endl;
+		
+		cout << "History : " << endl;
+		int historySize = this->j[this->user]["history"][size].size();
+		int i = 0;
+		while(i < historySize) {
+			cout << "\t" << i+1 << " - " << this->j[this->user]["history"][size][i] << endl;
+			i++;
+		}
+		cout << endl << endl;
 	}
 }
 
@@ -96,6 +103,14 @@ void Utilisateur::addRating(int rate) {
 	else {
 		int tmp = this->j[this->user]["rating"][this->number];
 		this->j[this->user]["rating"][this->number] = tmp + rate;
+	}
+}
+
+void Utilisateur::checkRating() {
+	int size = this->j[this->user]["rating"].size();
+	// cond qui test si on a deja ajouter des point
+	if(size == this->number) {
+		this->j[this->user]["rating"][this->number] = 0;
 	}
 }
 

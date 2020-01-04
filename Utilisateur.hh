@@ -23,6 +23,7 @@ class Utilisateur {
 		bool getPlay();
 		bool getHistory();
 		void printHistory();
+		void checkRating();
 		
 		void zero();
 		void addRating(int rate);
