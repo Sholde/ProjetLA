@@ -30,6 +30,7 @@ bool Utilisateur::connection() {
 	
 	if(!this->j[username].empty() && this->j[username]["password"] == password) {
 		this->user = username;
+		this->number = this->j[username]["date"].size();
 		return true;
 	}
 	cout << "Error connection" << endl;
@@ -57,13 +58,20 @@ bool Utilisateur::getPlay() {
 }
 
 void Utilisateur::printHistory() {
-	time_t now = time(0);
-	struct tm nowLocal;
-	nowLocal = *localtime(&now);
-	cout << nowLocal.tm_mday << "/" << nowLocal.tm_mon+1 << "/" << nowLocal.tm_year+1900 << " " << nowLocal.tm_hour << ":" << nowLocal.tm_min << endl;
+	time_t rawtime;
+  struct tm *timeinfo;
+  char buffer[80];
+
+  time (&rawtime);
+  timeinfo = localtime(&rawtime);
+
+  strftime(buffer, sizeof(buffer), "%d-%m-%Y %H:%M:%S", timeinfo);
+  string str(buffer);
+  cout << endl;
+  cout << "We are the " << str << endl << endl;
 	cout << "History :"<< endl << endl;
 	
-	int size = this->j[this->user]["history"].size();
+	int size = this->number;
 	
 	if(size == 0) {
 		cout << "No history" << endl << endl;
@@ -80,27 +88,24 @@ void Utilisateur::printHistory() {
 }
 
 void Utilisateur::addRating(int rate) {
-	int size = this->j[this->user]["rating"].size();
-	this->j[this->user]["rating"][size] = rate;
+	this->j[this->user]["rating"][this->number] = rate;
 }
 
 void Utilisateur::addDate() {
 	time_t rawtime;
-  struct tm * timeinfo;
+  struct tm *timeinfo;
   char buffer[80];
 
   time (&rawtime);
   timeinfo = localtime(&rawtime);
 
-  strftime(buffer,sizeof(buffer),"%d-%m-%Y %H:%M:%S",timeinfo);
+  strftime(buffer, sizeof(buffer), "%d-%m-%Y %H:%M:%S", timeinfo);
   string str(buffer);
-	int size = this->j[this->user]["date"].size();
-	this->j[this->user]["date"][size] = str;
+	this->j[this->user]["date"][this->number] = str;
 }
 
 void Utilisateur::addHistory() {
-	int size = this->j[this->user]["history"].size();
-	this->j[this->user]["history"][size] = "nothing";
+	this->j[this->user]["history"][this->number] = "nothing";
 }
 
 void Utilisateur::printJson() {

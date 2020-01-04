@@ -10,6 +10,7 @@ class Utilisateur {
 	
 	json j;
 	string user;
+	int number;
 	bool history;
 	bool play;
 	
