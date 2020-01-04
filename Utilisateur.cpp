@@ -99,6 +99,10 @@ void Utilisateur::addRating(int rate) {
 	}
 }
 
+void Utilisateur::zero() {
+	this->j[this->user]["rating"][this->number] = 0;
+}
+
 void Utilisateur::addDate() {
 	time_t rawtime;
   struct tm *timeinfo;

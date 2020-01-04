@@ -24,6 +24,7 @@ class Utilisateur {
 		bool getHistory();
 		void printHistory();
 		
+		void zero();
 		void addRating(int rate);
 		void addDate();
 		void addHistory(string str);

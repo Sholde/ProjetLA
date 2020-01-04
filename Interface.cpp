@@ -82,7 +82,7 @@ void Interface::printHistory() {
 		this->user->addRating(10);
 	}
 	else {
-		this->user->addRating(0);
+		this->user->zero();
 	}
 	this->user->addDate();
 	this->user->addHistory("test 1");
