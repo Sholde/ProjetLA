@@ -33,7 +33,7 @@ bool Utilisateur::connection() {
 		this->number = this->j[username]["date"].size();
 		return true;
 	}
-	cout << "Error connection" << endl;
+	cout << "Connection error" << endl;
 	return false;
 }
 
