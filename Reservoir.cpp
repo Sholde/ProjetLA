@@ -70,6 +70,7 @@ void Reservoir::handleClicStatement(int &x, int &y) {
 		this->isFull = false;
 		this->capacity = 0;
 		this->user->addRating(2);
+		this->user->addHistory("vidange du réservoir " + this->name);
 	}
 }
 
@@ -81,9 +82,16 @@ void Reservoir::update() {
 		this->capacity--;
 	}
 	
-	if(this->capacity > 0) 
+	if(this->capacity > 0) {
+		if(!this->isFull) {
+			this->user->addHistory("le réservoir " + this->name + " est désormais plein");
+		}
 		this->isFull = true;
+	}
 	else {
+		if(this->isFull) {
+			this->user->addHistory("le réservoir " + this->name + " s'est vidé");
+		}
 		this->isFull = false;
 		this->capacity = 0;
 	}
