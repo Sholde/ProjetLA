@@ -32,8 +32,10 @@ void VanneTransi::update() {
 void VanneTransi::open() {
 	if(this->isOpen) {
 		this->isOpen = false;
+		this->user->addHistory("fermeture de la vanne " + this->name);
 	}
 	else {
 		this->isOpen = true;
+		this->user->addHistory("ouverture de la vanne " + this->name);
 	}
 }

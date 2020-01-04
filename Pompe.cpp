@@ -49,6 +49,12 @@ void Pompe::handleClicDashboard(int &x, int &y) {
 	if(!this->isMain) {
 		if(this->button.isClicOn(x, y)) {
 			this->isActive = !this->isActive;
+			if(this->isActive) {
+				this->user->addHistory("ouverture de la pompe " + this->name);
+			}
+			else {
+				this->user->addHistory("fermeture de la pompe " + this->name);
+			}
 		}
 	}
 }
@@ -57,6 +63,8 @@ void Pompe::handleClicStatement(int &x,int &y) {
 	if(this->isClickOn(x ,y)) {
 		this->isFailure = true;
 		this->isActive = false;
+		this->user->addHistory("la vanne " + this->name + " tombe en panne");
+		this->user->addRating(2);
 	}
 }
 

@@ -78,15 +78,10 @@ void Interface::closeEvent(sf::Event &event) {
 }
 
 void Interface::printHistory() {
-	if(this->system->checkMoteur()) {
-		this->user->addRating(10);
-	}
-	else {
+	if(!this->system->checkMoteur()) {
 		this->user->zero();
 	}
 	this->user->addDate();
-	this->user->addHistory("test 1");
-	this->user->addHistory("test 2");
 	this->user->printJson();
 }
 

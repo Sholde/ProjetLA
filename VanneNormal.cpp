@@ -110,10 +110,12 @@ void VanneNormal::update() {
 void VanneNormal::open() {
 	if(this->isOpen) {
 		this->isOpen = false;
+		this->user->addHistory("fermeture de la vanne " + this->name);
 	}
 	else {
 		if(this->noPompeIsActive() || !this->isComming2side() && this->allPompeIsActive()) {
 			this->isOpen = true;
+			this->user->addHistory("ouverture de la vanne " + this->name);
 		}
 	}
 }
