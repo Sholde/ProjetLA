@@ -9,7 +9,7 @@ int main () {
 	if(user.connection()) {
 		user.choose();
 		if(user.getPlay()) {
-			System system;
+			System system(&user);
 			Interface interface;
 			interface.initSystem(&system);
 			interface.initUser(&user);

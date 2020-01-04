@@ -11,10 +11,11 @@ class Module {
 	protected:
 		string name;
 		sf::Vector2f pos_st;
+		Utilisateur *user;
 	
 	// public field
 	public:
-		Module(const char* name, const sf::Vector2f &st);
+		Module(Utilisateur* user, const char* name, const sf::Vector2f &st);
 		~Module();
 		
 		virtual void handleClicStatement(int &x, int &y) {};

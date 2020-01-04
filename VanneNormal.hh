@@ -16,7 +16,7 @@ class VanneNormal: public Vanne {
 	
 	// public field
 	public:
-		VanneNormal(const char* name, const sf::Vector2f &st, const sf::Vector2f &db);
+		VanneNormal(Utilisateur *user, const char* name, const sf::Vector2f &st, const sf::Vector2f &db);
 		~VanneNormal();
 		
 		void initLeft(Reservoir *r, VanneNormal *v, Moteur *m);

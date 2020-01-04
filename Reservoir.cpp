@@ -3,8 +3,8 @@
 #include <iostream>
 using namespace std;
 
-Reservoir::Reservoir(const char* name, int capacity, const sf::Vector2f &st)
-		:Module(name, st),
+Reservoir::Reservoir(Utilisateur *user, const char* name, int capacity, const sf::Vector2f &st)
+		:Module(user, name, st),
 		rect(sf::Vector2f(st.x - st_res_x, st.y - st_res_y), st_size_res_x, st_size_res_y, MARGIN) {
 	this->capacity = capacity;
 	if(this->capacity > 0)

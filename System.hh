@@ -13,7 +13,7 @@ class System {
 	
 	// public field
 	public:
-		System();
+		System(Utilisateur *user);
 		~System();
 		
 		void initVanne(Reservoir *r1, VanneTransi *v, Reservoir *r2);

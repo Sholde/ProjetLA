@@ -2,8 +2,8 @@
 #include <iostream>
 using namespace std;
 
-VanneNormal::VanneNormal(const char* name, const sf::Vector2f &st, const sf::Vector2f &db)
-		:Vanne(name, st, db) {}
+VanneNormal::VanneNormal(Utilisateur *user, const char* name, const sf::Vector2f &st, const sf::Vector2f &db)
+		:Vanne(user, name, st, db) {}
 
 VanneNormal::~VanneNormal() {}
 

@@ -5,89 +5,89 @@
 #include <string>
 using namespace std;
 
-System::System():composant() {
+System::System(Utilisateur *user):composant() {
 	sf::Vector2f vect;
 	sf::Vector2f db;
 	vect.x = st_m1_x;
 	vect.y = st_m1_y;
-	Moteur *m1 = new Moteur("m1", vect);
+	Moteur *m1 = new Moteur(user, "m1", vect);
 	vect.x = st_m2_x;
 	vect.y = st_m2_y;
-	Moteur *m2 = new Moteur("m2", vect);
+	Moteur *m2 = new Moteur(user, "m2", vect);
 	vect.x = st_m3_x;
 	vect.y = st_m3_y;
-	Moteur *m3 = new Moteur("m3", vect);
+	Moteur *m3 = new Moteur(user, "m3", vect);
 	
 	vect.x = st_tank1_x;
 	vect.y = st_tank1_y;
 	db.x = db_p12_x;
 	db.y = db_p12_y;
-	Reservoir *tank1 = new Reservoir("tank1", cap_1_max, vect);
+	Reservoir *tank1 = new Reservoir(user, "tank1", cap_1_max, vect);
 	vect.x = st_tank2_x;
 	vect.y = st_tank2_y;
 	db.x = db_p22_x;
 	db.y = db_p22_y;
-	Reservoir *tank2 = new Reservoir("tank2", cap_2_max, vect);
+	Reservoir *tank2 = new Reservoir(user, "tank2", cap_2_max, vect);
 	vect.x = st_tank3_x;
 	vect.y = st_tank3_y;
 	db.x = db_p32_x;
 	db.y = db_p32_y;
-	Reservoir *tank3 = new Reservoir("tank3", cap_1_max, vect);
+	Reservoir *tank3 = new Reservoir(user, "tank3", cap_1_max, vect);
 	
 	vect.x = st_vt12_x;
 	vect.y = st_vt12_y;
 	db.x = db_vt12_x;
 	db.y = db_vt12_y;
-	VanneTransi *vt12 = new VanneTransi("vt12", vect, db);
+	VanneTransi *vt12 = new VanneTransi(user, "vt12", vect, db);
 	vect.x = st_vt23_x;
 	vect.y = st_vt23_y;
 	db.x = db_vt23_x;
 	db.y = db_vt23_y;
-	VanneTransi *vt23 = new VanneTransi("vt23", vect, db);
+	VanneTransi *vt23 = new VanneTransi(user, "vt23", vect, db);
 	
 	// Pompe
 	vect.x = st_p11_x;
 	vect.y = st_p11_y;
-	Pompe *p11 = new Pompe("p11", vect);
+	Pompe *p11 = new Pompe(user, "p11", vect);
 	vect.x = st_p12_x;
 	vect.y = st_p12_y;
 	db.x = db_p12_x;
 	db.y = db_p12_y;
-	Pompe *p12 = new Pompe("p12", vect, db);
+	Pompe *p12 = new Pompe(user, "p12", vect, db);
 	
 	vect.x = st_p21_x;
 	vect.y = st_p21_y;
-	Pompe *p21 = new Pompe("p21", vect);
+	Pompe *p21 = new Pompe(user, "p21", vect);
 	vect.x = st_p22_x;
 	vect.y = st_p22_y;
 	db.x = db_p22_x;
 	db.y = db_p22_y;
-	Pompe *p22 = new Pompe("p22", vect, db);
+	Pompe *p22 = new Pompe(user, "p22", vect, db);
 	
 	vect.x = st_p31_x;
 	vect.y = st_p31_y;
-	Pompe *p31 = new Pompe("p31", vect);
+	Pompe *p31 = new Pompe(user, "p31", vect);
 	vect.x = st_p32_x;
 	vect.y = st_p32_y;
 	db.x = db_p32_x;
 	db.y = db_p32_y;
-	Pompe *p32 = new Pompe("p32", vect, db);
+	Pompe *p32 = new Pompe(user, "p32", vect, db);
 	
 	vect.x = st_v12_x;
 	vect.y = st_v12_y;
 	db.x = db_v12_x;
 	db.y = db_v12_y;
-	VanneNormal *v12 = new VanneNormal("v12",vect, db);
+	VanneNormal *v12 = new VanneNormal(user, "v12",vect, db);
 	vect.x = st_v23_x;
 	vect.y = st_v23_y;
 	db.x = db_v23_x;
 	db.y = db_v23_y;
-	VanneNormal *v23 = new VanneNormal("v23", vect, db);
+	VanneNormal *v23 = new VanneNormal(user, "v23", vect, db);
 	vect.x = st_v13_x;
 	vect.y = st_v13_y;
 	db.x = db_v13_x;
 	db.y = db_v13_y;
-	VanneNormal *v13 = new VanneNormal("v13", vect, db);
+	VanneNormal *v13 = new VanneNormal(user, "v13", vect, db);
 	
 	// Init liste
 	

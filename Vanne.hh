@@ -14,7 +14,7 @@ class Vanne: public Module {
 	
 	// public field
 	public:
-		Vanne(const char* name, const sf::Vector2f &st, const sf::Vector2f &db);
+		Vanne(Utilisateur *user, const char* name, const sf::Vector2f &st, const sf::Vector2f &db);
 		~Vanne();
 		
 		bool getOpen();

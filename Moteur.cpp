@@ -4,8 +4,8 @@
 #include <iostream>
 using namespace std;
 
-Moteur::Moteur(const char* name, const sf::Vector2f &st)
-		:Module(name, st),
+Moteur::Moteur(Utilisateur *user, const char* name, const sf::Vector2f &st)
+		:Module(user, name, st),
 		rect(sf::Vector2f(st.x - st_mot_x, st.y - st_mot_y), st_size_mot_x, st_size_mot_y, MARGIN) {
 	
 	this->isFeed = false;

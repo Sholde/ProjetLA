@@ -17,7 +17,7 @@ class Reservoir: public Module {
 	
 	// public field
 	public:
-		Reservoir(const char* name, int capacity, const sf::Vector2f &st);
+		Reservoir(Utilisateur *user, const char* name, int capacity, const sf::Vector2f &st);
 		~Reservoir();
 		
 		int &getCapacity();
