@@ -50,10 +50,12 @@ bool Reservoir::checkPompe() {
 }
 
 bool Reservoir::checkFeed() {
-	if(this->capacity > 0 && this->checkPompe())
+	if(this->capacity > 0 && this->checkPompe()) {
 		return true;
-	else
+	}
+	else {
 		return false;
+	}
 }
 
 bool Reservoir::getFull() {
@@ -68,8 +70,8 @@ void Reservoir::handleClicStatement(int &x, int &y) {
 	if(this->rect.isClicOn(x, y) && (!(this->main->isClickOn(x, y)) && !(this->second->isClickOn(x, y)))) {
 		this->isFull = false;
 		this->capacity = 0;
-		//~ this->user->addRating(2);
-		//~ this->user->addHistory("vidange du réservoir " + this->name);
+		this->user->addRating(2);
+		this->user->addHistory("vidange du réservoir " + this->name);
 	}
 }
 
@@ -82,15 +84,15 @@ void Reservoir::update() {
 	}
 	
 	if(this->capacity > 0) {
-		//~ if(!this->isFull) {
-			//~ this->user->addHistory("le réservoir " + this->name + " est désormais plein");
-		//~ }
+		if(!this->isFull) {
+			this->user->addHistory("le réservoir " + this->name + " est désormais plein");
+		}
 		this->isFull = true;
 	}
 	else {
-		//~ if(this->isFull) {
-			//~ this->user->addHistory("le réservoir " + this->name + " s'est vidé");
-		//~ }
+		if(this->isFull) {
+			this->user->addHistory("le réservoir " + this->name + " s'est vidé");
+		}
 		this->isFull = false;
 		this->capacity = 0;
 	}

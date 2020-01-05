@@ -39,10 +39,12 @@ void Pompe::setIsMain() {
 }
 
 bool Pompe::checkFeed() {
-	if(this->isFailure || !this->isActive)
+	if(this->isFailure || !this->isActive) {
 		return false;
-	else
+	}
+	else {
 		return true;
+	}
 }
 
 void Pompe::handleClicDashboard(int &x, int &y) {
@@ -73,9 +75,6 @@ bool Pompe::isClickOn(int &x,int &y) {
 }
 
 void Pompe::update() {
-	if(this->isFailure && this->isActive) {
-		this->isActive = false;
-	}
 }
 
 void Pompe::render(Interface *interface) {

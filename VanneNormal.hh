@@ -25,7 +25,7 @@ class VanneNormal: public Vanne {
 		
 		bool caseOneRes(Reservoir *r1);
 		bool caseTwoRes(Reservoir *r1, Reservoir *r2);
-		bool checkFeed(Reservoir *r1, Reservoir *r2 = nullptr);
+		bool checkFeed();
 		
 		bool noPompeIsActive();
 		bool allPompeIsActive();
