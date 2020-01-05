@@ -12,6 +12,7 @@ using namespace std;
 Utilisateur::Utilisateur():j(), user() {
 	this->play = false;
 	this->history = false;
+	this->rate = 0;
 }
 
 Utilisateur::~Utilisateur() {}
@@ -95,27 +96,19 @@ void Utilisateur::printHistory() {
 }
 
 void Utilisateur::addRating(int rate) {
-	int size = this->j[this->user]["rating"].size();
-	// cond qui test si on a deja ajouter des point
-	if(size == this->number) {
-		this->j[this->user]["rating"][this->number] = rate;
-	}
-	else {
-		int tmp = this->j[this->user]["rating"][this->number];
-		this->j[this->user]["rating"][this->number] = tmp + rate;
-	}
+	this->rate = this->rate + rate;
 }
 
 void Utilisateur::checkRating() {
 	int size = this->j[this->user]["rating"].size();
 	// cond qui test si on a deja ajouter des point
 	if(size == this->number) {
-		this->j[this->user]["rating"][this->number] = 0;
+		this->rate = 0;
 	}
 }
 
 void Utilisateur::zero() {
-	this->j[this->user]["rating"][this->number] = 0;
+	this->rate = 0;
 }
 
 void Utilisateur::addDate() {
@@ -137,6 +130,7 @@ void Utilisateur::addHistory(string str) {
 }
 
 void Utilisateur::printJson() {
+	this->j[this->user]["rating"][this->number] = this->rate;
 	ofstream o("file.json");
 	o << this->j;
 }

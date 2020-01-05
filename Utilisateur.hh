@@ -11,6 +11,7 @@ class Utilisateur {
 	json j;
 	string user;
 	int number;
+	int rate;
 	bool history;
 	bool play;
 	

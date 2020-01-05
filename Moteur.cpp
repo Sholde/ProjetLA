@@ -26,15 +26,15 @@ void Moteur::addVanneNormal(VanneNormal *v) {
 
 void Moteur::checkFeed() {
 	if(this->reservoir->checkFeed() || this->v1->checkFeed(this->reservoir) || this->v2->checkFeed(this->reservoir)) {
-		if(!this->isFeed) {
-			this->user->addHistory("le moteur " + this->name + " est désormais alimenté");
-		}
+		//~ if(!this->isFeed) {
+			//~ this->user->addHistory("le moteur " + this->name + " est désormais alimenté");
+		//~ }
 		this->isFeed = true;
 	}
 	else {
-		if(this->isFeed) {
-			this->user->addHistory("le moteur " + this->name + " n'est plus alimenté");
-		}
+		//~ if(this->isFeed) {
+			//~ this->user->addHistory("le moteur " + this->name + " n'est plus alimenté");
+		//~ }
 		this->isFeed = false;
 	}
 }
