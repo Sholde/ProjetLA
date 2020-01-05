@@ -1,5 +1,4 @@
 #include "Include.hh"
-#include <vector>
 #include <iostream>
 using namespace std;
 
@@ -66,9 +65,9 @@ void Reservoir::setFull(bool boolean) {
 }
 
 void Reservoir::handleClicStatement(int &x, int &y) {
-	if(this->rect.isClicOn(x, y) && !(this->main->isClickOn(x,y)) && !(this->second->isClickOn(x,y))) {
+	if(this->rect.isClicOn(x, y) && (!(this->main->isClickOn(x, y)) && !(this->second->isClickOn(x, y)))) {
 		this->isFull = false;
-		this->capacity = 0;
+		//~ this->capacity = 2;
 		this->user->addRating(2);
 		this->user->addHistory("vidange du réservoir " + this->name);
 	}

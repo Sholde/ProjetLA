@@ -27,15 +27,14 @@ void BoxCircle::render(Interface *interface) {
 	interface->statement.draw(inside);
 }
 
-bool BoxCircle::isClicOn(int &x,int &y)
-{
+bool BoxCircle::isClicOn(int &x, int &y) {
 	sf::Vector2f pos = this->edge.getPosition();
-	if(pos.x + 2 * edge.getRadius() > x &&
-			pos.x < x &&
-			pos.y + 2 * edge.getRadius() > y && 
-			pos.y < y)
-			{
+	int radius = this->edge.getRadius();
+	if(pos.x + 2 * radius > x
+		&& pos.x < x 
+		&& pos.y + 2 * radius > y 
+		&& pos.y < y) {
 				return true;
-			}
-		return false;
+	}
+	return false;
 }

@@ -1,4 +1,3 @@
-
 #include "Include.hh"
 
 Box::Box(sf::Vector2f pos, int x, int y, int margin)

@@ -59,8 +59,8 @@ void Pompe::handleClicDashboard(int &x, int &y) {
 	}
 }
 
-void Pompe::handleClicStatement(int &x,int &y) {
-	if(this->isClickOn(x ,y)) {
+void Pompe::handleClicStatement(int &x, int &y) {
+	if(this->isClickOn(x, y)) {
 		this->isFailure = true;
 		this->isActive = false;
 		this->user->addHistory("la pompe " + this->name + " tombe en panne");
@@ -69,7 +69,7 @@ void Pompe::handleClicStatement(int &x,int &y) {
 }
 
 bool Pompe::isClickOn(int &x,int &y) {
-	return this->circle.isClicOn(x ,y);
+	return this->circle.isClicOn(x, y);
 }
 
 void Pompe::update() {
