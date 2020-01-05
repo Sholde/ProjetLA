@@ -63,7 +63,7 @@ void Pompe::handleClicStatement(int &x,int &y) {
 	if(this->isClickOn(x ,y)) {
 		this->isFailure = true;
 		this->isActive = false;
-		this->user->addHistory("la vanne " + this->name + " tombe en panne");
+		this->user->addHistory("la pompe " + this->name + " tombe en panne");
 		this->user->addRating(2);
 	}
 }

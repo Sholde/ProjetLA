@@ -66,7 +66,7 @@ void Reservoir::setFull(bool boolean) {
 }
 
 void Reservoir::handleClicStatement(int &x, int &y) {
-	if(this->rect.isClicOn(x, y) && !(main->isClickOn(x,y)) && !(second->isClickOn(x,y))) {
+	if(this->rect.isClicOn(x, y) && !(this->main->isClickOn(x,y)) && !(this->second->isClickOn(x,y))) {
 		this->isFull = false;
 		this->capacity = 0;
 		this->user->addRating(2);
