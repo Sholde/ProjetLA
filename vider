@@ -1,0 +1,1 @@
+echo "{\"user\":{\"password\":\"user\",\"date\":[],\"rating\":[],\"history\":[]}}" > file.json
