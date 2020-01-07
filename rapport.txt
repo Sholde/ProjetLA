@@ -1,4 +1,20 @@
 ########
+## Implémentation
+########
+
+On a ragroupé Réservoir, Moteur et Vanne dans une super-class Module.
+Vanne est La super-class les vannes de transition qui permettent de
+mettre a niveau le flux de carburant et les vannes normal qui sont les 
+vannes entre les réservoirs et les moteurs.
+
+System regroupe la liste de tous les modules.
+
+Interface est l'interface graphique.
+
+La méthode update() des modules calcul les mises a jour.
+La méthode render() des modules affiche les modules.
+
+########
 ## Calcul flux de carburant
 ########
 
