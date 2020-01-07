@@ -19,7 +19,8 @@ sudo apt-get install libsfml-dev
 
 2eme cas: (le cas qu'on a choisis)
 https://www.sfml-dev.org/download/sfml/2.5.1/
-Installer la lib et spécifier le chemin dans le makefile.
+Installer la lib et spécifier le chemin dans le makefile + le nom du 
+fichier.
 
 
 ########
@@ -34,7 +35,8 @@ On utilise la librairies de nlohmann.
 
 git clone https://github.com/nlohmann/json.git
 
-Et ensuite il faut specifier dans le makefile la ou vous l'avez installez.
+Et ensuite il faut spécifier dans le makefile le chemin ou vous l'avez 
+installez + le nom du fichier.
 
 ########
 ## COMPILATION
