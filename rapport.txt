@@ -54,7 +54,7 @@ gagne 2 points. Si il finit la partie avec un moteur non alimenté il à
 ## Stokage info des pilotes
 ########
 
-On utilise une lbrairie json.
+On utilise une librairie json.
 On a un identifiant qui contient :
 		- un mot de passe, 
 		- un tableau de date,
