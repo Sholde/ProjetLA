@@ -31,6 +31,17 @@ contact avec le reservoir pas encore vu, et du coup ca vérifie le
 réservoir. Et si le moteur est toujour pas alimenter le moteur regarde
 son autre vanne direct et fait la meme chose que la premiere vanne.
 
+
+## example moteur m1 :
+
+m1 -> tank1
+
+m1 -> v12 -> tank2
+					-> v13 -> tank3
+
+m1 -> v13 -> tank3
+					-> v12 -> tank2
+
 ########
 ## Calcul des points
 ########
