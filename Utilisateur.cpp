@@ -100,10 +100,8 @@ void Utilisateur::addRating(int rate) {
 }
 
 void Utilisateur::checkRating() {
-	int size = this->j[this->user]["rating"].size();
-	// cond qui test si on a deja ajouter des point
-	if(size == this->number) {
-		this->rate = 0;
+	if(this->rate > 10) {
+		this->rate = 10;
 	}
 }
 
@@ -130,9 +128,6 @@ void Utilisateur::addHistory(string str) {
 }
 
 void Utilisateur::printJson() {
-	if(this->rate > 10) {
-		this->rate = 10;
-	}
 	this->j[this->user]["rating"][this->number] = this->rate;
 	ofstream o("file.json");
 	o << this->j;
