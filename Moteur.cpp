@@ -54,9 +54,15 @@ bool Moteur::getFeed() {
 void Moteur::update() {
 	this->calculCarburant();
 	if(this->pompe) {
+		if(!this->isFeed) {
+			this->user->addHistory("le moteur " + this->name + " est désormais alimenté");
+		}
 		this->isFeed = true;
 	}
 	else {
+		if(this->isFeed) {
+			this->user->addHistory("le moteur " + this->name + " n'est plus alimenté");
+		}
 		this->isFeed = false;
 	}
 }
