@@ -23,10 +23,10 @@ class VanneNormal: public Vanne {
 		void initRight(Reservoir *r, VanneNormal *v, Moteur *m);
 		void open();
 		
-		bool caseOneRes(Reservoir *r1);
-		bool caseTwoRes(Reservoir *r1, Reservoir *r2);
+		bool caseOneRes(Reservoir *r1, Moteur* mot);
+		bool caseTwoRes(Reservoir *r1, Moteur* mot, Reservoir *r2);
 		bool checkFeed();
-		bool cF(Reservoir* res, Moteur* mot);
+		bool cF(Reservoir* res1, Moteur* mot, Reservoir *res2 = nullptr);
 		
 		bool noPompeIsActive();
 		bool allPompeIsActive();

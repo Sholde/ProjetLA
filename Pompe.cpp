@@ -66,11 +66,6 @@ bool Pompe::cF(Moteur* mot) {
 			return true;
 		}
 	}
-	else {
-		this->clear();
-		mot->clear();
-		return false;
-	}
 }
 
 bool Pompe::checkFeed() {

@@ -19,56 +19,50 @@ void VanneNormal::initRight(Reservoir *r, VanneNormal *v, Moteur *m) {
 	this->mr = m;
 }
 
-//~ bool VanneNormal::caseOneRes(Reservoir *r1) {
-	//~ if(this->rl != r1) {
-		//~ if(this->rl->checkFeed()) {
-			//~ return true;
-		//~ }
-		//~ return this->vl->checkFeed(r1, rl) || this->vr->checkFeed(r1, rl);
-	//~ }
-	//~ else if(this->rr != r1) {
-		//~ if(this->rr->checkFeed()) {
-			//~ return true;
-		//~ }
-		//~ return this->vl->checkFeed(r1, rr) || this->vr->checkFeed(r1, rr);
-	//~ }
-	//~ else
-		//~ return false;
-//~ }
+bool VanneNormal::caseOneRes(Reservoir *res1, Moteur *mot) {
+	if(this->rl != res1) {
+		return this->rl->cF(mot);
+	}
+	else if(this->rr != res1) {
+		return this->rr->cF(mot);
+	}
+	else
+		return false;
+}
 
-//~ bool VanneNormal::caseTwoRes(Reservoir *r1, Reservoir *r2) {
-	//~ if(this->rl != r1 && this->rl != r2) {
-		//~ if(this->rl->checkFeed()) {
-			//~ return true;
-		//~ }
-		//~ return false;
-	//~ }
-	//~ else if(this->rr != r1  && this->rr != r2) {
-		//~ if(this->rr->checkFeed()) {
-			//~ return true;
-		//~ }
-		//~ return false;
-	//~ }
-	//~ else
-		//~ return false;
-//~ }
+bool VanneNormal::caseTwoRes(Reservoir *res1, Moteur *mot, Reservoir *res2) {
+	if(this->rl != res1 && this->rl != res2) {
+		return this->rl->cF(mot);
+	}
+	else if(this->rr != res1 && this->rr != res2) {
+		return this->rr->cF(mot);
+	}
+	else
+		return false;
+}
 
 bool VanneNormal::checkFeed() {
 	return this->allPompeIsActive();
 }
 
-bool VanneNormal::cF(Reservoir* res, Moteur* mot) {
+bool VanneNormal::cF(Reservoir *res1, Moteur *mot, Reservoir *res2) {
 	if(!this->isOpen)
 		return false;
-	
-	if(this->rl != res) {
-		return this->rl->cF(mot);
+		
+	if(!res2) {
+		if(caseOneRes(res1, mot)) {
+			return true;
+		}
+		else {
+			if(this->rr == res1)
+				return this->vl->cF(res1, mot, rl);
+			else
+				return this->vr->cF(res1, mot, rr);
+		}
 	}
-	else if(this->rr != res) {
-		return this->rr->cF(mot);
+	else {
+		return caseTwoRes(res1, mot, res2);
 	}
-	else
-		return false;
 }
 
 bool VanneNormal::noPompeIsActive() {
