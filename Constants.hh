@@ -128,4 +128,15 @@
 
 #define box_margin 5
 
+
+
+// Tuyaux
+
+
+
+#define t_tank1_m1_1_x 135
+#define t_tank1_m1_1_y 60
+#define t_tank1_m1_1_size_x 10
+#define t_tank1_m1_1_size_y 260
+
 #endif
