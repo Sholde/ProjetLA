@@ -25,19 +25,14 @@ bool VanneNormal::caseOneRes(Reservoir *res1, Moteur *mot) {
 			this->setLine(this->pos_st, this->rl->getPos(), sf::Color::Red);
 			return true;
 		}
-		this->setLine(sf::Vector2f(0, 0), sf::Vector2f(0, 0), sf::Color::Black);
-		return false;
 	}
 	else if(this->rr != res1) {
 		if(this->rr->calculCarburant(mot)) {
 			this->setLine(this->pos_st, this->rr->getPos(), sf::Color::Red);
 			return true;
 		}
-		this->setLine(sf::Vector2f(0, 0), sf::Vector2f(0, 0), sf::Color::Black);
-		return false;
 	}
 	else {
-		this->setLine(sf::Vector2f(0, 0), sf::Vector2f(0, 0), sf::Color::Black);
 		return false;
 	}
 }
@@ -48,16 +43,12 @@ bool VanneNormal::caseTwoRes(Reservoir *res1, Moteur *mot, Reservoir *res2) {
 			this->setLine(this->pos_st, this->rl->getPos(), sf::Color::Red);
 			return true;
 		}
-		this->setLine(sf::Vector2f(0, 0), sf::Vector2f(0, 0), sf::Color::Black);
-		return false;
 	}
 	else if(this->rr != res1 && this->rr != res2) {
 		if(this->rr->calculCarburant(mot)) {
 			this->setLine(this->pos_st, this->rr->getPos(), sf::Color::Red);
 			return true;
 		}
-		this->setLine(sf::Vector2f(0, 0), sf::Vector2f(0, 0), sf::Color::Black);
-		return false;
 	}
 	else {
 		this->setLine(sf::Vector2f(0, 0), sf::Vector2f(0, 0), sf::Color::Black);
@@ -76,11 +67,22 @@ bool VanneNormal::calculCarburant(Reservoir *res1, Moteur *mot, Reservoir *res2)
 			return true;
 		}
 		else {
-			if(this->rr == res1)
-				return this->vl->calculCarburant(res1, mot, rl);
-			else
-				return this->vr->calculCarburant(res1, mot, rr);
+			if(this->rr == res1) {
+				if(this->vl->calculCarburant(res1, mot, rl)) {
+					this->setLine(this->pos_st, this->rl->getPos(), sf::Color::Red);
+					return true;
+				}
+			}
+			else {
+				if(this->vr->calculCarburant(res1, mot, rr)) {
+					this->setLine(this->pos_st, this->rr->getPos(), sf::Color::Red);
+					return true;
+				}
+			}
 		}
+		cout << "here" << endl;
+		this->setLine(sf::Vector2f(0, 0), sf::Vector2f(0, 0), sf::Color::Black);
+		return false;
 	}
 	else {
 		return caseTwoRes(res1, mot, res2);

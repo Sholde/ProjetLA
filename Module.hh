@@ -27,7 +27,7 @@ class Module {
 		virtual void update() {};
 		virtual void render(Interface *interface) {};
 		virtual bool getFeed();
-		virtual void clear() {};
+		virtual void clear() {this->setLine(sf::Vector2f(0, 0), sf::Vector2f(0, 0), sf::Color::Black); };
 };
 
 #endif

@@ -37,6 +37,7 @@ bool Moteur::isTaken() {
 
 void Moteur::clear() {
 	this->pompe = nullptr;
+	this->setLine(sf::Vector2f(0, 0), sf::Vector2f(0, 0), sf::Color::Black);
 }
 
 void Moteur::setPompe(Pompe* p) {
