@@ -130,6 +130,9 @@ void Utilisateur::addHistory(string str) {
 }
 
 void Utilisateur::printJson() {
+	if(this->rate > 10) {
+		this->rate = 10;
+	}
 	this->j[this->user]["rating"][this->number] = this->rate;
 	ofstream o("file.json");
 	o << this->j;
