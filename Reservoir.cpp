@@ -58,9 +58,9 @@ bool Reservoir::checkFeed() {
 	}
 }
 
-bool Reservoir::cF(Moteur* mot) {
+bool Reservoir::calculCarburant(Moteur* mot) {
 	if(this->capacity > 0) {
-		return this->main->cF(mot) || this->second->cF(mot);
+		return this->main->calculCarburant(mot) || this->second->calculCarburant(mot);
 	}
 	return false;
 }

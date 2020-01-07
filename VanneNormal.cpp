@@ -21,10 +21,10 @@ void VanneNormal::initRight(Reservoir *r, VanneNormal *v, Moteur *m) {
 
 bool VanneNormal::caseOneRes(Reservoir *res1, Moteur *mot) {
 	if(this->rl != res1) {
-		return this->rl->cF(mot);
+		return this->rl->calculCarburant(mot);
 	}
 	else if(this->rr != res1) {
-		return this->rr->cF(mot);
+		return this->rr->calculCarburant(mot);
 	}
 	else
 		return false;
@@ -32,20 +32,16 @@ bool VanneNormal::caseOneRes(Reservoir *res1, Moteur *mot) {
 
 bool VanneNormal::caseTwoRes(Reservoir *res1, Moteur *mot, Reservoir *res2) {
 	if(this->rl != res1 && this->rl != res2) {
-		return this->rl->cF(mot);
+		return this->rl->calculCarburant(mot);
 	}
 	else if(this->rr != res1 && this->rr != res2) {
-		return this->rr->cF(mot);
+		return this->rr->calculCarburant(mot);
 	}
 	else
 		return false;
 }
 
-bool VanneNormal::checkFeed() {
-	return this->allPompeIsActive();
-}
-
-bool VanneNormal::cF(Reservoir *res1, Moteur *mot, Reservoir *res2) {
+bool VanneNormal::calculCarburant(Reservoir *res1, Moteur *mot, Reservoir *res2) {
 	if(!this->isOpen)
 		return false;
 		
@@ -55,42 +51,14 @@ bool VanneNormal::cF(Reservoir *res1, Moteur *mot, Reservoir *res2) {
 		}
 		else {
 			if(this->rr == res1)
-				return this->vl->cF(res1, mot, rl);
+				return this->vl->calculCarburant(res1, mot, rl);
 			else
-				return this->vr->cF(res1, mot, rr);
+				return this->vr->calculCarburant(res1, mot, rr);
 		}
 	}
 	else {
 		return caseTwoRes(res1, mot, res2);
 	}
-}
-
-bool VanneNormal::noPompeIsActive() {
-	return !(this->rl->checkPompe() || this->rr->checkPompe());
-}
-
-bool VanneNormal::allPompeIsActive() {
-	bool left = this->rl->checkFeed();
-	bool right = this->rr->checkFeed();
-	if(left) {
-		if(this->rl->checkAllPompe()) {
-			return true;
-		}
-		return false;
-	}
-	else if(right) {
-		if(this->rr->checkAllPompe()) {
-			return true;
-		}
-		return false;
-	}
-	return false;
-}
-
-bool VanneNormal::isComming2side() {
-	bool left = this->rl->checkFeed();
-	bool right = this->rr->checkFeed();
-	return left && right;
 }
 
 void VanneNormal::update() {}

@@ -28,8 +28,8 @@ class Pompe: public Module {
 		bool isTaken();
 		void take(Moteur* mot);
 		void clear();
+		bool calculCarburant(Moteur* mot);
 		
-		bool cF(Moteur* mot);
 		bool checkFeed();
 		void handleClicDashboard(int &x, int &y);
 		void handleClicStatement(int &x,int &y);

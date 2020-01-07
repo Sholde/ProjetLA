@@ -59,13 +59,14 @@ void Pompe::clear() {
 	this->mot = nullptr;
 }
 
-bool Pompe::cF(Moteur* mot) {
+bool Pompe::calculCarburant(Moteur* mot) {
 	if(!this->isFailure && this->isActive) {
 		if(!this->isTaken()) {
 			this->take(mot);
 			return true;
 		}
 	}
+	return false;
 }
 
 bool Pompe::checkFeed() {

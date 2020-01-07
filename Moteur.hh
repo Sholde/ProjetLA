@@ -24,8 +24,7 @@ class Moteur: public Module {
 		bool isTaken();
 		void clear();
 		void setPompe(Pompe* p);
-		bool cF();
-		void checkFeed();
+		void calculCarburant();
 		bool getFeed();
 		
 		void update();

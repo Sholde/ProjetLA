@@ -43,23 +43,8 @@ void Moteur::setPompe(Pompe* p) {
 	this->pompe = p;
 }
 
-bool Moteur::cF() {
-	return this->reservoir->cF(this) || this->v1->cF(this->reservoir, this)  || this->v2->cF(this->reservoir, this);
-}
-
-void Moteur::checkFeed() {
-	if(this->reservoir->checkFeed() || this->v1->checkFeed() || this->v2->checkFeed()) {
-		if(!this->isFeed) {
-			this->user->addHistory("le moteur " + this->name + " est désormais alimenté");
-		}
-		this->isFeed = true;
-	}
-	else {
-		if(this->isFeed) {
-			this->user->addHistory("le moteur " + this->name + " n'est plus alimenté");
-		}
-		this->isFeed = false;
-	}
+void Moteur::calculCarburant() {
+	this->reservoir->calculCarburant(this) || this->v1->calculCarburant(this->reservoir, this)  || this->v2->calculCarburant(this->reservoir, this);
 }
 
 bool Moteur::getFeed() {
@@ -67,7 +52,7 @@ bool Moteur::getFeed() {
 }
 
 void Moteur::update() {
-	this->cF();
+	this->calculCarburant();
 	if(this->pompe) {
 		this->isFeed = true;
 	}
