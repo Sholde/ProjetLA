@@ -10,6 +10,7 @@ Pompe::Pompe(Utilisateur *user, const char* name, const sf::Vector2f &st)
 	this->isActive = false;
 	this->isFailure = false;
 	this->isMain = true;
+	this->mot = nullptr;
 }
 
 Pompe::Pompe(Utilisateur *user, const char* name, const sf::Vector2f &st, const sf::Vector2f &db)
@@ -36,6 +37,40 @@ void Pompe::setActive() {
 
 void Pompe::setIsMain() {
 	this->isMain = true;
+}
+
+bool Pompe::isTaken() {
+	if(this->mot != nullptr) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+void Pompe::take(Moteur* mot) {
+	if(!mot->isTaken()) {
+		this->mot = mot;
+		this->mot->setPompe(this);
+	}
+}
+
+void Pompe::clear() {
+	this->mot = nullptr;
+}
+
+bool Pompe::cF(Moteur* mot) {
+	if(!this->isFailure && this->isActive) {
+		if(!this->isTaken()) {
+			this->take(mot);
+			return true;
+		}
+	}
+	else {
+		this->clear();
+		mot->clear();
+		return false;
+	}
 }
 
 bool Pompe::checkFeed() {

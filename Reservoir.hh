@@ -31,6 +31,7 @@ class Reservoir: public Module {
 		bool checkAllPompe();
 		bool checkPompe();
 		bool checkFeed();
+		bool cF(Moteur* mot);
 		
 		bool getFull();
 		void setFull(bool boolean);

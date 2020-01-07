@@ -9,6 +9,7 @@ class Pompe: public Module {
 	bool isActive;
 	bool isFailure;
 	bool isMain;
+	Moteur* mot;
 	BoxCircle circle;
 	Box button;
 	sf::Vector2f pos_db;
@@ -24,6 +25,11 @@ class Pompe: public Module {
 		void setActive();
 		void setIsMain();
 		
+		bool isTaken();
+		void take(Moteur* mot);
+		void clear();
+		
+		bool cF(Moteur* mot);
 		bool checkFeed();
 		void handleClicDashboard(int &x, int &y);
 		void handleClicStatement(int &x,int &y);

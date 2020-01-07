@@ -58,6 +58,13 @@ bool Reservoir::checkFeed() {
 	}
 }
 
+bool Reservoir::cF(Moteur* mot) {
+	if(this->capacity > 0) {
+		return this->main->cF(mot) || this->second->cF(mot);
+	}
+	return false;
+}
+
 bool Reservoir::getFull() {
 	return this->isFull;
 }

@@ -57,6 +57,20 @@ bool VanneNormal::checkFeed() {
 	return this->allPompeIsActive();
 }
 
+bool VanneNormal::cF(Reservoir* res, Moteur* mot) {
+	if(!this->isOpen)
+		return false;
+	
+	if(this->rl != res) {
+		return this->rl->cF(mot);
+	}
+	else if(this->rr != res) {
+		return this->rr->cF(mot);
+	}
+	else
+		return false;
+}
+
 bool VanneNormal::noPompeIsActive() {
 	return !(this->rl->checkPompe() || this->rr->checkPompe());
 }

@@ -177,6 +177,9 @@ void System::handleClicDashboard(int &x, int &y) {
 
 void System::update() {
 	for(Module *m : composant) {
+		m->clear();
+	}
+	for(Module *m : composant) {
 		m->update();
 	}
 }

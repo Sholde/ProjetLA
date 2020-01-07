@@ -23,6 +23,7 @@ class Module {
 		virtual void update() {};
 		virtual void render(Interface *interface) {};
 		virtual bool getFeed();
+		virtual void clear() {};
 };
 
 #endif

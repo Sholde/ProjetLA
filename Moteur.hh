@@ -11,6 +11,7 @@ class Moteur: public Module {
 	VanneNormal* v2;
 	Reservoir *reservoir;
 	Box rect;
+	Pompe *pompe;
 	
 	// public field
 	public:
@@ -20,6 +21,10 @@ class Moteur: public Module {
 		void initReservoir(Reservoir *res);
 		void addVanneNormal(VanneNormal *v);
 		
+		bool isTaken();
+		void clear();
+		void setPompe(Pompe* p);
+		bool cF();
 		void checkFeed();
 		bool getFeed();
 		

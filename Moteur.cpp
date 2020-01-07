@@ -10,6 +10,7 @@ Moteur::Moteur(Utilisateur *user, const char* name, const sf::Vector2f &st)
 	this->v1 = nullptr;
 	this->v2 = nullptr;
 	this->isFeed = false;
+	this->pompe = nullptr;
 }
 
 Moteur::~Moteur() {}
@@ -23,6 +24,27 @@ void Moteur::addVanneNormal(VanneNormal *v) {
 		this->v1 = v;
 	else if(!this->v2)
 		this->v2 = v;
+}
+
+bool Moteur::isTaken() {
+	if(this->pompe) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+void Moteur::clear() {
+	this->pompe = nullptr;
+}
+
+void Moteur::setPompe(Pompe* p) {
+	this->pompe = p;
+}
+
+bool Moteur::cF() {
+	return this->reservoir->cF(this) || this->v1->cF(this->reservoir, this)  || this->v2->cF(this->reservoir, this);
 }
 
 void Moteur::checkFeed() {
@@ -45,7 +67,13 @@ bool Moteur::getFeed() {
 }
 
 void Moteur::update() {
-	this->checkFeed();
+	this->cF();
+	if(this->pompe) {
+		this->isFeed = true;
+	}
+	else {
+		this->isFeed = false;
+	}
 }
 
 
