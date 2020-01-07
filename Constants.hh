@@ -100,10 +100,10 @@
 #define db_v12_x 50
 #define db_v12_y 320
 
-#define db_v23_x 230
+#define db_v23_x 400
 #define db_v23_y 320
 
-#define db_v13_x 400
+#define db_v13_x 230
 #define db_v13_y 320
 
 #define db_vt12_x 140
