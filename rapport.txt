@@ -32,7 +32,7 @@ réservoir. Et si le moteur est toujour pas alimenter le moteur regarde
 son autre vanne direct et fait la meme chose que la premiere vanne.
 
 
-## example moteur m1 :
+## exemple moteur m1 :
 
 m1 -> tank1
 
@@ -49,3 +49,18 @@ m1 -> v13 -> tank3
 Lorsque le pilote vidange un réservoir ou met une pompe en panne il 
 gagne 2 points. Si il finit la partie avec un moteur non alimenté il à
 0.
+
+########
+## Stokage info des pilotes
+########
+
+On utilise une lbrairie json.
+On a un identifiant qui contient :
+		- un mot de passe, 
+		- un tableau de date,
+		- un tableau de note,
+		- un tableau de tableau de string qui stock l'historique
+		
+Comme on a trois tableau pour savoir a quoi correspond chaque élément 
+on regarde l'indice. date[1], rating[1] et history[1] font partie du
+même historique.
