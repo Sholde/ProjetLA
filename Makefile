@@ -13,14 +13,14 @@ DEPS = $(wildcard $(SRCDIR)/*.hh)
 SRC = $(wildcard $(SRCDIR)/*.cpp)
 OBJ = $(SRC:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
-option = -lsfml-graphics -lsfml-window -lsfml-system
+SFML_OPTION = -lsfml-graphics -lsfml-window -lsfml-system
 
 FLAG = -Wall -g3
 
 all: compil
 
 compil: $(OBJ)
-	@ $(CXX) -o $(OBJ) $(BINDIR)/$(EXEC) -L$(SFML)/lib $(option)
+	@ $(CXX) -o $(OBJ) $(BINDIR)/$(EXEC) -L$(SFML)/lib $(SFML_OPTION)
 	@ echo "Linking complete!"
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp $(DEPS)
