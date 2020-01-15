@@ -20,15 +20,15 @@ FLAG = -Wall -g3
 all: compil
 
 compil: $(OBJ)
-	@ $(CXX) -o $(OBJ) $(BINDIR)/${EXEC} -L${SFML}/lib ${option}
+	@ $(CXX) -o $(OBJ) $(BINDIR)/$(EXEC) -L$(SFML)/lib $(option)
 	@ echo "Linking complete!"
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.cpp ${DEPS}
-	@ $(CXX) -c -o $@ $< -I${SFML}/include -I${JSON}/include $(FLAG)
-	@ echo "Compiled "$<" successfully!"
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp $(DEPS)
+	@ $(CXX) -c -o $@ $< -I$(SFML)/include -I$(JSON)/include $(FLAG)
+	@ echo "Compiled "$@" successfully!"
 
 run:
-	@ export LD_LIBRARY_PATH=${SFML}/lib && echo starting... && ./$(BINDIR)/${EXEC} && echo ending...
+	@ export LD_LIBRARY_PATH=$(SFML)/lib && echo starting... && ./$(BINDIR)/$(EXEC) && echo ending...
 	
 
 clear:
