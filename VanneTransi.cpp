@@ -13,13 +13,15 @@ void VanneTransi::initReservoir(Reservoir *l, Reservoir *r) {
 }
 
 void VanneTransi::share() {
-	if(this->left->getCapacity() > this->right->getCapacity()) {
-		this->left->setCapacity(this->left->getCapacity() - this->flow);
-		this->right->setCapacity(this->right->getCapacity() + this->flow);
-	}
-	else {
-		this->left->setCapacity(this->left->getCapacity() + this->flow);
-		this->right->setCapacity(this->right->getCapacity() - this->flow);
+	if(this->left->getFull() || this->right->getFull()) {
+		if(this->left->getCapacity() > this->right->getCapacity()) {
+			this->left->setCapacity(this->left->getCapacity() - this->flow);
+			this->right->setCapacity(this->right->getCapacity() + this->flow);
+		}
+		else {
+			this->left->setCapacity(this->left->getCapacity() + this->flow);
+			this->right->setCapacity(this->right->getCapacity() - this->flow);
+		}
 	}
 }
 
