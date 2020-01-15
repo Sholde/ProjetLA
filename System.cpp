@@ -1,10 +1,4 @@
 
-// pour inverser le for each sur la liste
-#include <boost/range/adaptor/reversed.hpp>
-#include <boost/range/algorithm/copy.hpp>
-#include <boost/assign.hpp>
-#include <iterator>
-
 #include <SFML/Graphics.hpp>
 #include "Include.hh"
 #include <iostream>
@@ -191,7 +185,7 @@ void System::update() {
 }
 
 void System::render(Interface *interface) {
-	for(Module *m : boost::adaptors::reverse(composant)) {
+	for(Module *m : composant) {
 		m->render(interface);
 	}
 }

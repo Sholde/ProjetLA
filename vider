@@ -1,3 +1,2 @@
 echo "{\"user\":{\"password\":\"user\",\"date\":[],\"rating\":[],\"history\":[]},
-\"adrien\":{\"password\":\"adrien\",\"date\":[],\"rating\":[],\"history\":[]},
-\"salut\":{\"password\":\"bonjour\",\"date\":[],\"rating\":[],\"history\":[]}}" > file.json
+\"adrien\":{\"password\":\"adrien\",\"date\":[],\"rating\":[],\"history\":[]}}" > file.json
