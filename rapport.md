@@ -45,9 +45,7 @@ Lorsque le pilote vidange un réservoir ou met une pompe en panne il
 gagne 2 points. Si il finit la partie avec un moteur non alimenté il à
 0.
 
-########
-## Stokage info des pilotes
-########
+# Stokage info des pilotes
 
 On utilise une librairie json.
 On a un identifiant qui contient :
