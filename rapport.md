@@ -33,10 +33,10 @@ son autre vanne direct et fait la même chose que la première vanne.
 m1 -> tank1
 
 m1 -> v12 -> tank2
-					-> v13 -> tank3
+			-> v13 -> tank3
 
 m1 -> v13 -> tank3
-					-> v12 -> tank2
+			-> v12 -> tank2
 </pre>
 
 # Calcul des points
