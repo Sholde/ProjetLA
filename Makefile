@@ -39,5 +39,6 @@ clean:
 	@ echo "Executable removed!"
 	
 package: clean
+	@ if [ $(ARCHIVE).$(TAR) ]; then rm -f $(ARCHIVE).$(TAR); fi
 	@ tar -czvf $(ARCHIVE).$(TAR) *
 	@ echo "Archive created!"
