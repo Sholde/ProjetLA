@@ -1,1 +1,2 @@
 mkdir bin
+mkdir obj
