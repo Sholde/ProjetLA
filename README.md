@@ -8,10 +8,10 @@ On utilise SFML version 2.5.1.
 
 # INSTALLATION
 
-##1er cas: (débrouiller vous)
+## 1er cas: (débrouiller vous)
 sudo apt-get install libsfml-dev
 
-##2eme cas: (le cas qu'on a choisis)
+## 2eme cas: (le cas qu'on a choisis)
 https://www.sfml-dev.org/download/sfml/2.5.1/
 Installer la lib et spécifier le chemin dans le makefile + le nom du 
 fichier.
