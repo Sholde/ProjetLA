@@ -24,7 +24,7 @@ compil: $(OBJ)
 
 %.o: %.cpp ${DEPS}
 	@ echo -n compilation de $@... 
-	@ $(CXX) -c -o bin/$@ src/$< -I${SFML}/include -I${JSON}/include $(FLAG)
+	@ $(CXX) -c bin/$@ -o src/$< -I${SFML}/include -I${JSON}/include $(FLAG)
 	@ echo OK
 
 run:
@@ -33,9 +33,9 @@ run:
 
 clear:
 	@ echo -n suppréssion des fichiers objets...
-	@ rm bin/*.o
+	@ rm -rf bin/*
 	@ echo OK
 	
 zip: clear
-	@ rm *.tar.gz
 	@ tar -czvf BOUTON_Nicolas-DEDARALLY_Taariq.tar.gz *
+	@ echo archive created
