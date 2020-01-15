@@ -1,7 +1,9 @@
+# variable
+
 CXX = g++
 
-SFML = ~/lib/SFML-2.5.1
-JSON = ~/lib/json
+SFML =/home/user/lib/SFML-2.5.1
+JSON =/home/user/lib/json
 
 EXEC = app.exe
 ARCHIVE = BOUTON_Nicolas-DEDARALLY_Taariq
@@ -19,10 +21,12 @@ SFML_OPTION = -lsfml-graphics -lsfml-window -lsfml-system
 
 FLAG = -Wall -g3
 
+# make
+
 all: compil
 
 compil: $(OBJ)
-	@ $(CXX) -o $(OBJ) $(BINDIR)/$(EXEC) -L$(SFML)/lib $(SFML_OPTION)
+	@ $(CXX) -o $(BINDIR)/$(EXEC) $(OBJ) -L$(SFML)/lib $(SFML_OPTION)
 	@ echo "Linking complete!"
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp $(DEPS)
@@ -34,11 +38,12 @@ run:
 	
 
 clean:
-	@ rm -f $(BINDIR)/*
+	@ if [ $(ARCHIVE).$(TAR) ]; then rm -f $(ARCHIVE).$(TAR); echo "Archive removed!"; fi
 	@ rm -f $(OBJDIR)/*
+	@ echo "Object files removed!"
+	@ rm -f $(BINDIR)/*
 	@ echo "Executable removed!"
 	
 package: clean
-	@ if [ $(ARCHIVE).$(TAR) ]; then rm -f $(ARCHIVE).$(TAR); fi
 	@ tar -czvf $(ARCHIVE).$(TAR) *
 	@ echo "Archive created!"

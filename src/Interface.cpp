@@ -1,4 +1,3 @@
-
 #include <SFML/Graphics.hpp>
 #include "Include.hh"
 #include <iostream>
@@ -10,7 +9,7 @@ Interface::Interface(int width, int height)
 		dashboard(sf::VideoMode(500, 400), "Dashboard"),
 		font() {
 			
-	if (!this->font.loadFromFile("arial_narrow_7.ttf")) {
+	if (!this->font.loadFromFile("ressources/arial_narrow_7.ttf")) {
 		exit(1);
 	}
 }

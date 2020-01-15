@@ -18,7 +18,7 @@ Utilisateur::Utilisateur():j(), user() {
 Utilisateur::~Utilisateur() {}
 
 bool Utilisateur::connection() {
-	std::ifstream i("file.json");
+	std::ifstream i("ressources/file.json");
 	i >> this->j;
 	
 	string username;
@@ -129,6 +129,6 @@ void Utilisateur::addHistory(string str) {
 
 void Utilisateur::printJson() {
 	this->j[this->user]["rating"][this->number] = this->rate;
-	ofstream o("file.json");
+	ofstream o("ressources/file.json");
 	o << this->j;
 }
