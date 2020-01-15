@@ -12,7 +12,7 @@ Interface est l'interface graphique.
 La méthode update() des modules calcul les mises a jour.
 La méthode render() des modules affiche les modules.
 
-# Calcul flux de carburant
+# Calcul du flux de carburant
 
 Pour calculer si le moteur est alimenté, le moteur regarde d'abord le 
 réservoir direct, qui lui regarde si il est plein et si il a une pompe 
@@ -28,15 +28,13 @@ réservoir. Et si le moteur est toujour pas alimenté le moteur regarde
 son autre vanne direct et fait la même chose que la première vanne.
 
 
-## exemple moteur m1 :
+## exemple pour le moteur m1 :
 <pre>
 m1 -> tank1
 
-m1 -> v12 -> tank2
-			-> v13 -> tank3
+m1 -> v12 -> tank2 -> v13 -> tank3
 
-m1 -> v13 -> tank3
-			-> v12 -> tank2
+m1 -> v13 -> tank3 -> v12 -> tank2
 </pre>
 
 # Calcul des points
@@ -45,7 +43,7 @@ Lorsque le pilote vidange un réservoir ou met une pompe en panne il
 gagne 2 points. Si il finit la partie avec un moteur non alimenté il à
 0.
 
-# Stokage info des pilotes
+# Stokage des infos des pilotes
 
 On utilise une librairie json.
 On a un identifiant qui contient :
