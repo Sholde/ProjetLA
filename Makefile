@@ -4,6 +4,8 @@ SFML = ~/lib/SFML-2.5.1
 JSON = ~/lib/json
 
 EXEC = app.exe
+ARCHIVE = BOUTON_Nicolas-DEDARALLY_Taariq
+TAR = tar.gz
 
 SRCDIR = src
 OBJDIR = obj
@@ -31,11 +33,11 @@ run:
 	@ export LD_LIBRARY_PATH=$(SFML)/lib && echo starting... && ./$(BINDIR)/$(EXEC) && echo ending...
 	
 
-clear:
-	@ rm -rf $(BINDIR)/*
-	@ rm -rf $(OBJDIR)/*
+clean:
+	@ rm -f $(BINDIR)/*
+	@ rm -f $(OBJDIR)/*
 	@ echo "Executable removed!"
 	
-zip: clear
-	@ tar -czvf BOUTON_Nicolas-DEDARALLY_Taariq.tar.gz *
+package: clean
+	@ tar -czvf $(ARCHIVE).$(TAR) *
 	@ echo "Archive created!"
