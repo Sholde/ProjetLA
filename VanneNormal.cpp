@@ -21,40 +21,68 @@ void VanneNormal::initRight(Reservoir *r, VanneNormal *v, Moteur *m) {
 
 bool VanneNormal::caseOneRes(Reservoir *res1, Moteur *mot) {
 	if(this->rl != res1) {
-		return this->rl->calculCarburant(mot);
+		if(this->rl->calculCarburant(mot)) {
+			this->setLine(this->pos_st, this->rl->getPos(), sf::Color::Red);
+			return true;
+		}
 	}
 	else if(this->rr != res1) {
-		return this->rr->calculCarburant(mot);
+		if(this->rr->calculCarburant(mot)) {
+			this->setLine(this->pos_st, this->rr->getPos(), sf::Color::Red);
+			return true;
+		}
 	}
-	else
+	else {
 		return false;
+	}
 }
 
 bool VanneNormal::caseTwoRes(Reservoir *res1, Moteur *mot, Reservoir *res2) {
 	if(this->rl != res1 && this->rl != res2) {
-		return this->rl->calculCarburant(mot);
+		if(this->rl->calculCarburant(mot)) {
+			this->setLine(this->pos_st, this->rl->getPos(), sf::Color::Red);
+			return true;
+		}
 	}
 	else if(this->rr != res1 && this->rr != res2) {
-		return this->rr->calculCarburant(mot);
+		if(this->rr->calculCarburant(mot)) {
+			this->setLine(this->pos_st, this->rr->getPos(), sf::Color::Red);
+			return true;
+		}
 	}
-	else
+	else {
+		this->setLine(sf::Vector2f(0, 0), sf::Vector2f(0, 0), sf::Color::Black);
 		return false;
+	}
 }
 
 bool VanneNormal::calculCarburant(Reservoir *res1, Moteur *mot, Reservoir *res2) {
-	if(!this->isOpen)
+	if(!this->isOpen) {
+		this->setLine(sf::Vector2f(0, 0), sf::Vector2f(0, 0), sf::Color::Black);
 		return false;
+	}
 		
 	if(!res2) {
 		if(caseOneRes(res1, mot)) {
 			return true;
 		}
 		else {
-			if(this->rr == res1)
-				return this->vl->calculCarburant(res1, mot, rl);
-			else
-				return this->vr->calculCarburant(res1, mot, rr);
+			if(this->rr == res1) {
+				if(this->vl->calculCarburant(res1, mot, rl)) {
+					this->setLine(this->pos_st, this->rl->getPos(), sf::Color::Red);
+					return true;
+				}
+			}
+			else {
+				if(this->vr->calculCarburant(res1, mot, rr)) {
+					this->setLine(this->pos_st, this->rr->getPos(), sf::Color::Red);
+					return true;
+				}
+			}
 		}
+		cout << "here" << endl;
+		this->setLine(sf::Vector2f(0, 0), sf::Vector2f(0, 0), sf::Color::Black);
+		return false;
 	}
 	else {
 		return caseTwoRes(res1, mot, res2);

@@ -37,6 +37,7 @@ bool Moteur::isTaken() {
 
 void Moteur::clear() {
 	this->pompe = nullptr;
+	this->setLine(sf::Vector2f(0, 0), sf::Vector2f(0, 0), sf::Color::Black);
 }
 
 void Moteur::setPompe(Pompe* p) {
@@ -44,7 +45,18 @@ void Moteur::setPompe(Pompe* p) {
 }
 
 void Moteur::calculCarburant() {
-	this->reservoir->calculCarburant(this) || this->v1->calculCarburant(this->reservoir, this)  || this->v2->calculCarburant(this->reservoir, this);
+	if(this->reservoir->calculCarburant(this)) {
+		this->setLine(this->pos_st, this->reservoir->getPos(), sf::Color::Red);
+	}
+	else if(this->v1->calculCarburant(this->reservoir, this)) {
+		this->setLine(this->pos_st, this->v1->getPos(), sf::Color::Red);
+	}
+	else if(this->v2->calculCarburant(this->reservoir, this)) {
+		this->setLine(this->pos_st, this->v2->getPos(), sf::Color::Red);
+	}
+	else {
+		this->setLine(sf::Vector2f(0, 0), sf::Vector2f(0, 0), sf::Color::Black);
+	}
 }
 
 bool Moteur::getFeed() {
@@ -75,6 +87,8 @@ void Moteur::render(Interface *interface) {
 	else {
 		this->rect.setColor(sf::Color::Red);
 	}
+	
+	interface->statement.draw(this->line, 2, sf::LinesStrip);
 	
 	this->rect.render(interface->statement);
 	

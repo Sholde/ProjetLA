@@ -31,6 +31,8 @@ void Vanne::render(Interface *interface) {
 		this->circle.setColor(sf::Color::Red);
 	}
 	
+	interface->statement.draw(this->line, 2, sf::LinesStrip);
+	
 	this->circle.render(interface);
 	draw_text(interface->statement, this->pos_st, this->name, interface->font, 25, sf::Color::Black);
 	
