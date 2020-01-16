@@ -2,6 +2,12 @@
 
 On utilise 2 librairie externes.
 
+# CONFIGURATION
+
+<pre>
+./config.sh
+</pre>
+
 # LIBRAIRIE GRAPHIQUE
 
 On utilise SFML version 2.5.1.

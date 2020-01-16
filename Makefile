@@ -47,7 +47,3 @@ clean:
 package: clean
 	@ tar -czvf $(ARCHIVE).$(TAR) *
 	@ echo "Archive created!"
-
-config:
-	@ SFML=${bash -c "head -1 path.txt"}
-	@ JSON=${bash -c "tail -1 path.txt"}

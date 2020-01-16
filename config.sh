@@ -1,25 +1,10 @@
 #!/bin/bash
 
-if [ $# != 2 ]
+if [ $# != 0 ]
 	then 
-		echo "Need 2 arguments !"
+		echo "Need 0 arguments !"
 		exit 1
 fi
-
-if [ -e path.txt ]
-	then
-		rm path.txt
-		touch path.txt
-		echo $1 >> path.txt
-		echo $2 >> path.txt
-	else
-		touch path.txt
-		echo "Création du fichier path.txt"
-		echo $1 >> path.txt
-		echo $2 >> path.txt
-fi
-
-make config
 
 # pwd renvoie le répertoire courant
 # ## pour pouvoir écrire des chose après
