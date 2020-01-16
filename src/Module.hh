@@ -16,7 +16,7 @@ class Module {
 	// public field
 	public:
 		Module(Utilisateur* user, const char* name, const sf::Vector2f &st);
-		~Module();
+		virtual ~Module();
 		
 		virtual void handleClicStatement(int &x, int &y) {};
 		virtual void handleClicDashboard(int &x, int &y) {};

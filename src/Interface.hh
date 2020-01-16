@@ -3,7 +3,6 @@
 
 #include <SFML/Graphics.hpp>
 #include "Include.hh"
-#include "Utilisateur.hh"
 
 class Interface {
 	

@@ -2,12 +2,11 @@
 #include "Include.hh"
 #include <iostream>
 using namespace std;
-#include "Utilisateur.hh"
 
 Interface::Interface(int width, int height)
-		:statement(sf::VideoMode(width, height), "Statement"),
-		dashboard(sf::VideoMode(500, 400), "Dashboard"),
-		font() {
+		:	font()
+		, dashboard(sf::VideoMode(500, 400), "Dashboard")
+		, statement(sf::VideoMode(width, height), "Statement") {
 			
 	if (!this->font.loadFromFile("ressources/arial_narrow_7.ttf")) {
 		exit(1);

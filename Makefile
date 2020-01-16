@@ -2,8 +2,8 @@
 
 CXX = g++
 
-SFML =/home/user/lib/SFML-2.5.1
-JSON =/home/user/lib/json
+SFML = /home/user/lib/SFML-2.5.1
+JSON = /home/user/lib/json
 
 EXEC = app.exe
 ARCHIVE = BOUTON_Nicolas-DEDARALLY_Taariq
