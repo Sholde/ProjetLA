@@ -5,8 +5,8 @@ using namespace std;
 
 Interface::Interface(int width, int height)
 		:	font()
-		, dashboard(sf::VideoMode(500, 400), "Dashboard")
-		, statement(sf::VideoMode(width, height), "Statement") {
+		, statement(sf::VideoMode(width, height), "Statement")
+		, dashboard(sf::VideoMode(500, 400), "Dashboard") {
 			
 	if (!this->font.loadFromFile("ressources/arial_narrow_7.ttf")) {
 		exit(1);
