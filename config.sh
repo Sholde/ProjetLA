@@ -10,12 +10,12 @@ fi
 # ## pour pouvoir écrire des chose après
 # test si les répertoires existe et les créer sinon
 
-if [ -d ${pwd##/bin} ]
+if [ -d ${PWD}/bin ]
 	then echo "Dossier bin déjà existant"
 	else mkdir bin
 fi
 
-if [ -d ${pwd##/obj} ]
+if [ -d ${PWD}/obj ]
 	then echo "Dossier obj déjà existant"
 	else mkdir obj
 fi
